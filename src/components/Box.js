@@ -17,6 +17,7 @@ import {
   fontWeight,
   borderRadius,
   zIndex,
+  flex,
 } from 'styled-system';
 
 import blacklist from './utils/blacklist';
@@ -38,6 +39,7 @@ const Box = styled(tag)`
   ${bottom}
   ${fontWeight}
   ${borderRadius}
+  ${flex}
   ${injectProps('overflow')}
   ${injectProps.responsive('transform')}
   ${injectProps('transition')}

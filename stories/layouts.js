@@ -4,6 +4,7 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 
 import Box from '../src/components/Box';
+import Header from '../src/components/Header';
 import Backgrounds from '../src/components/Backgrounds';
 import OldBg from '../src/components/Backgrounds/OldBg';
 import NewBg from '../src/components/Backgrounds/NewBg';
@@ -29,6 +30,10 @@ storiesOf('Layouts', module)
         leftContent={<Box mx="auto" width={400} height={200} bg="red" />}
         rightContent={<Box mx="auto" width={400} height={200} bg="yellow" />}
       />
+    </Box>
+  )).add('Header', () => (
+    <Box height="50vh" bg="blue">
+      <Header />
     </Box>
   ));
 

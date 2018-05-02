@@ -79,4 +79,17 @@ Button.secondary = (props) => (
   />
 );
 
+Button.icon = (props) => (
+  <Button
+    bg="white"
+    color="text"
+    borderColor="gray"
+    hoverColor="primary"
+    px="0"
+    py="0"
+    borderRadius="50%"
+    {...props}
+  />
+);
+
 export default Button;
