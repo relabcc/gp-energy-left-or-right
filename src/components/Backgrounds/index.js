@@ -2,7 +2,6 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Measure from 'react-measure';
 import clamp from 'lodash/clamp';
-import round from 'lodash/round';
 import Hammer from 'hammerjs';
 
 import Box from '../Box';
@@ -24,6 +23,10 @@ class TwoBackgrounds extends PureComponent {
     this.hammertime.on('pan', this.handleOnDrag);
   }
 
+  componentWillReceiveProps({ ratio }) {
+    if (ratio !== this.props.ratio) this.setState({ ratio });
+  }
+
   componentWillUnmount() {
     this.hammertime.destroy();
   }
@@ -34,7 +37,7 @@ class TwoBackgrounds extends PureComponent {
 
   handleOnDrag = (evt) => {
     const { onRatioChange } = this.props;
-    const newRatio = clamp(round(evt.srcEvent.clientX / this.state.dimensions.width, 2), 0, 1);
+    const newRatio = clamp(evt.srcEvent.clientX / this.state.dimensions.width, 0, 1);
     if (onRatioChange) {
       onRatioChange(newRatio);
     } else {
@@ -43,7 +46,7 @@ class TwoBackgrounds extends PureComponent {
   }
 
   render() {
-    const { onDrag, ratio, leftContent, rightContent, ...props } = this.props;
+    const { onDrag, ratio, leftContent, rightContent, onRatioChange, ...props } = this.props;
     const { width } = this.state.dimensions;
     const leftPos = `${this.state.ratio * 100}%`;
     return (

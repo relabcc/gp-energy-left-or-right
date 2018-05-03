@@ -1,18 +1,15 @@
 import React from 'react';
 
-import Container from '../components/Container';
+import withHeader from '../hoc/withHeader';
 import Box from '../components/Box';
-import Text from '../components/Text';
-import BackgroundImage from '../components/BackgroundImage';
+import Intro from '../containers/Intro';
 
-const Index = () => (
-  <Container>
-    <Box my="2em">
-      <Text.h1>Styled Gatsby Starter</Text.h1>
-      <Text>Styled Components + Styled System is cool!</Text>
+const Index = (props) => {
+  return (
+    <Box height="100vh" {...props}>
+      <Intro />
     </Box>
-    <BackgroundImage my="2em" src="https://loremflickr.com/1920/1080" ratio={9 / 16} />
-  </Container>
-);
+  );
+}
 
-export default Index;
+export default withHeader(Index);

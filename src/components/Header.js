@@ -17,29 +17,31 @@ const links = [
   { label: '21道微想題', link: '#' },
 ];
 
-const Header = (props) => (
-  <Flex
-    position="fixed"
-    height={theme.headerHeight}
-    px="0.5em"
-    bg="fade.white.70"
-    align="center"
-    w={1}
-  >
-    <Logo w={175} color="cyan" />
-    <Box flex={1} />
-    <Flex align="center">
-      {links.reduce((seprated, { label, link }, index) => {
-        const ele = <Link key={index} href={link} color="gray" f="0.875em">{label}</Link>;
-        if (index === 0) return seprated.concat(ele);
-        return seprated.concat([<Text mx="0.75em" color="gray">|</Text>, ele]);
-      }, [])}
+const Header = (props) => {
+  return (
+    <Flex
+      position="fixed"
+      height={theme.headerHeight}
+      px="0.5em"
+      bg="fade.white.70"
+      align="center"
+      w={1}
+    >
+      <Logo w={175} color="cyan" />
+      <Box flex={1} />
+      <Flex align="center">
+        {links.reduce((seprated, { label, link }, index) => {
+          const ele = <Link key={index} href={link} color="gray" f="0.875em">{label}</Link>;
+          if (index === 0) return seprated.concat(ele);
+          return seprated.concat([<Text mx="0.75em" color="gray">|</Text>, ele]);
+        }, [])}
+      </Flex>
+      <Flex align="center" pl="1em">
+        <Button.icon mr="0.5em" w="2em"><Fb /></Button.icon>
+        <Button.icon w="2em"><Line /></Button.icon>
+      </Flex>
     </Flex>
-    <Flex align="center" px="1em">
-      <Button.icon mr="0.5em" w="2em"><Fb /></Button.icon>
-      <Button.icon w="2em"><Line /></Button.icon>
-    </Flex>
-  </Flex>
-);
+  );
+}
 
 export default Header;
