@@ -1,9 +1,10 @@
 import { createElement } from 'react';
-import fromPairs from 'lodash/fromPairs';
 
 import AiCanvas from './AiCanvas';
 import BackgroundImage from '../components/BackgroundImage';
-import Text from '../components/Text';
+import InlineStyleText from './InlineStyleText';
+
+import parseProps from './parseProps';
 
 const percents = (num) => `${num * 100}%`;
 
@@ -17,14 +18,11 @@ const styleParser = ({ width, height, x, y }, { width: canvasWidth, height: canv
 const texParser = (txt) => {
   const re = /txt\|([^[]+)\[([^\]]+)/g;
   const [, children, props] = re.exec(txt);
-  const attrs = fromPairs(props.split(',').map((p) => p.split(':')));
   return {
     children,
     fontWeight: 700,
-    ...attrs,
-    f: `${attrs['f']}em`,
-    whiteSpace: 'nowrap',
     lineHeight: 1,
+    ...parseProps(props),
   };
 };
 
@@ -35,12 +33,12 @@ export default (data, images) => {
     canvasWidth: width,
     layers: layers.slice().reverse().map((d) => {
       const { ratio, ...attr } = styleParser(d, { width, height });
-      const { name } = d;
+      const { name, layername } = d;
       return {
         ...props,
         name,
-        layer: name.startsWith('txt')
-          ? createElement(Text, texParser(name))
+        layer: layername.startsWith('txt')
+          ? createElement(InlineStyleText, texParser(layername))
           : createElement(BackgroundImage, {
             src: images[name],
             ratio,

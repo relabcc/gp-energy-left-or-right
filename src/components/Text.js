@@ -38,9 +38,11 @@ const Text = styled(tag)`
 Text.defaultProps = {
   is: 'p',
   f: '1em',
-  lineHeight: 1.5,
+  lineHeight: 1.25,
   blacklist,
 };
+
+Text.span = (props) => <Text is="span" {...props} />;
 
 Text.bold = (props) => <Text.span fontWeight="bold" {...props} />;
 

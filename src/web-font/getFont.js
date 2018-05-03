@@ -7,13 +7,14 @@ const fontMin = require('./fontMin');
 
 const textParser = (txt) => {
   const re = /txt\|([^[]+)\[([^\]]+)/g;
-  const [, text, props] = re.exec(txt);
+  const res = re.exec(txt);
+  const [, text, props] = res;
   const { fontWeight } = fromPairs(props.split(',').map((p) => p.split(':')));
   return merge({ fontWeight: 700 }, {
     text,
     fontWeight,
   });
-}
+};
 
 const handleRead = (path) => new Promise((res, rej) => {
   fs.readFile(path, (err, data) => {
@@ -22,9 +23,9 @@ const handleRead = (path) => new Promise((res, rej) => {
   });
 });
 
-const handleLayer = (all, { name }) => {
-  if (name.startsWith('txt')) {
-    const { text, fontWeight } = textParser(name);
+const handleLayer = (all, { name, layername }) => {
+  if (layername.startsWith('txt')) {
+    const { text, fontWeight } = textParser(layername);
     all[fontWeight].push(text);
   }
   return all;
