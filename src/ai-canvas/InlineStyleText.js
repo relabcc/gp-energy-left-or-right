@@ -39,7 +39,6 @@ class InlineStyleText extends React.PureComponent {
     }
 
     let lastIndex = 0;
-    console.log(matches);
 
     matches.forEach((match, idx) => {
       // Push the preceding text if there is any

@@ -1,0 +1,271 @@
+{
+	"name": "整合網站＿情境3_2017.ai",
+	"width": 1334,
+	"height": 718,
+	"layers": [
+		{
+			"x": "784.48",
+			"y": "443.79",
+			"r": "886.77",
+			"b": "462.12",
+			"width": "102.29",
+			"height": "18.33",
+			"layername": "txt|健康衝擊成本[f:15.5,color:white]",
+			"name": "txt|健康衝擊成本[f:15",
+			"type": "5,color:white]",
+			"filename": "txt|健康衝擊成本[f:15.5,color:white]",
+			"visible": true,
+			"items": [
+
+			]
+		},
+		{
+			"x": "777.35",
+			"y": "468.64",
+			"r": "897.20",
+			"b": "527.52",
+			"width": "119.85",
+			"height": "58.88",
+			"layername": "txt|指發電過程中除了燃料、機器運轉等成本以外，包含造成呼吸系統、心血管疾病，以及其他醫療支出成本。[f:8.5,color:white,lineHeight:1.375]",
+			"name": "txt|指發電過程中除了燃料、機器運轉等成本以外，包含造成呼吸系統、心血管疾病，以及其他醫療支出成本。[f:8",
+			"type": "5,color:white,lineHeight:1.375]",
+			"filename": "txt|指發電過程中除了燃料、機器運轉等成本以外，包含造成呼吸系統、心血管疾病，以及其他醫療支出成本。[f:8.5,color:white,lineHeight:1.375]",
+			"visible": true,
+			"items": [
+
+			]
+		},
+		{
+			"x": "859.00",
+			"y": "395.41",
+			"r": "870.00",
+			"b": "408.42",
+			"width": "11.00",
+			"height": "13.01",
+			"layername": "txt|元[f:11]",
+			"name": "txt|元[f:11]",
+			"type": "div",
+			"visible": true,
+			"items": [
+
+			]
+		},
+		{
+			"x": "812.50",
+			"y": "389.39",
+			"r": "859.30",
+			"b": "410.68",
+			"width": "46.80",
+			"height": "21.29",
+			"layername": "txt|410億[f:18,color:darkRed]",
+			"name": "txt|410億[f:18,color:darkRed]",
+			"type": "div",
+			"visible": true,
+			"items": [
+
+			]
+		},
+		{
+			"x": "799.25",
+			"y": "395.41",
+			"r": "812.45",
+			"b": "408.42",
+			"width": "13.20",
+			"height": "13.01",
+			"layername": "txt|為[f:11]",
+			"name": "txt|為[f:11]",
+			"type": "div",
+			"visible": true,
+			"items": [
+
+			]
+		},
+		{
+			"x": "826.09",
+			"y": "372.47",
+			"r": "892.09",
+			"b": "385.48",
+			"width": "66.00",
+			"height": "13.01",
+			"layername": "txt|健康衝擊成本[f:11]",
+			"name": "txt|健康衝擊成本[f:11]",
+			"type": "div",
+			"visible": true,
+			"items": [
+
+			]
+		},
+		{
+			"x": "766.75",
+			"y": "372.47",
+			"r": "821.75",
+			"b": "385.48",
+			"width": "55.00",
+			"height": "13.01",
+			"layername": "txt|燃煤發電之[f:11]",
+			"name": "txt|燃煤發電之[f:11]",
+			"type": "div",
+			"visible": true,
+			"items": [
+
+			]
+		},
+		{
+			"x": "793.41",
+			"y": "355.38",
+			"r": "875.90",
+			"b": "368.38",
+			"width": "82.49",
+			"height": "13.00",
+			"layername": "txt|2008年 - 2015年[f:11]",
+			"name": "txt|2008年---2015年[f:11]",
+			"type": "div",
+			"visible": true,
+			"items": [
+
+			]
+		},
+		{
+			"x": "825.19",
+			"y": "373.71",
+			"r": "901.87",
+			"b": "386.37",
+			"width": "76.68",
+			"height": "12.66",
+			"layername": "Layer 17.svg",
+			"name": "Layer-17",
+			"type": "svg",
+			"filename": "Layer-17.svg",
+			"visible": true,
+			"items": [
+
+			]
+		},
+		{
+			"x": "750.25",
+			"y": "342.90",
+			"r": "916.62",
+			"b": "532.46",
+			"width": "166.37",
+			"height": "189.56",
+			"layername": "Layer 6.svg",
+			"name": "Layer-6",
+			"type": "svg",
+			"filename": "Layer-6.svg",
+			"visible": true,
+			"items": [
+
+			]
+		},
+		{
+			"x": "432.19",
+			"y": "335.98",
+			"r": "554.81",
+			"b": "353.75",
+			"width": "122.62",
+			"height": "17.77",
+			"layername": "txt|近25%的氮氧化物[f:15,color:darkRed]",
+			"name": "txt|近25%的氮氧化物[f:15,color:darkRed]",
+			"type": "div",
+			"visible": true,
+			"items": [
+
+			]
+		},
+		{
+			"x": "486.95",
+			"y": "163.15",
+			"r": "609.05",
+			"b": "180.84",
+			"width": "122.10",
+			"height": "17.69",
+			"layername": "txt|近50%的硫氧化物[f:15,color:darkRed]",
+			"name": "txt|近50%的硫氧化物[f:15,color:darkRed]",
+			"type": "div",
+			"visible": true,
+			"items": [
+
+			]
+		},
+		{
+			"x": "486.95",
+			"y": "183.20",
+			"r": "598.18",
+			"b": "216.00",
+			"width": "111.23",
+			"height": "32.80",
+			"layername": "txt|是來自燃煤電廠排放， 會造成酸雨、空污[f:11,lineHeight:1.5]",
+			"name": "txt|是來自燃煤電廠排放，-會造成酸雨、空污[f:11,lineHeight:1",
+			"type": "5]",
+			"filename": "txt|是來自燃煤電廠排放，-會造成酸雨、空污[f:11,lineHeight:1.5]",
+			"visible": true,
+			"items": [
+
+			]
+		},
+		{
+			"x": "432.19",
+			"y": "356.55",
+			"r": "545.00",
+			"b": "390.24",
+			"width": "112.81",
+			"height": "33.69",
+			"layername": "txt|是來自燃煤電廠排放， 會造成人體呼吸道危害[f:11,lineHeight:1.5]",
+			"name": "txt|是來自燃煤電廠排放，-會造成人體呼吸道危害[f:11,lineHeight:1",
+			"type": "5]",
+			"filename": "txt|是來自燃煤電廠排放，-會造成人體呼吸道危害[f:11,lineHeight:1.5]",
+			"visible": true,
+			"items": [
+
+			]
+		},
+		{
+			"x": "474.19",
+			"y": "153.26",
+			"r": "679.17",
+			"b": "239.10",
+			"width": "204.98",
+			"height": "85.84",
+			"layername": "Layer 9.svg",
+			"name": "Layer-9",
+			"type": "svg",
+			"filename": "Layer-9.svg",
+			"visible": true,
+			"items": [
+
+			]
+		},
+		{
+			"x": "418.74",
+			"y": "324.89",
+			"r": "614.15",
+			"b": "399.63",
+			"width": "195.41",
+			"height": "74.74",
+			"layername": "Layer 10.svg",
+			"name": "Layer-10",
+			"type": "svg",
+			"filename": "Layer-10.svg",
+			"visible": true,
+			"items": [
+
+			]
+		},
+		{
+			"x": "462.00",
+			"y": "114.02",
+			"r": "912.13",
+			"b": "597.36",
+			"width": "450.13",
+			"height": "483.34",
+			"layername": "Layer 2.png",
+			"name": "Layer-2",
+			"type": "png",
+			"filename": "Layer-2.png",
+			"visible": true,
+			"items": [
+
+			]
+		}
+	]
+}
