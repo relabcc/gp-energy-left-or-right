@@ -12,4 +12,5 @@ export default [
   'alpha',
   'hoverColor',
   'hoverBg',
+  'whiteSpace',
 ];

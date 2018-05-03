@@ -14,7 +14,7 @@ const styleParser = ({ width, height, x, y }, { width: canvasWidth, height: canv
   ratio: height / width,
 });
 
-export const texParser = (txt) => {
+const texParser = (txt) => {
   const re = /txt\|([^[]+)\[([^\]]+)/g;
   const [, children, props] = re.exec(txt);
   const attrs = fromPairs(props.split(',').map((p) => p.split(':')));
@@ -30,13 +30,14 @@ export const texParser = (txt) => {
 
 export default (data, images) => {
   const { width, height, layers } = data;
-  return () => createElement(AiCanvas, {
+  return (props) => createElement(AiCanvas, {
     ratio: height / width,
     canvasWidth: width,
     layers: layers.slice().reverse().map((d) => {
       const { ratio, ...attr } = styleParser(d, { width, height });
       const { name } = d;
       return {
+        ...props,
         name,
         layer: name.startsWith('txt')
           ? createElement(Text, texParser(name))

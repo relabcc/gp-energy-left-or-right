@@ -15,6 +15,7 @@ import {
 import tag from 'clean-tag';
 
 import { getColorByPropKey } from './utils/getColor';
+import blacklist from './utils/blacklist';
 
 const active = css`
   color: ${getColorByPropKey('hoverColor')};
@@ -68,6 +69,7 @@ Button.defaultProps = {
   py: '0.5em',
   borderRadius: '0.25em',
   fontWeight: 'bold',
+  blacklist,
 };
 
 Button.secondary = (props) => (

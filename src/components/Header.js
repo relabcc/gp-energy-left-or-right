@@ -34,7 +34,7 @@ const Header = (props) => {
         {links.reduce((seprated, { label, link }, index) => {
           const ele = <Link key={index} href={link} color="gray" f="0.875em">{label}</Link>;
           if (index === 0) return seprated.concat(ele);
-          return seprated.concat([<Text mx="0.75em" color="gray">|</Text>, ele]);
+          return seprated.concat([<Text mx="0.75em" key={`${index}-sep`} color="gray">|</Text>, ele]);
         }, [])}
       </Flex>
       <Flex align="center" pl="1em">

@@ -1,29 +1,45 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import ContainerDimensions from 'react-container-dimensions';
+import { withContentRect  } from 'react-measure';
 
 import Box from '../components/Box';
 
-function AiCanvas({ ratio, layers, canvasWidth, ...props }) {
-  return (
-    <ContainerDimensions>
-      {({ width }) => (
-        <Box
-          position="relative"
-          overflow="hidden"
-          pb={`${ratio * 100}%`}
-          style={{ fontSize: `${(width / canvasWidth) * 1}px` }}
-          {...props}
-        >
-          {layers.map(({ attr, layer, name }) => (
-            <Box position="absolute" {...attr} key={name}>
-              {layer}
-            </Box>
-          ))}
-        </Box>
-      )}
-    </ContainerDimensions>
-  );
+class AiCanvas extends Component {
+  componentDidMount() {
+    this.props.measure();
+  }
+
+  shouldComponentUpdate({ contentRect }) {
+    return this.props.contentRect.bounds !== contentRect.bounds;
+  }
+
+  render() {
+    const {
+      ratio,
+      layers,
+      canvasWidth,
+      measureRef,
+      measure,
+      contentRect,
+      ...props
+    } = this.props;
+    return (
+      <Box
+        position="relative"
+        overflow="hiddesn"
+        pb={`${ratio * 100}%`}
+        style={{ fontSize: `${(contentRect.bounds.width / canvasWidth) * 1}px` }}
+        innerRef={measureRef }
+        {...props}
+      >
+        {layers.map(({ attr, layer, name }) => (
+          <Box position="absolute" {...attr} key={name}>
+            {layer}
+          </Box>
+        ))}
+      </Box>
+    );
+  }
 }
 
 AiCanvas.propTypes = {
@@ -32,4 +48,4 @@ AiCanvas.propTypes = {
   canvasWidth: PropTypes.number,
 };
 
-export default AiCanvas;
+export default withContentRect('bounds')(AiCanvas);

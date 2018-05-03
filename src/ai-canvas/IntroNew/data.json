@@ -85,8 +85,8 @@
 			"b": "195.69",
 			"width": "64.00",
 			"height": "37.85",
-			"layername": "txt|2035[f:32]",
-			"name": "txt|2035[f:32]",
+			"layername": "txt|2035[f:32,color:orange]",
+			"name": "txt|2035[f:32,color:orange]",
 			"type": "div",
 			"visible": true,
 			"items": [

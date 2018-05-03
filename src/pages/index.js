@@ -4,9 +4,9 @@ import withHeader from '../hoc/withHeader';
 import Box from '../components/Box';
 import Intro from '../containers/Intro';
 
-const Index = (props) => {
+const Index = () => {
   return (
-    <Box height="100vh" {...props}>
+    <Box height="100vh">
       <Intro />
     </Box>
   );

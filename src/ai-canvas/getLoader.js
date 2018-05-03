@@ -5,13 +5,11 @@ const forEach = require('lodash/forEach');
 const compact = require('lodash/compact');
 
 const index = `
-import { createElement } from 'react';
-
 import images from './images';
 import data from './data.json';
 import dataParser from '../dataParser';
 
-export default (props) => createElement(dataParser(data, images), props);
+export default dataParser(data, images);
 `;
 
 glob('*/*.+(png|svg)', (er, files) => {

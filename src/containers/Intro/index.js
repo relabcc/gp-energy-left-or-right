@@ -7,8 +7,8 @@ import IntroNew from '../../ai-canvas/IntroNew';
 const Intro = () => {
   return (
     <DualBg
-      leftContent={(<IntroOld />)}
-      rightContent={(<IntroNew />)}
+      leftContent={(<IntroNew />)}
+      rightContent={(<IntroOld />)}
     />
   );
 };

@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import Measure from 'react-measure';
+import { withContentRect  } from 'react-measure';
 import clamp from 'lodash/clamp';
 
 import Box from '../Box';
@@ -9,22 +9,15 @@ import NewBg from './NewBg';
 import OldBg from './OldBg';
 import Hammer from '../../vendor/hammer';
 
-const isBrowser = typeof window !== 'undefined';
-
 class TwoBackgrounds extends PureComponent {
   state = {
-    dimensions: {
-      width: -1,
-      height: -1
-    },
     ratio: this.props.ratio,
   }
 
   componentDidMount() {
-    if (isBrowser) {
-      this.hammertime = new Hammer(this.handle);
-      this.hammertime.on('pan', this.handleOnDrag);
-    }
+    this.hammertime = new Hammer(this.handle);
+    this.hammertime.on('pan', this.handleOnDrag);
+    this.props.measure();
   }
 
   componentWillReceiveProps({ ratio }) {
@@ -32,7 +25,7 @@ class TwoBackgrounds extends PureComponent {
   }
 
   componentWillUnmount() {
-    if (isBrowser) this.hammertime.destroy();
+    this.hammertime.destroy();
   }
 
   handleRef = (ref) => {
@@ -40,8 +33,8 @@ class TwoBackgrounds extends PureComponent {
   }
 
   handleOnDrag = (evt) => {
-    const { onRatioChange } = this.props;
-    const newRatio = clamp(evt.srcEvent.clientX / this.state.dimensions.width, 0, 1);
+    const { onRatioChange, contentRect } = this.props;
+    const newRatio = clamp(evt.srcEvent.clientX / contentRect.bounds.width, 0, 1);
     if (onRatioChange) {
       onRatioChange(newRatio);
     } else {
@@ -50,30 +43,38 @@ class TwoBackgrounds extends PureComponent {
   }
 
   render() {
-    const { onDrag, ratio, leftContent, rightContent, onRatioChange, ...props } = this.props;
-    const { width } = this.state.dimensions;
+    const {
+      onDrag,
+      ratio,
+      leftContent,
+      rightContent,
+      onRatioChange,
+      measureRef,
+      contentRect,
+      measure,
+      ...props
+    } = this.props;
     const leftPos = `${this.state.ratio * 100}%`;
+
     return (
-      <Box position="relative" height="100%" {...props}>
-        <Measure
-          bounds
-          onResize={(contentRect) => {
-            this.setState({ dimensions: contentRect.bounds })
-          }}
-        >
-          {({ measureRef }) => (
-            <Box height="100%" innerRef={measureRef}>
-              <OldBg>{leftContent}</OldBg>
-              <Box top="0" left="0" bottom="0" style={{ width: leftPos }} position="absolute" overflow="hidden">
-                <Box w={width} height="100%">
-                  <NewBg>
-                    {rightContent}
-                  </NewBg>
-                </Box>
-              </Box>
+      <Box position="relative" height="100%" innerRef={measureRef} {...props}>
+        <Box height="100%">
+          <NewBg>{leftContent}</NewBg>
+          <Box
+            top="0"
+            left="0"
+            bottom="0"
+            style={{ width: leftPos }}
+            position="absolute"
+            overflow="hidden"
+          >
+            <Box w={contentRect.bounds.width} height="100%">
+              <OldBg>
+                {rightContent}
+              </OldBg>
             </Box>
-          )}
-        </Measure>
+          </Box>
+        </Box>
         <EnergyHandle
           position="absolute"
           bottom="15%"
@@ -97,4 +98,4 @@ TwoBackgrounds.defaultProps = {
   ratio: 0.5,
 };
 
-export default TwoBackgrounds;
+export default withContentRect('bounds')(TwoBackgrounds);
