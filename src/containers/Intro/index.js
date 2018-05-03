@@ -1,30 +1,15 @@
 import React from 'react';
 
-import Box from '../../components/Box';
-import BackgroundImage from '../../components/BackgroundImage';
 import DualBg from '../DualBg';
-
-import oldTw from './intro-tw-old.svg';
-import newTw from './intro-tw-new.svg';
-
-const Wrapper = (props) => <Box w="50%" mx="auto" {...props} />
+import IntroOld from '../../ai-canvas/IntroOld';
+import IntroNew from '../../ai-canvas/IntroNew';
 
 const Intro = () => {
   return (
-    <Box height="100%">
-      <DualBg
-        leftContent={(
-          <Wrapper>
-            <BackgroundImage src={oldTw} />
-          </Wrapper>
-        )}
-        rightContent={(
-          <Wrapper>
-            <BackgroundImage src={newTw} />
-          </Wrapper>
-        )}
-      />
-    </Box>
+    <DualBg
+      leftContent={(<IntroOld />)}
+      rightContent={(<IntroNew />)}
+    />
   );
 };
 

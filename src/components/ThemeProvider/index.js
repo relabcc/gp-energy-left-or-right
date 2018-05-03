@@ -1,9 +1,24 @@
 import React from 'react';
-import { ThemeProvider } from 'styled-components';
+import { ThemeProvider, injectGlobal } from 'styled-components';
 import 'sanitize.css';
 
 import theme from './theme';
 import Box from '../Box';
+
+import '../../web-font';
+
+injectGlobal`
+  html,
+  body {
+    height: 100%;
+    width: 100%;
+  }
+
+  body {
+    margin: 0;
+    font-family: ${theme.font};
+  }
+`;
 
 export default (props) => (
   <ThemeProvider theme={theme}>

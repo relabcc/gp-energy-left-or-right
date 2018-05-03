@@ -11,7 +11,7 @@ export const containerWidth = [36, 46, 58].map(emToPx);
 const generateFade = (r, g, b) => range(10, 100, 10)
   .reduce((fade, opacity) => merge(fade, { [opacity]: `rgba(${[r, g, b, opacity / 100].join()})` }), {});
 
-const font = 'Arial, "PingFang TC", "HeiTi TC", "Microsoft JhengHei", sans-serif';
+const font = '"Gen Jyuu Gothic X Monospace", sans-serif';
 
 const white = '#fff';
 const black = '#000';

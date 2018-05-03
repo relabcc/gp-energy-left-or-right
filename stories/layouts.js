@@ -1,13 +1,14 @@
 import React from 'react';
 
 import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
+// import { action } from '@storybook/addon-actions';
 
 import Box from '../src/components/Box';
 import Header from '../src/components/Header';
 import Backgrounds from '../src/components/Backgrounds';
 import OldBg from '../src/components/Backgrounds/OldBg';
 import NewBg from '../src/components/Backgrounds/NewBg';
+import IntroOld from '../src/ai-canvas/IntroOld';
 
 storiesOf('Layouts', module)
   .add('OldBg', () => (
@@ -35,5 +36,8 @@ storiesOf('Layouts', module)
     <Box height="50vh" bg="blue">
       <Header />
     </Box>
+  ))
+  .add('IntroOld', () => (
+    <IntroOld />
   ));
 

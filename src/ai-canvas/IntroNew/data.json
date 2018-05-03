@@ -1,0 +1,176 @@
+{
+	"name": "intro-new.ai",
+	"width": 1334,
+	"height": 718,
+	"layers": [
+		{
+			"x": "102.51",
+			"y": "227.17",
+			"r": "292.50",
+			"b": "280.39",
+			"width": "189.99",
+			"height": "53.22",
+			"layername": "txt|左右世界[f:45]",
+			"name": "txt|左右世界[f:45]",
+			"type": "div",
+			"visible": true,
+			"items": [
+
+			]
+		},
+		{
+			"x": "102.51",
+			"y": "155.19",
+			"r": "292.50",
+			"b": "208.41",
+			"width": "189.99",
+			"height": "53.22",
+			"layername": "txt|能源也能[f:45]",
+			"name": "txt|能源也能[f:45]",
+			"type": "div",
+			"visible": true,
+			"items": [
+
+			]
+		},
+		{
+			"x": "97.01",
+			"y": "293.84",
+			"r": "296.81",
+			"b": "308.03",
+			"width": "199.80",
+			"height": "14.19",
+			"layername": "txt|一個關於現在、未來能源情報的網站[f:12]",
+			"name": "txt|一個關於現在、未來能源情報的網站[f:12]",
+			"type": "div",
+			"visible": true,
+			"items": [
+
+			]
+		},
+		{
+			"x": "440.21",
+			"y": "197.40",
+			"r": "600.01",
+			"b": "217.64",
+			"width": "159.80",
+			"height": "20.24",
+			"layername": "txt|再生能源蓬勃成長。[f:17]",
+			"name": "txt|再生能源蓬勃成長。[f:17]",
+			"type": "div",
+			"visible": true,
+			"items": [
+
+			]
+		},
+		{
+			"x": "526.14",
+			"y": "170.75",
+			"r": "614.54",
+			"b": "190.85",
+			"width": "88.40",
+			"height": "20.10",
+			"layername": "txt|年的臺灣，[f:17]",
+			"name": "txt|年的臺灣，[f:17]",
+			"type": "div",
+			"visible": true,
+			"items": [
+
+			]
+		},
+		{
+			"x": "462.14",
+			"y": "157.84",
+			"r": "526.14",
+			"b": "195.69",
+			"width": "64.00",
+			"height": "37.85",
+			"layername": "txt|2035[f:32]",
+			"name": "txt|2035[f:32]",
+			"type": "div",
+			"visible": true,
+			"items": [
+
+			]
+		},
+		{
+			"x": "426.19",
+			"y": "170.75",
+			"r": "461.04",
+			"b": "190.85",
+			"width": "34.85",
+			"height": "20.10",
+			"layername": "txt|這是[f:17]",
+			"name": "txt|這是[f:17]",
+			"type": "div",
+			"visible": true,
+			"items": [
+
+			]
+		},
+		{
+			"x": "58.59",
+			"y": "67.57",
+			"r": "343.27",
+			"b": "324.65",
+			"width": "284.68",
+			"height": "257.08",
+			"layername": "Layer 9.png",
+			"name": "Layer-9",
+			"type": "png",
+			"filename": "Layer-9.png",
+			"visible": true,
+			"items": [
+
+			]
+		},
+		{
+			"x": "487.95",
+			"y": "81.44",
+			"r": "636.45",
+			"b": "158.34",
+			"width": "148.50",
+			"height": "76.90",
+			"layername": "Layer 10.png",
+			"name": "Layer-10",
+			"type": "png",
+			"filename": "Layer-10.png",
+			"visible": true,
+			"items": [
+
+			]
+		},
+		{
+			"x": "412.26",
+			"y": "144.50",
+			"r": "620.41",
+			"b": "231.84",
+			"width": "208.15",
+			"height": "87.34",
+			"layername": "Layer 11.svg",
+			"name": "Layer-11",
+			"type": "svg",
+			"filename": "Layer-11.svg",
+			"visible": true,
+			"items": [
+
+			]
+		},
+		{
+			"x": "413.86",
+			"y": "145.42",
+			"r": "893.71",
+			"b": "612.27",
+			"width": "479.85",
+			"height": "466.85",
+			"layername": "Layer 12.png",
+			"name": "Layer-12",
+			"type": "png",
+			"filename": "Layer-12.png",
+			"visible": true,
+			"items": [
+
+			]
+		}
+	]
+}

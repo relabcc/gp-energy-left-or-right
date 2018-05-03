@@ -26,6 +26,7 @@ const Header = (props) => {
       bg="fade.white.70"
       align="center"
       w={1}
+      zIndex={99}
     >
       <Logo w={175} color="cyan" />
       <Box flex={1} />

@@ -2,12 +2,14 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Measure from 'react-measure';
 import clamp from 'lodash/clamp';
-import Hammer from 'hammerjs';
 
 import Box from '../Box';
 import EnergyHandle from '../EnergyHandle';
 import NewBg from './NewBg';
 import OldBg from './OldBg';
+import Hammer from '../../vendor/hammer';
+
+const isBrowser = typeof window !== 'undefined';
 
 class TwoBackgrounds extends PureComponent {
   state = {
@@ -19,8 +21,10 @@ class TwoBackgrounds extends PureComponent {
   }
 
   componentDidMount() {
-    this.hammertime = new Hammer(this.handle);
-    this.hammertime.on('pan', this.handleOnDrag);
+    if (isBrowser) {
+      this.hammertime = new Hammer(this.handle);
+      this.hammertime.on('pan', this.handleOnDrag);
+    }
   }
 
   componentWillReceiveProps({ ratio }) {
@@ -28,7 +32,7 @@ class TwoBackgrounds extends PureComponent {
   }
 
   componentWillUnmount() {
-    this.hammertime.destroy();
+    if (isBrowser) this.hammertime.destroy();
   }
 
   handleRef = (ref) => {

@@ -32,6 +32,7 @@ const Text = styled(tag)`
   ${letterSpacing}
   ${position}
   ${injectProps('textTransform')}
+  ${injectProps('whiteSpace')}
 `;
 
 Text.defaultProps = {
