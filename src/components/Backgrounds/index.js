@@ -7,6 +7,7 @@ import Box from '../Box';
 import EnergyHandle from '../EnergyHandle';
 import NewBg from './NewBg';
 import OldBg from './OldBg';
+import Grain from './Grain';
 import Hammer from '../../vendor/hammer';
 
 class TwoBackgrounds extends PureComponent {
@@ -52,14 +53,15 @@ class TwoBackgrounds extends PureComponent {
       measureRef,
       contentRect,
       measure,
+      isMobile,
       ...props
     } = this.props;
     const leftPos = `${this.state.ratio * 100}%`;
 
     return (
-      <Box position="relative" height="100%" innerRef={measureRef} {...props}>
+      <Box position="relative" height="100%" overflow="hidden" innerRef={measureRef} {...props}>
         <Box height="100%">
-          <NewBg>{leftContent}</NewBg>
+          <NewBg isMobile={isMobile}>{leftContent}</NewBg>
           <Box
             top="0"
             left="0"
@@ -69,12 +71,19 @@ class TwoBackgrounds extends PureComponent {
             overflow="hidden"
           >
             <Box w={contentRect.bounds.width} height="100%">
-              <OldBg>
+              <OldBg isMobile={isMobile}>
                 {rightContent}
               </OldBg>
             </Box>
           </Box>
         </Box>
+        <Grain
+          position="absolute"
+          left="0"
+          top="0"
+          right="0"
+          bottom="0"
+        />
         <EnergyHandle
           position="absolute"
           bottom="15%"
