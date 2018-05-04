@@ -13,4 +13,5 @@ export default [
   'hoverColor',
   'hoverBg',
   'whiteSpace',
+  'pointerEvents',
 ];

@@ -12,6 +12,7 @@
   "dependencies": {
     "clean-tag": "^1.0.4",
     "consolidated-events": "^1.1.1",
+    "fullpage-react": "^3.0.31",
     "gatsby": "^1.9.250",
     "gatsby-link": "^1.6.40",
     "gatsby-plugin-react-helmet": "^2.0.11",

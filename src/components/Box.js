@@ -45,6 +45,7 @@ const Box = styled(tag)`
   ${injectProps('transition')}
   ${injectProps.responsive('opacity', { alias: 'alpha' })}
   ${injectProps('verticalAlign')}
+  ${injectProps('pointerEvents')}
   ${({ onClick }) => onClick && 'cursor: pointer;'}
 `;
 
