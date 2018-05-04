@@ -2,7 +2,6 @@ import React, { PureComponent } from 'react';
 import { Fullpage, Slide } from 'fullpage-react';
 
 import withHeader from '../hoc/withHeader';
-import withTitle from '../hoc/withTitle';
 
 import Title from '../components/Title';
 import Box from '../components/Box';
@@ -12,17 +11,11 @@ import System from '../containers/System';
 import People from '../containers/People';
 import Why from '../containers/Why';
 import Potential from '../containers/Potential';
+import SideNav from '../containers/SideNav';
+
+import { titles } from '../text';
 
 const { changeFullpageSlide } = Fullpage;
-
-const titles = [
-  null,
-  '能源的真實成本',
-  '系統運作模式的比較',
-  '民眾角色的轉變',
-  '我們為何需要能源轉型',
-  '再生能源的潛力',
-];
 
 const Sections = [
   Intro,
@@ -32,7 +25,6 @@ const Sections = [
   Why,
   Potential,
 ];
-// .map(withTitle);
 
 class Index extends PureComponent {
   state = {
@@ -53,7 +45,7 @@ class Index extends PureComponent {
     return (
       <Box position="relatvie" height="100vh" {...this.props}>
         <Fullpage
-          scrollSensitivity={25}
+          scrollSensitivity={20}
           onSlideChangeStart={this.onChangeStart}
           onSlideChangeEnd={this.onChangeEnd}
           slides={Sections.map((Content, index) => (
@@ -61,6 +53,10 @@ class Index extends PureComponent {
               <Content active={index === active} title={titles[index]} animating={animating} />
             </Slide>
           ))}
+        />
+        <SideNav
+          active={active}
+          onSetActive={changeFullpageSlide}
         />
         <Title active={!animating}>
           {title}

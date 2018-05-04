@@ -1,12 +1,13 @@
 {
-  "name": "styled-gatsby-starter",
-  "description": "Gatsby hello world starter",
+  "name": "gp-energy-left-or-right",
+  "description": "How will you decide the future of energy?",
   "license": "MIT",
   "scripts": {
     "start": "npm run develop",
     "develop": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public",
     "storybook": "start-storybook -p 9001 -c .storybook"
   },
   "dependencies": {
@@ -45,6 +46,7 @@
     "eslint-plugin-import": "^2.6.0",
     "eslint-plugin-jsx-a11y": "^5.1.1",
     "eslint-plugin-react": "^7.1.0",
-    "fontmin": "^0.9.6"
+    "fontmin": "^0.9.6",
+    "gh-pages": "^1.1.0"
   }
 }

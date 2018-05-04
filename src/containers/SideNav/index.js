@@ -1,45 +1,36 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
 import Box from '../../components/Box';
 import Step from './Step';
 
-const navs = [
+import { titles } from '../../text';
 
-];
+const SideNav = ({ onSetActive, isSm, active, ...props }) => (
+  <Box
+    position="fixed"
+    top="50%"
+    right="1em"
+    transform="translateY(-50%)"
+    z={100}
+    {...props}
+  >
+    {titles.map((title, index) => (
+      <Step
+        key={index}
+        active={index === active}
+        title={title}
+        onClick={() => onSetActive(index)}
+        isSm={isSm}
+      />
+    ))}
+  </Box>
+);
 
-class SideNav extends PureComponent {
-  static propTypes = {
-    isSm: PropTypes.bool,
-  }
+SideNav.propTypes = {
+  onSetActive: PropTypes.func,
+  isSm: PropTypes.bool,
+  active: PropTypes.bool,
+};
 
-  state = {
-    active: 0,
-  }
-
-  handleActive = (active) => {
-    this.setState({ active });
-  }
-
-  render() {
-    const { active } = this.state;
-    return (
-      <Box position="fixed" top="50%" right="0" transform="translateY(-50%)" pr={['10px', null, '2.5em']} z={100}>
-        {navs.map(({ name, to, target }, index) => (
-          <Step
-            key={name}
-            to={to}
-            active={index === active}
-            first={!index}
-            name={name}
-            target={target}
-            onSetActive={() => this.handleActive(index)}
-            isSm={this.props.isSm}
-          />
-        ))}
-      </Box>
-    );
-  }
-}
-
-export default (SideNav);
+export default SideNav;

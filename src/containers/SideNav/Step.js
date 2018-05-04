@@ -1,46 +1,12 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
-import styled from 'styled-components';
+import Box from '../../components/Box';
+import Button from '../../components/Button';
+import Text from '../../components/Text';
+import SideDot from '../../components/SVG/SideDot';
 
-import Box from 'components/Box';
-import Button from 'components/Button';
-import Text from 'components/Text';
-import SideDot from 'components/SVG/SideDot';
-
-const size = '0.5em';
-
-const ToolTip = styled(Box)`
-  ${({ active }) => `
-    opacity: ${+active};
-    ${active && `
-      pointer-events: none;
-    `}
-  `}
-  transition: opacity 0.5s;
-  right: 1em;
-  bottom: -0.5em;
-  ${({ theme }) => theme.mq.md`
-    top: -3em;
-    left: 50%;
-    right: auto;
-    bottom: auto;
-    transform: translateX(-50%);
-    &::after {
-      content: '';
-      display: block;
-      position: absolute;
-      left: 50%;
-      bottom: -${size};
-      transform: translateX(-50%);
-      border-left: ${size} solid transparent;
-      border-right: ${size} solid transparent;
-      border-top: ${size} solid currentColor;
-    }
-  `}
-`;
-
-export default class Step extends PureComponent {
+class Step extends PureComponent {
   state = {
     hover: false,
   }
@@ -48,10 +14,6 @@ export default class Step extends PureComponent {
   componentDidMount() {
     const { isSm, active } = this.props;
     if (!isSm && active) this.showTag();
-  }
-
-  componentWillReceiveProps({ active, isSm }) {
-    if (!this.props.active && active && !isSm) this.showTag();
   }
 
   handleMouseEnter = () => this.showTag()
@@ -62,7 +24,7 @@ export default class Step extends PureComponent {
   }
 
   render() {
-    const { hover, hideSm } = this.state;
+    const { hover } = this.state;
     const {
       active,
       title,
@@ -71,19 +33,35 @@ export default class Step extends PureComponent {
       ...props
     } = this.props;
     return (
-      <Box f="0.75em" {...props}>
-        <Box w={['0.75em', null, '1em']}>
-          <ToolTip active={(isSm || !hideSm) && (active || hover)} w="5em" py="0.25em" bg="blue" color="blue">
-            <Text f="1em" center color="white">
-              {title}
-            </Text>
-          </ToolTip>
+      <Box f="0.75em" my="1em" {...props}>
+        <Box position="relative" w="1.25em">
+          {title && (
+            <Box
+              position="absolute"
+              opacity={+hover}
+              w="11em"
+              py="0.25em"
+              bg="white"
+              color="orange"
+              right="1.5em"
+              bottom="0"
+              transition="all 0.5s"
+              borderRadius="0.5em"
+            >
+              <Text f="1em" align="center">
+                {title}
+              </Text>
+            </Box>
+          )}
           <Button.icon
             onMouseEnter={this.handleMouseEnter}
             onFocus={this.handleMouseEnter}
             onMouseLeave={this.handleMouseLeave}
             onBlur={this.handleMouseLeave}
             onClick={onClick}
+            border="none"
+            bg="transparent"
+            hoverBg="transparent"
           >
             <SideDot color={active ? 'orange' : 'white'} />
           </Button.icon>
@@ -96,8 +74,8 @@ export default class Step extends PureComponent {
 Step.propTypes = {
   active: PropTypes.bool,
   title: PropTypes.string,
-  to: PropTypes.string,
-  target: PropTypes.string,
-  onSetActive: PropTypes.func,
+  onClick: PropTypes.func,
   isSm: PropTypes.bool,
 };
+
+export default Step;

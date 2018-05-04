@@ -8,4 +8,5 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-styled-components',
   ],
+  pathPrefix: '/gp-energy-left-or-right',
 };

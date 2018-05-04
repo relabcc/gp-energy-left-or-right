@@ -10,12 +10,7 @@ import Logo from './SVG/Logo';
 import Fb from './SVG/Fb';
 import Line from './SVG/Line';
 
-const links = [
-  { label: '連署支持', link: '#' },
-  { label: '能源傳送門', link: '#' },
-  { label: '迷思懶人包', link: '#' },
-  { label: '21道微想題', link: '#' },
-];
+import { links } from '../text';
 
 const Header = (props) => {
   return (
