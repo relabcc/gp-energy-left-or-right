@@ -1,0 +1,103 @@
+{
+	"name": "整合網站＿情境4_2035.ai",
+	"width": 1334,
+	"height": 718,
+	"layers": [
+		{
+			"x": "584.06",
+			"y": "414.76",
+			"r": "660.73",
+			"b": "491.09",
+			"width": "76.67",
+			"height": "76.33",
+			"layername": "txt|全臺有無數個區域智慧電網，因應各地供需情況，靈活調度電力。[f:9,lineHeight:1.5]",
+			"name": "txt|全臺有無數個區域智慧電網，因應各地供需情況，靈活調度電力。[f:9,lineHeight:1",
+			"type": "375]",
+			"filename": "txt|全臺有無數個區域智慧電網，因應各地供需情況，靈活調度電力。[f:9,lineHeight:1.5]",
+			"visible": true,
+			"items": [
+
+			]
+		},
+		{
+			"x": "722.62",
+			"y": "189.57",
+			"r": "872.26",
+			"b": "233.00",
+			"width": "149.64",
+			"height": "43.43",
+			"layername": "txt|「今日已發電{88.88}(color:orange)度， 已節省{462}(color:orange)元」[f:13,lineHeight:1.5,textAlign:center]",
+			"name": "txt|「今日已發電{88",
+			"type": "88}(color:orange)度， 已節省{462}(color:orange)元」[f:13,lineHeight:1",
+			"filename": "txt|「今日已發電{88.88}(color:orange)度，已節省{462}(color:orange)元」[f:13,lineHeight:1",
+			"visible": true,
+			"items": [
+
+			]
+		},
+		{
+			"x": "420.72",
+			"y": "253.72",
+			"r": "557.32",
+			"b": "548.40",
+			"width": "136.60",
+			"height": "294.68",
+			"layername": "Layer 4.png",
+			"name": "Layer-4",
+			"type": "png",
+			"filename": "Layer-4.png",
+			"visible": true,
+			"items": [
+
+			]
+		},
+		{
+			"x": "852.35",
+			"y": "133.00",
+			"r": "893.97",
+			"b": "164.24",
+			"width": "41.62",
+			"height": "31.24",
+			"layername": "Layer 7.svg",
+			"name": "Layer-7",
+			"type": "svg",
+			"filename": "Layer-7.svg",
+			"visible": true,
+			"items": [
+
+			]
+		},
+		{
+			"x": "721.73",
+			"y": "150.18",
+			"r": "874.02",
+			"b": "282.50",
+			"width": "152.29",
+			"height": "132.32",
+			"layername": "Layer 6.svg",
+			"name": "Layer-6",
+			"type": "svg",
+			"filename": "Layer-6.svg",
+			"visible": true,
+			"items": [
+
+			]
+		},
+		{
+			"x": "563.16",
+			"y": "234.08",
+			"r": "763.23",
+			"b": "570.75",
+			"width": "200.07",
+			"height": "336.67",
+			"layername": "Layer 3.png",
+			"name": "Layer-3",
+			"type": "png",
+			"filename": "Layer-3.png",
+			"visible": true,
+			"items": [
+
+			]
+		}
+	]
+}

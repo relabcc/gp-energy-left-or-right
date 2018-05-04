@@ -9,4 +9,9 @@ export default styled(Box)`
   background-repeat: repeat;
   background-position: 50% 50%;
   pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 `;

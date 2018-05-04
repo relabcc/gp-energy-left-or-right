@@ -1,0 +1,103 @@
+{
+	"name": "整合網站＿情境4_2017.ai",
+	"width": 1334,
+	"height": 718,
+	"layers": [
+		{
+			"x": "773.35",
+			"y": "256.38",
+			"r": "865.28",
+			"b": "551.40",
+			"width": "91.93",
+			"height": "295.02",
+			"layername": "Layer 2.png",
+			"name": "Layer-2",
+			"type": "png",
+			"filename": "Layer-2.png",
+			"visible": true,
+			"items": [
+
+			]
+		},
+		{
+			"x": "452.51",
+			"y": "132.99",
+			"r": "494.13",
+			"b": "164.23",
+			"width": "41.62",
+			"height": "31.24",
+			"layername": "Layer 4.svg",
+			"name": "Layer-4",
+			"type": "svg",
+			"filename": "Layer-4.svg",
+			"visible": true,
+			"items": [
+
+			]
+		},
+		{
+			"x": "471.60",
+			"y": "190.56",
+			"r": "604.09",
+			"b": "231.67",
+			"width": "132.49",
+			"height": "41.11",
+			"layername": "txt|「今日電力供應吃緊，你準備好了嗎？」[f:13,textAlign:center,lineHeight:1.5]",
+			"name": "txt|「今日電力供應吃緊，你準備好了嗎？」[f:13,textAlign:center,lineHeight:1",
+			"type": "5]",
+			"filename": "txt|「今日電力供應吃緊，你準備好了嗎？」[f:13,textAlign:center,lineHeight:1.5]",
+			"visible": true,
+			"items": [
+
+			]
+		},
+		{
+			"x": "460.02",
+			"y": "150.01",
+			"r": "611.62",
+			"b": "282.58",
+			"width": "151.60",
+			"height": "132.57",
+			"layername": "Layer 5.svg",
+			"name": "Layer-5",
+			"type": "svg",
+			"filename": "Layer-5.svg",
+			"visible": true,
+			"items": [
+
+			]
+		},
+		{
+			"x": "676.85",
+			"y": "309.52",
+			"r": "744.62",
+			"b": "385.68",
+			"width": "67.77",
+			"height": "76.16",
+			"layername": "txt|一個由上到下的傳統電網，當機組故障時，重啟時間長[f:9,color:white,lineHeight:1.5]",
+			"name": "txt|一個由上到下的傳統電網，當機組故障時，重啟時間長[f:9,color:white,lineHeight:1",
+			"type": "375]",
+			"filename": "txt|一個由上到下的傳統電網，當機組故障時，重啟時間長[f:9,color:white,lineHeight:1.5]",
+			"visible": true,
+			"items": [
+
+			]
+		},
+		{
+			"x": "563.16",
+			"y": "234.07",
+			"r": "763.24",
+			"b": "570.73",
+			"width": "200.08",
+			"height": "336.66",
+			"layername": "Layer 3.png",
+			"name": "Layer-3",
+			"type": "png",
+			"filename": "Layer-3.png",
+			"visible": true,
+			"items": [
+
+			]
+		}
+	]
+}

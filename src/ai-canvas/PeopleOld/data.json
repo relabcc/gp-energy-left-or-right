@@ -1,0 +1,115 @@
+{
+	"name": "整合網站＿情境5_2017.ai",
+	"width": 1334,
+	"height": 718,
+	"layers": [
+		{
+			"x": "690.09",
+			"y": "587.50",
+			"r": "775.45",
+			"b": "599.32",
+			"width": "85.36",
+			"height": "11.82",
+			"layername": "txt|透明公開的資訊。[f:10]",
+			"name": "txt|透明公開的資訊。[f:10]",
+			"type": "div",
+			"visible": true,
+			"items": [
+
+			]
+		},
+		{
+			"x": "690.09",
+			"y": "571.50",
+			"r": "775.45",
+			"b": "584.33",
+			"width": "85.36",
+			"height": "12.83",
+			"layername": "txt|民眾需要更[f:10]",
+			"name": "txt|民眾需要更[f:10]",
+			"type": "div",
+			"visible": true,
+			"items": [
+
+			]
+		},
+		{
+			"x": "679.82",
+			"y": "533.07",
+			"r": "778.40",
+			"b": "607.05",
+			"width": "98.58",
+			"height": "73.98",
+			"layername": "Layer 4.svg",
+			"name": "Layer-4",
+			"type": "svg",
+			"filename": "Layer-4.svg",
+			"visible": true,
+			"items": [
+
+			]
+		},
+		{
+			"x": "553.49",
+			"y": "582.37",
+			"r": "623.89",
+			"b": "601.29",
+			"width": "70.40",
+			"height": "18.92",
+			"layername": "txt|紙本帳單[f:16,color:white]",
+			"name": "txt|紙本帳單[f:16,color:white]",
+			"type": "div",
+			"visible": true,
+			"items": [
+
+			]
+		},
+		{
+			"x": "548.89",
+			"y": "560.81",
+			"r": "628.09",
+			"b": "575.00",
+			"width": "79.20",
+			"height": "14.19",
+			"layername": "txt|這是他收到的[f:12]",
+			"name": "txt|這是他收到的[f:12]",
+			"type": "div",
+			"visible": true,
+			"items": [
+
+			]
+		},
+		{
+			"x": "547.12",
+			"y": "576.06",
+			"r": "628.46",
+			"b": "605.21",
+			"width": "81.34",
+			"height": "29.15",
+			"layername": "Layer 6.svg",
+			"name": "Layer-6",
+			"type": "svg",
+			"filename": "Layer-6.svg",
+			"visible": true,
+			"items": [
+
+			]
+		},
+		{
+			"x": "438.73",
+			"y": "146.12",
+			"r": "877.35",
+			"b": "621.90",
+			"width": "438.62",
+			"height": "475.78",
+			"layername": "Layer 2.png",
+			"name": "Layer-2",
+			"type": "png",
+			"filename": "Layer-2.png",
+			"visible": true,
+			"items": [
+
+			]
+		}
+	]
+}

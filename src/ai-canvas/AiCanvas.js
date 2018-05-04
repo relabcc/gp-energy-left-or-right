@@ -26,7 +26,7 @@ class AiCanvas extends Component {
     return (
       <Box
         position="relative"
-        overflow="hiddesn"
+        overflow="hidden"
         pb={`${ratio * 100}%`}
         style={{ fontSize: `${(contentRect.bounds.width / canvasWidth) * 1}px` }}
         innerRef={measureRef }

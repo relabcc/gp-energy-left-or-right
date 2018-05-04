@@ -1,13 +1,14 @@
 const Fontmin = require('fontmin');
+const nums = '0123456789';
 
 const fontMinGen = (src, text) => [
   new Fontmin()
     .src(src)
-    .use(Fontmin.glyph({ text }))
+    .use(Fontmin.glyph({ text: text + nums }))
     .dest('./minified'),
   new Fontmin()
     .src(src)
-    .use(Fontmin.glyph({ text }))
+    .use(Fontmin.glyph({ text: text + nums }))
     .use(Fontmin.ttf2woff())
     .dest('./minified'),
 ];

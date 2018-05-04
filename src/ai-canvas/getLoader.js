@@ -1,7 +1,7 @@
 const glob = require('glob');
 const fs = require('fs');
 const groupBy = require('lodash/groupBy');
-const forEach = require('lodash/forEach');
+const map = require('lodash/map');
 const compact = require('lodash/compact');
 
 const index = `
@@ -24,12 +24,21 @@ glob('*/*.+(png|svg)', (er, files) => {
       ext,
     };
   })), 'folder');
-  forEach(folders, (list, folder) => {
+  Promise.all(map(folders, (list, folder) => {
     const loader = list.map(({ name, filename }) => `'${name}': require('./${filename}')`).join(',');
-    fs.writeFile(`${folder}/index.js`, index, () => {});
-    fs.writeFile(`${folder}/images.js`, `/* eslint-disable */\nexport default {${loader}};`, (err) => {
-      if (err) console.error(err);
-      process.exit(0);
-    });
-  });
+    return Promise.all([
+      new Promise((res, rej) => {
+        fs.writeFile(`${folder}/index.js`, index, (err) => {
+          if (err) rej(err);
+          res();
+        });
+      }),
+      new Promise((res, rej) => {
+        fs.writeFile(`${folder}/images.js`, `/* eslint-disable */\nexport default {${loader}};`, (err) => {
+          if (err) rej(err);
+          res();
+        });
+      })
+    ]);
+  })).then(process.exit);
 });
