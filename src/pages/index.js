@@ -11,6 +11,7 @@ import System from '../containers/System';
 import People from '../containers/People';
 import Why from '../containers/Why';
 import Potential from '../containers/Potential';
+import Actions from '../containers/Actions';
 import SideNav from '../containers/SideNav';
 
 import { titles } from '../text';
@@ -24,6 +25,7 @@ const Sections = [
   People,
   Why,
   Potential,
+  Actions,
 ];
 
 class Index extends PureComponent {
@@ -45,9 +47,9 @@ class Index extends PureComponent {
     return (
       <Box position="relatvie" height="100vh" {...this.props}>
         <Fullpage
-          scrollSensitivity={20}
           onSlideChangeStart={this.onChangeStart}
           onSlideChangeEnd={this.onChangeEnd}
+          enableArrowKeys
           slides={Sections.map((Content, index) => (
             <Slide key={index}>
               <Content active={index === active} title={titles[index]} animating={animating} />
