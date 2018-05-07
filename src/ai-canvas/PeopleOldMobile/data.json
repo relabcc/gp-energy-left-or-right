@@ -1,0 +1,117 @@
+{
+	"name": "整合網站手機版＿情境5_2017.ai",
+	"width": 375,
+	"height": 618,
+	"layers": [
+		{
+			"x": "211.48",
+			"y": "471.29",
+			"r": "249.76",
+			"b": "480.35",
+			"width": "38.28",
+			"height": "9.06",
+			"layername": "txt|民眾需要更[f:7.5]",
+			"name": "txt|民眾需要更[f:7",
+			"type": "5]",
+			"filename": "txt|民眾需要更[f:7.5]",
+			"visible": true,
+			"items": [
+
+			]
+		},
+		{
+			"x": "211.58",
+			"y": "482.99",
+			"r": "276.17",
+			"b": "492.71",
+			"width": "64.59",
+			"height": "9.72",
+			"layername": "txt|透明公開的資訊。[f:7.5]",
+			"name": "txt|透明公開的資訊。[f:7",
+			"type": "5]",
+			"filename": "txt|透明公開的資訊。[f:7.5]",
+			"visible": true,
+			"items": [
+
+			]
+		},
+		{
+			"x": "203.52",
+			"y": "441.09",
+			"r": "278.11",
+			"b": "497.07",
+			"width": "74.59",
+			"height": "55.98",
+			"layername": "Layer 4.svg",
+			"name": "Layer-4",
+			"type": "svg",
+			"filename": "Layer-4.svg",
+			"visible": true,
+			"items": [
+
+			]
+		},
+		{
+			"x": "107.62",
+			"y": "477.65",
+			"r": "161.51",
+			"b": "492.13",
+			"width": "53.89",
+			"height": "14.48",
+			"layername": "txt|紙本帳單[f:12,color:white]",
+			"name": "txt|紙本帳單[f:12,color:white]",
+			"type": "div",
+			"visible": true,
+			"items": [
+
+			]
+		},
+		{
+			"x": "105.38",
+			"y": "462.45",
+			"r": "163.40",
+			"b": "472.85",
+			"width": "58.02",
+			"height": "10.40",
+			"layername": "txt|這是他收到的[f:9]",
+			"name": "txt|這是他收到的[f:9]",
+			"type": "div",
+			"visible": true,
+			"items": [
+
+			]
+		},
+		{
+			"x": "103.10",
+			"y": "473.75",
+			"r": "164.65",
+			"b": "495.81",
+			"width": "61.55",
+			"height": "22.06",
+			"layername": "Layer 6.svg",
+			"name": "Layer-6",
+			"type": "svg",
+			"filename": "Layer-6.svg",
+			"visible": true,
+			"items": [
+
+			]
+		},
+		{
+			"x": "21.08",
+			"y": "148.28",
+			"r": "352.99",
+			"b": "508.31",
+			"width": "331.91",
+			"height": "360.03",
+			"layername": "Layer 7.svg",
+			"name": "Layer-7",
+			"type": "svg",
+			"filename": "Layer-7.svg",
+			"visible": true,
+			"items": [
+
+			]
+		}
+	]
+}

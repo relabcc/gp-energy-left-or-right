@@ -1,0 +1,119 @@
+{
+	"name": "整合網站手機版＿情境6.ai",
+	"width": 375,
+	"height": 618,
+	"layers": [
+		{
+			"x": "230.34",
+			"y": "171.73",
+			"r": "319.88",
+			"b": "209.03",
+			"width": "89.54",
+			"height": "37.30",
+			"layername": "txt|2017後再生能源產業將持續成長，新的就業機會多半在亞洲[f:8.5,lineHeight:1.3]",
+			"name": "txt|2017後再生能源產業將持續成長，新的就業機會多半在亞洲[f:8",
+			"type": "5,lineHeight:1",
+			"filename": "txt|2017後再生能源產業將持續成長，新的就業機會多半在亞洲[f:8.5,lineHeight:1",
+			"visible": true,
+			"items": [
+
+			]
+		},
+		{
+			"x": "214.92",
+			"y": "364.86",
+			"r": "298.10",
+			"b": "436.89",
+			"width": "83.18",
+			"height": "72.03",
+			"layername": "txt|再生能源產業在美國所創造的就業機會是其他產業的{12}(fontWeight:900)倍[f:8,color:white,lineHeight:1.5]",
+			"name": "txt|再生能源產業在美國所創造的就業機會是其他產業的{12}(fontWeight:900)倍[f:8,color:white,lineHeight:1",
+			"type": "5]",
+			"filename": "txt|再生能源產業在美國所創造的就業機會是其他產業的{12}(fontWeight:900)倍[f:8,color:white,lineHeight:1.5]",
+			"visible": true,
+			"items": [
+
+			]
+		},
+		{
+			"x": "44.74",
+			"y": "351.33",
+			"r": "157.63",
+			"b": "374.12",
+			"width": "112.89",
+			"height": "22.79",
+			"layername": "txt|全球最好的18個離岸風場， {有16個在台灣海峽}(color:orange)[f:8.55,lineHeight:1.375]",
+			"name": "txt|全球最好的18個離岸風場，-{有16個在台灣海峽}(color:orange)[f:8",
+			"type": "55,lineHeight:1",
+			"filename": "txt|全球最好的18個離岸風場，-{有16個在台灣海峽}(color:orange)[f:8.55,lineHeight:1",
+			"visible": true,
+			"items": [
+
+			]
+		},
+		{
+			"x": "122.90",
+			"y": "363.59",
+			"r": "132.36",
+			"b": "372.90",
+			"width": "9.46",
+			"height": "9.31",
+			"layername": "Layer 7.svg",
+			"name": "Layer-7",
+			"type": "svg",
+			"filename": "Layer-7.svg",
+			"visible": true,
+			"items": [
+
+			]
+		},
+		{
+			"x": "276.78",
+			"y": "388.87",
+			"r": "286.23",
+			"b": "398.19",
+			"width": "9.45",
+			"height": "9.32",
+			"layername": "Layer 8.svg",
+			"name": "Layer-8",
+			"type": "svg",
+			"filename": "Layer-8.svg",
+			"visible": true,
+			"items": [
+
+			]
+		},
+		{
+			"x": "306.10",
+			"y": "195.92",
+			"r": "315.56",
+			"b": "205.23",
+			"width": "9.46",
+			"height": "9.31",
+			"layername": "Layer 9.svg",
+			"name": "Layer-9",
+			"type": "svg",
+			"filename": "Layer-9.svg",
+			"visible": true,
+			"items": [
+
+			]
+		},
+		{
+			"x": "36.74",
+			"y": "130.69",
+			"r": "349.63",
+			"b": "516.03",
+			"width": "312.89",
+			"height": "385.34",
+			"layername": "Layer 10.svg",
+			"name": "Layer-10",
+			"type": "svg",
+			"filename": "Layer-10.svg",
+			"visible": true,
+			"items": [
+
+			]
+		}
+	]
+}

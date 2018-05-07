@@ -1,0 +1,103 @@
+{
+	"name": "整合網站手機版＿情境4_2035.ai",
+	"width": 375,
+	"height": 618,
+	"layers": [
+		{
+			"x": "129.02",
+			"y": "348.16",
+			"r": "182.79",
+			"b": "441.93",
+			"width": "53.77",
+			"height": "93.77",
+			"layername": "txt|全臺有無數個區域智慧電網，因應各地供需情況，靈活調度電力。[f:6.5,lineHeight:1.375]",
+			"name": "txt|全臺有無數個區域智慧電網，因應各地供需情況，靈活調度電力。[f:6",
+			"type": "5,lineHeight:1",
+			"filename": "txt|全臺有無數個區域智慧電網，因應各地供需情況，靈活調度電力。[f:6.5,lineHeight:1",
+			"visible": true,
+			"items": [
+
+			]
+		},
+		{
+			"x": "14.48",
+			"y": "235.23",
+			"r": "110.27",
+			"b": "441.87",
+			"width": "95.79",
+			"height": "206.64",
+			"layername": "Layer 7.svg",
+			"name": "Layer-7",
+			"type": "svg",
+			"filename": "Layer-7.svg",
+			"visible": true,
+			"items": [
+
+			]
+		},
+		{
+			"x": "226.18",
+			"y": "190.24",
+			"r": "331.12",
+			"b": "246.98",
+			"width": "104.94",
+			"height": "56.74",
+			"layername": "txt|「今日已發電{88.88}(color:orange)度， 已節省{462}(color:orange)元」[f:9,lineHeight:1.5]",
+			"name": "txt|「今日已發電{88",
+			"type": "88}(color:orange)度， 已節省{462}(color:orange)元」[f:9,lineHeight:1",
+			"filename": "txt|「今日已發電{88.88}(color:orange)度， 已節省{462}(color:orange)元」[f:9,lineHeight:1",
+			"visible": true,
+			"items": [
+
+			]
+		},
+		{
+			"x": "317.16",
+			"y": "150.58",
+			"r": "346.34",
+			"b": "172.49",
+			"width": "29.18",
+			"height": "21.91",
+			"layername": "Layer 9.svg",
+			"name": "Layer-9",
+			"type": "svg",
+			"filename": "Layer-9.svg",
+			"visible": true,
+			"items": [
+
+			]
+		},
+		{
+			"x": "225.56",
+			"y": "162.62",
+			"r": "332.35",
+			"b": "255.41",
+			"width": "106.79",
+			"height": "92.79",
+			"layername": "Layer 10.svg",
+			"name": "Layer-10",
+			"type": "svg",
+			"filename": "Layer-10.svg",
+			"visible": true,
+			"items": [
+
+			]
+		},
+		{
+			"x": "114.36",
+			"y": "221.46",
+			"r": "254.66",
+			"b": "457.54",
+			"width": "140.30",
+			"height": "236.08",
+			"layername": "Layer 11.svg",
+			"name": "Layer-11",
+			"type": "svg",
+			"filename": "Layer-11.svg",
+			"visible": true,
+			"items": [
+
+			]
+		}
+	]
+}
