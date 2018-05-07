@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { Fullpage, Slide } from 'fullpage-react';
+import { FullPage, Slide } from 'react-full-page';
 
 import withHeader from '../hoc/withHeader';
 
@@ -16,8 +16,6 @@ import SideNav from '../containers/SideNav';
 
 import { titles } from '../text';
 
-const { changeFullpageSlide } = Fullpage;
-
 const Sections = [
   Intro,
   Cost,
@@ -28,17 +26,20 @@ const Sections = [
   Actions,
 ];
 
+const last = Sections.length - 1;
+
 class Index extends PureComponent {
   state = {
     active: 0,
   }
 
-  onChangeStart = () => {
+  onChangeStart = (slider) => {
+    if (this.state.active === last && slider.from > slider.to) return true;
     this.setState({ animating: true });
   }
 
-  onChangeEnd = (name, props, state, nextState) => {
-    this.setState({ active: nextState.activeSlide, animating: false });
+  onChangeEnd = (slider) => {
+    this.setState({ active: slider.to, animating: false });
   }
 
   render() {
@@ -46,20 +47,18 @@ class Index extends PureComponent {
     const title = titles[active];
     return (
       <Box position="relatvie" height="100vh" {...this.props}>
-        <Fullpage
-          onSlideChangeStart={this.onChangeStart}
-          onSlideChangeEnd={this.onChangeEnd}
-          enableArrowKeys
-          slides={Sections.map((Content, index) => (
+        <FullPage
+          beforeChange={this.onChangeStart}
+          afterChange={this.onChangeEnd}
+          controls={SideNav}
+        >
+          {Sections.map((Content, index) => (
             <Slide key={index}>
               <Content active={index === active} title={titles[index]} animating={animating} />
             </Slide>
           ))}
-        />
-        <SideNav
-          active={active}
-          onSetActive={changeFullpageSlide}
-        />
+        </FullPage>
+
         <Title active={!animating}>
           {title}
         </Title>

@@ -35,7 +35,6 @@ export default (data, images) => {
       const { ratio, ...attr } = styleParser(d, { width, height });
       const { name, layername } = d;
       return {
-        ...props,
         name,
         layer: layername.startsWith('txt')
           ? createElement(InlineStyleText, texParser(layername))
@@ -46,5 +45,6 @@ export default (data, images) => {
         attr,
       };
     }),
+    ...props,
   });
 };

@@ -6,31 +6,32 @@ import Step from './Step';
 
 import { titles } from '../../text';
 
-const SideNav = ({ onSetActive, isSm, active, ...props }) => (
+const SideNav = ({
+  scrollToSlide,
+  getCurrentSlideIndex,
+}) => (
   <Box
     position="fixed"
     top="50%"
     right="1em"
     transform="translateY(-50%)"
-    z={100}
-    {...props}
+    zIndex={100}
   >
     {titles.map((title, index) => (
       <Step
         key={index}
-        active={index === active}
+        active={index === getCurrentSlideIndex()}
         title={title}
-        onClick={() => onSetActive(index)}
-        isSm={isSm}
+        onClick={() => scrollToSlide(index)}
       />
     ))}
   </Box>
 );
 
 SideNav.propTypes = {
-  onSetActive: PropTypes.func,
+  scrollToSlide: PropTypes.func,
   isSm: PropTypes.bool,
-  active: PropTypes.bool,
+  getCurrentSlideIndex: PropTypes.func,
 };
 
 export default SideNav;

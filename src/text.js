@@ -5,6 +5,7 @@ exports.titles = [
   '民眾角色的轉變',
   '我們為何需要能源轉型',
   '再生能源的潛力',
+  null,
 ];
 
 exports.links = [

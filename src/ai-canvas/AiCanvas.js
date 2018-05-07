@@ -29,7 +29,7 @@ class AiCanvas extends Component {
         overflow="hidden"
         pb={`${ratio * 100}%`}
         style={{ fontSize: `${(contentRect.bounds.width / canvasWidth) * 1}px` }}
-        innerRef={measureRef }
+        innerRef={measureRef}
         {...props}
       >
         {layers.map(({ attr, layer, name }) => (
