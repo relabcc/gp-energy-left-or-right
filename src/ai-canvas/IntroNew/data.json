@@ -1,5 +1,5 @@
 {
-	"name": "intro-new.ai",
+	"name": "整合網站＿情境1_2035.ai",
 	"width": 1334,
 	"height": 718,
 	"layers": [
@@ -86,7 +86,7 @@
 			"width": "64.00",
 			"height": "37.85",
 			"layername": "txt|2035[f:32,color:orange]",
-			"name": "txt|2035[f:32,color:orange]",
+			"name": "txt|2035[f:32]",
 			"type": "div",
 			"visible": true,
 			"items": [
@@ -115,10 +115,10 @@
 			"b": "324.65",
 			"width": "284.68",
 			"height": "257.08",
-			"layername": "Layer 9.png",
+			"layername": "Layer 9.svg",
 			"name": "Layer-9",
-			"type": "png",
-			"filename": "Layer-9.png",
+			"type": "svg",
+			"filename": "Layer-9.svg",
 			"visible": true,
 			"items": [
 
@@ -131,10 +131,10 @@
 			"b": "158.34",
 			"width": "148.50",
 			"height": "76.90",
-			"layername": "Layer 10.png",
+			"layername": "Layer 10.svg",
 			"name": "Layer-10",
-			"type": "png",
-			"filename": "Layer-10.png",
+			"type": "svg",
+			"filename": "Layer-10.svg",
 			"visible": true,
 			"items": [
 
@@ -157,16 +157,16 @@
 			]
 		},
 		{
-			"x": "413.86",
-			"y": "145.42",
-			"r": "893.71",
-			"b": "612.27",
+			"x": "414.06",
+			"y": "146.42",
+			"r": "893.91",
+			"b": "613.27",
 			"width": "479.85",
 			"height": "466.85",
-			"layername": "Layer 12.png",
+			"layername": "Layer 12.svg",
 			"name": "Layer-12",
-			"type": "png",
-			"filename": "Layer-12.png",
+			"type": "svg",
+			"filename": "Layer-12.svg",
 			"visible": true,
 			"items": [
 
