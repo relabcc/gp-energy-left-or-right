@@ -34,7 +34,7 @@ class Header extends PureComponent {
 
   toggleOpen = () => this.setState({ isOpen: !this.state.isOpen })
 
-  handleStateChange = (state) => this.setState({ isOpen: state.isOpen })
+  handleStateChange = ({ isOpen }) => this.setState({ isOpen })
 
   renderLink = ({ link, label }, index) => (
     <Link
