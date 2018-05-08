@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
-import { FullPage, Slide } from 'react-full-page';
 
+import { FullPage, Slide } from '../vendor/FullPage';
 import withHeader from '../hoc/withHeader';
 
 import Title from '../components/Title';

@@ -22,7 +22,6 @@
     "invariant": "^2.2.4",
     "lodash": "^4.17.10",
     "react-burger-menu": "^2.4.4",
-    "react-full-page": "^0.1.4",
     "react-helmet": "^5.2.0",
     "react-icons": "^2.2.7",
     "react-measure": "^2.0.2",

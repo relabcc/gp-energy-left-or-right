@@ -5,7 +5,7 @@ import Box from './Box';
 
 const BackgroundImage = Box.extend`
   background-image: url(${({ src }) => src});
-  background-size: ${({ size }) => size};
+  background-size: ${({ backgroundSize }) => backgroundSize};
   background-position: ${({ backgroundPosition }) => backgroundPosition};
   background-repeat: no-repeat;
   ${ratio}
@@ -13,13 +13,13 @@ const BackgroundImage = Box.extend`
 
 BackgroundImage.propTypes = {
   src: PropTypes.string,
-  size: PropTypes.string,
+  backgroundSize: PropTypes.string,
   position: PropTypes.string,
 };
 
 BackgroundImage.defaultProps = {
   ratio: 1,
-  size: 'cover',
+  backgroundSize: 'cover',
   backgroundPosition: '50% 50%',
   position: 'relative',
 };
