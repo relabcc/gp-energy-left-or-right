@@ -46,7 +46,7 @@ class Index extends PureComponent {
     const { active, animating } = this.state;
     const title = titles[active];
     return (
-      <Box position="relatvie" height="100vh" {...this.props}>
+      <Box position="relative" height="100vh" zIndex={0} {...this.props}>
         <FullPage
           beforeChange={this.onChangeStart}
           afterChange={this.onChangeEnd}
