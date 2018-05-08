@@ -45,7 +45,7 @@ export default class FullPage extends React.Component {
     this._slides = [];
     this._slidesCount = getChildrenCount(this.props.children);
     this._scrollSensitivity = 10;
-    this._touchSensitivity = 5;
+    this._touchSensitivity = 20;
     this._touchStart = 0;
     this._isMobile = null;
 

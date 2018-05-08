@@ -41,10 +41,10 @@
 			"b": "140.42",
 			"width": "292.30",
 			"height": "115.03",
-			"layername": "Layer 8.png",
+			"layername": "Layer 8.svg",
 			"name": "Layer-8",
-			"type": "png",
-			"filename": "Layer-8.png",
+			"type": "svg",
+			"filename": "Layer-8.svg",
 			"visible": true,
 			"items": [
 
@@ -173,12 +173,12 @@
 			]
 		},
 		{
-			"x": "-450.00",
-			"y": "-7907.57",
+			"x": "43.04",
+			"y": "275.75",
 			"r": "55.78",
-			"b": "8475.43",
-			"width": "505.78",
-			"height": "16383.00",
+			"b": "282.99",
+			"width": "12.74",
+			"height": "7.24",
 			"layername": "Layer 5.svg",
 			"name": "Layer-5",
 			"type": "svg",
@@ -271,10 +271,10 @@
 			"b": "417.14",
 			"width": "89.06",
 			"height": "49.97",
-			"layername": "Layer 3.png",
+			"layername": "Layer 3.svg",
 			"name": "Layer-3",
-			"type": "png",
-			"filename": "Layer-3.png",
+			"type": "svg",
+			"filename": "Layer-3.svg",
 			"visible": true,
 			"items": [
 
@@ -303,10 +303,10 @@
 			"b": "520.93",
 			"width": "274.51",
 			"height": "325.88",
-			"layername": "Layer 1.png",
+			"layername": "Layer 1.svg",
 			"name": "Layer-1",
-			"type": "png",
-			"filename": "Layer-1.png",
+			"type": "svg",
+			"filename": "Layer-1.svg",
 			"visible": true,
 			"items": [
 
