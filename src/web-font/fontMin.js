@@ -7,7 +7,8 @@ const { titles, links } = require('../text');
 const nums = range(0, 10);
 
 const moreText = compact(titles)
-  .concat(map(links, 'label'));
+  .concat(map(links, 'label'))
+  .concat('背景同步');
 
 const fontMinGen = (src, text) => [
   new Fontmin()

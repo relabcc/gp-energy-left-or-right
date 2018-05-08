@@ -1,5 +1,5 @@
 {
-	"name": "intro-old.ai",
+	"name": "整合網站＿情境1_2017.ai",
 	"width": 1334,
 	"height": 718,
 	"layers": [
@@ -55,10 +55,10 @@
 			"b": "325.33",
 			"width": "284.68",
 			"height": "257.08",
-			"layername": "Layer 1.png",
+			"layername": "Layer 1.svg",
 			"name": "Layer-1",
-			"type": "png",
-			"filename": "Layer-1.png",
+			"type": "svg",
+			"filename": "Layer-1.svg",
 			"visible": true,
 			"items": [
 
@@ -71,10 +71,10 @@
 			"b": "456.82",
 			"width": "134.15",
 			"height": "75.28",
-			"layername": "Layer 2.png",
+			"layername": "Layer 2.svg",
 			"name": "Layer-2",
-			"type": "png",
-			"filename": "Layer-2.png",
+			"type": "svg",
+			"filename": "Layer-2.svg",
 			"visible": true,
 			"items": [
 
@@ -317,10 +317,10 @@
 			"b": "613.16",
 			"width": "413.50",
 			"height": "490.87",
-			"layername": "Layer 18.png",
+			"layername": "Layer 18.svg",
 			"name": "Layer-18",
-			"type": "png",
-			"filename": "Layer-18.png",
+			"type": "svg",
+			"filename": "Layer-18.svg",
 			"visible": true,
 			"items": [
 

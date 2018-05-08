@@ -34,9 +34,9 @@ class TwoBackgrounds extends PureComponent {
   }
 
   handleOnDrag = (evt) => {
-    const { onRatioChange, contentRect } = this.props;
+    const { onRatioChange, contentRect, ratioSync } = this.props;
     const newRatio = clamp(evt.srcEvent.clientX / contentRect.bounds.width, 0, 1);
-    if (onRatioChange) {
+    if (ratioSync && onRatioChange) {
       onRatioChange(newRatio);
     } else {
       this.setState({ ratio: newRatio });
@@ -95,6 +95,7 @@ TwoBackgrounds.propTypes = {
   ratio: PropTypes.number,
   leftContent: PropTypes.node,
   rightContent: PropTypes.node,
+  ratioSync: PropTypes.bool,
 };
 
 TwoBackgrounds.defaultProps = {

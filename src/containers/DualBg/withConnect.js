@@ -1,8 +1,20 @@
+import { compose } from 'redux';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { updateRatio } from './reducer';
+import reducer, { updateRatio, toggleSyncRatio } from './reducer';
 
-const mapStateToProps = (state) => ({ ratio: state.getIn(['BG', 'ratio']) });
-const mapDispatchToProps = (dispatch) => bindActionCreators({ updateRatio }, dispatch);
+import injectReducer from '../../utils/injectReducer';
 
-export default (SubComp) => connect(mapStateToProps, mapDispatchToProps)(SubComp);
+const mapStateToProps = (state) => ({
+  ratio: state.getIn(['BG', 'ratio']),
+  ratioSync: state.getIn(['BG', 'sync']),
+});
+
+const mapDispatchToProps = (dispatch) => bindActionCreators({ updateRatio, toggleSyncRatio }, dispatch);
+
+const withReducer = injectReducer({ key: 'BG', reducer });
+
+export default (SubComp) => compose(
+  withReducer,
+  connect(mapStateToProps, mapDispatchToProps)
+)(SubComp);
