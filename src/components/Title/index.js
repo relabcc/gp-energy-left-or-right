@@ -26,8 +26,8 @@ class Title extends PureComponent {
       <Box
         position="fixed"
         top={0}
-        left="40%"
-        right="40%"
+        left={['15%', null, '40%']}
+        right={['15%', null, '40%']}
         transform={`translateY(${active ? 0 : '-100%'})`}
         transition="transform 0.5s"
         innerRef={measureRef}

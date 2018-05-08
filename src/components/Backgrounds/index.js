@@ -80,8 +80,8 @@ class TwoBackgrounds extends PureComponent {
         <Grain />
         <EnergyHandle
           position="absolute"
-          bottom="15%"
-          transform="translate(-50%, 50%)"
+          bottom="6em"
+          transform="translate(-50%, 0)"
           innerRef={this.handleRef}
           style={{ left: leftPos }}
         />

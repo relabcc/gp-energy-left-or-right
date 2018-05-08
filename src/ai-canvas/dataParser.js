@@ -40,6 +40,7 @@ export default (data, images) => {
           ? createElement(InlineStyleText, texParser(layername))
           : createElement(BackgroundImage, {
             src: images[name],
+            backgroundSize: 'contain',
             ratio,
           }),
         attr,
