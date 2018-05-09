@@ -7,7 +7,7 @@ import handle from './energy-handle.svg';
 
 const EnergyHandle = ({ style, ...props }) => (
   <Box w="2em" style={{ cursor: 'col-resize', ...style }} {...props}>
-    <BackgroundImage src={handle} />
+    <BackgroundImage className="ratio-hanlde" src={handle} />
   </Box>
 );
 

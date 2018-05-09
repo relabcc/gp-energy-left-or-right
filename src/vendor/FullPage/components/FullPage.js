@@ -94,11 +94,13 @@ export default class FullPage extends React.Component {
   }
 
   onTouchStart = (evt) => {
+    if (evt.target.classList.contains('ratio-hanlde')) return;
     this._touchStart = evt.touches[0].clientY;
     this._isScrolledAlready = false;
   }
 
   onTouchMove = (evt) => {
+    if (evt.target.classList.contains('ratio-hanlde')) return;
     const touchEnd = evt.changedTouches[0].clientY;
     if (!this._isScrollPending && !this._isScrolledAlready) {
       if (this._touchStart > touchEnd + this._touchSensitivity) {

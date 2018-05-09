@@ -129,15 +129,15 @@
 		},
 		{
 			"x": "251.56",
-			"y": "357.64",
+			"y": "357.63",
 			"r": "323.79",
-			"b": "390.41",
+			"b": "390.63",
 			"width": "72.23",
-			"height": "32.77",
-			"layername": "Layer 10.svg",
-			"name": "Layer-10",
-			"type": "svg",
-			"filename": "Layer-10.svg",
+			"height": "33.00",
+			"layername": "txt|我們解決了 哪些問題？[color:cyan,f:13,lineHeight:1.25]",
+			"name": "txt|我們解決了-哪些問題？[color:cyan,f:13,lineHeight:1",
+			"type": "25]",
+			"filename": "txt|我們解決了-哪些問題？[color:cyan,f:13,lineHeight:1.25]",
 			"visible": true,
 			"items": [
 

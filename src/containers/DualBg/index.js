@@ -16,4 +16,8 @@ DualBg.propTypes = {
   updateRatio: PropTypes.func,
 };
 
+DualBg.defaultProps = {
+  ratioSync: true,
+};
+
 export default withConnect(DualBg);
