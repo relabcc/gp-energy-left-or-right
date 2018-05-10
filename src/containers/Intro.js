@@ -6,17 +6,16 @@ import IntroNew from '../ai-canvas/IntroNew';
 import IntroNewMobile from '../ai-canvas/IntroNewMobile';
 import IntroOldMobile from '../ai-canvas/IntroOldMobile';
 
-import withResponsive from '../hoc/withResponsive'
-
-const Intro = ({ browser }) => {
-  const isMobile = browser.lessThan.md;
+const Intro = ({ isMobile, windowWidth }) => {
+  const Left = isMobile ? IntroNewMobile : IntroNew;
+  const Right = isMobile ? IntroOldMobile : IntroOld;
   return (
     <DualBg
       isMobile={isMobile}
-      leftContent={isMobile ? <IntroNewMobile /> : <IntroNew />}
-      rightContent={isMobile ? <IntroOldMobile /> : <IntroOld />}
+      leftContent={<Left windowWidth={windowWidth} />}
+      rightContent={<Right windowWidth={windowWidth} />}
     />
   );
 };
 
-export default withResponsive(Intro);
+export default Intro;

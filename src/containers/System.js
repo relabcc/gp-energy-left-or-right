@@ -6,17 +6,16 @@ import SystemNew from '../ai-canvas/SystemNew';
 import SystemNewMobile from '../ai-canvas/SystemNewMobile';
 import SystemOldMobile from '../ai-canvas/SystemOldMobile';
 
-import withResponsive from '../hoc/withResponsive'
-
-const System = ({ browser }) => {
-  const isMobile = browser.lessThan.md;
+const System = ({ isMobile, windowWidth }) => {
+  const Left = isMobile ? SystemNewMobile : SystemNew;
+  const Right = isMobile ? SystemOldMobile : SystemOld;
   return (
     <DualBg
       isMobile={isMobile}
-      leftContent={isMobile ? <SystemNewMobile /> : <SystemNew />}
-      rightContent={isMobile ? <SystemOldMobile /> : <SystemOld />}
+      leftContent={<Left windowWidth={windowWidth} />}
+      rightContent={<Right windowWidth={windowWidth} />}
     />
   );
 };
 
-export default withResponsive(System);
+export default System;

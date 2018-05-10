@@ -149,7 +149,7 @@
 			"b": "950.74",
 			"width": "88.20",
 			"height": "37.87",
-			"layername": "txt|早就不該有的[f:14,textAlign:center,lineHeight:1.5]",
+			"layername": "txt|早就不該有的\n能源迷思[f:14,textAlign:center,lineHeight:1.5,whiteSpace:pre",
 			"name": "txt|早就不該有的[f:14,textAlign:center,lineHeight:1.5]",
 			"type": "div",
 			"visible": true,

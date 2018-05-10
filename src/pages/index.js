@@ -1,7 +1,10 @@
 import React, { PureComponent } from 'react';
+import { compose } from 'redux';
+import { withContentRect } from 'react-measure';
 
 import { FullPage, Slide } from '../vendor/FullPage';
 import withHeader from '../hoc/withHeader';
+import withResponsive from '../hoc/withResponsive';
 
 import Title from '../components/Title';
 // import Text from '../components/Text';
@@ -37,6 +40,10 @@ class Index extends PureComponent {
     active: 0,
   }
 
+  componentDidMount() {
+    this.props.measure();
+  }
+
   onChangeStart = (slider) => {
     if (this.state.active === last && slider.from > slider.to) return true;
     this.setState({ animating: true });
@@ -47,10 +54,17 @@ class Index extends PureComponent {
   }
 
   render() {
+    const {
+      measure,
+      measureRef,
+      contentRect: { bounds: { width } },
+      browser,
+      ...props,
+    } = this.props;
     const { active, animating } = this.state;
     const title = titles[active];
     return (
-      <Box position="relative" height="100vh" zIndex={0} {...this.props}>
+      <Box position="relative" height="100vh" zIndex={0} innerRef={measureRef} {...props}>
         <FullPage
           beforeChange={this.onChangeStart}
           afterChange={this.onChangeEnd}
@@ -58,7 +72,13 @@ class Index extends PureComponent {
         >
           {Sections.map((Content, index) => (
             <Slide key={index}>
-              <Content active={index === active} title={titles[index]} animating={animating} />
+              <Content
+                active={index === active}
+                title={titles[index]}
+                animating={animating}
+                windowWidth={width}
+                isMobile={browser.lessThan.md}
+              />
             </Slide>
           ))}
         </FullPage>
@@ -80,4 +100,8 @@ class Index extends PureComponent {
 //           </label>
 //         </Box>
 
-export default withHeader(Index);
+export default compose(
+  withHeader,
+  withResponsive,
+  withContentRect('bounds'),
+)(Index);

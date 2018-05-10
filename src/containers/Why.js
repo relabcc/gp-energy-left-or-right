@@ -6,17 +6,16 @@ import WhyNew from '../ai-canvas/WhyNew';
 import WhyNewMobile from '../ai-canvas/WhyNewMobile';
 import WhyOldMobile from '../ai-canvas/WhyOldMobile';
 
-import withResponsive from '../hoc/withResponsive'
-
-const Why = ({ browser }) => {
-  const isMobile = browser.lessThan.md;
+const Why = ({ isMobile, windowWidth }) => {
+  const Left = isMobile ? WhyNewMobile : WhyNew;
+  const Right = isMobile ? WhyOldMobile : WhyOld;
   return (
     <DualBg
       isMobile={isMobile}
-      leftContent={isMobile ? <WhyNewMobile /> : <WhyNew />}
-      rightContent={isMobile ? <WhyOldMobile /> : <WhyOld />}
+      leftContent={<Left windowWidth={windowWidth} />}
+      rightContent={<Right windowWidth={windowWidth} />}
     />
   );
 };
 
-export default withResponsive(Why);
+export default Why;

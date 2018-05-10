@@ -6,17 +6,16 @@ import CostNew from '../ai-canvas/CostNew';
 import CostNewMobile from '../ai-canvas/CostNewMobile';
 import CostOldMobile from '../ai-canvas/CostOldMobile';
 
-import withResponsive from '../hoc/withResponsive'
-
-const Cost = ({ browser }) => {
-  const isMobile = browser.lessThan.md;
+const Cost = ({ isMobile, windowWidth }) => {
+  const Left = isMobile ? CostNewMobile : CostNew;
+  const Right = isMobile ? CostOldMobile : CostOld;
   return (
     <DualBg
       isMobile={isMobile}
-      leftContent={isMobile ? <CostNewMobile /> : <CostNew />}
-      rightContent={isMobile ? <CostOldMobile /> : <CostOld />}
+      leftContent={<Left windowWidth={windowWidth} />}
+      rightContent={<Right windowWidth={windowWidth} />}
     />
   );
 };
 
-export default withResponsive(Cost);
+export default Cost;

@@ -209,6 +209,7 @@ export default class FullPage extends React.Component {
 
     const controlsBasicProps = {
       getCurrentSlideIndex: this.getCurrentSlideIndex,
+      activeSlide: this.getCurrentSlideIndex(),
       onNext: this.scrollNext,
       onPrev: this.scrollPrev,
       scrollToSlide: this.scrollToSlide,

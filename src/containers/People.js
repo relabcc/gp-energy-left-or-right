@@ -6,17 +6,16 @@ import PeopleNew from '../ai-canvas/PeopleNew';
 import PeopleNewMobile from '../ai-canvas/PeopleNewMobile';
 import PeopleOldMobile from '../ai-canvas/PeopleOldMobile';
 
-import withResponsive from '../hoc/withResponsive'
-
-const People = ({ browser }) => {
-  const isMobile = browser.lessThan.md;
+const People = ({ isMobile, windowWidth }) => {
+  const Left = isMobile ? PeopleNewMobile : PeopleNew;
+  const Right = isMobile ? PeopleOldMobile : PeopleOld;
   return (
     <DualBg
       isMobile={isMobile}
-      leftContent={isMobile ? <PeopleNewMobile /> : <PeopleNew />}
-      rightContent={isMobile ? <PeopleOldMobile /> : <PeopleOld />}
+      leftContent={<Left windowWidth={windowWidth} />}
+      rightContent={<Right windowWidth={windowWidth} />}
     />
   );
 };
 
-export default withResponsive(People);
+export default People;

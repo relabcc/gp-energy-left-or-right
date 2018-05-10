@@ -3,12 +3,14 @@ import PropTypes from 'prop-types';
 
 import Box from '../../components/Box';
 import Step from './Step';
+import withResponsive from '../../hoc/withResponsive';
 
 import { titles } from '../../text';
 
 const SideNav = ({
   scrollToSlide,
-  getCurrentSlideIndex,
+  activeSlide,
+  browser,
 }) => (
   <Box
     position="fixed"
@@ -20,9 +22,10 @@ const SideNav = ({
     {titles.map((title, index) => (
       <Step
         key={index}
-        active={index === getCurrentSlideIndex()}
+        active={index === activeSlide}
         title={title}
         onClick={() => scrollToSlide(index)}
+        isMobile={browser.lessThan.md}
       />
     ))}
   </Box>
@@ -30,8 +33,13 @@ const SideNav = ({
 
 SideNav.propTypes = {
   scrollToSlide: PropTypes.func,
-  isSm: PropTypes.bool,
+  browser: PropTypes.shape({
+    lessThan: PropTypes.shape({
+      md: PropTypes.bool,
+    }),
+  }),
   getCurrentSlideIndex: PropTypes.func,
+  activeSlide: PropTypes.number,
 };
 
-export default SideNav;
+export default withResponsive(SideNav);
