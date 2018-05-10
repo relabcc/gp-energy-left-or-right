@@ -9,7 +9,7 @@ export const toggleSyncRatio = createAction(TOGGLE_SYNC_RATIO);
 
 const initialState = fromJS({
   ratio: 0.5,
-  sync: true,
+  sync: false,
 });
 
 export default handleActions({

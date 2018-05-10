@@ -17,7 +17,7 @@ DualBg.propTypes = {
 };
 
 DualBg.defaultProps = {
-  ratioSync: true,
+  ratioSync: false,
 };
 
 export default withConnect(DualBg);

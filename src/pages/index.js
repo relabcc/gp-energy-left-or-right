@@ -1,11 +1,14 @@
 import React, { PureComponent } from 'react';
+import { compose } from 'redux';
+import { withContentRect } from 'react-measure';
 
 import { FullPage, Slide } from '../vendor/FullPage';
 import withHeader from '../hoc/withHeader';
+import withResponsive from '../hoc/withResponsive';
 
 import Title from '../components/Title';
-import Text from '../components/Text';
-import Flex from '../components/Flex';
+// import Text from '../components/Text';
+// import Flex from '../components/Flex';
 import Box from '../components/Box';
 
 import Intro from '../containers/Intro';
@@ -16,7 +19,7 @@ import Why from '../containers/Why';
 import Potential from '../containers/Potential';
 import Actions from '../containers/Actions';
 import SideNav from '../containers/SideNav';
-import RatioToggle from '../containers/RatioToggle';
+// import RatioToggle from '../containers/RatioToggle';
 
 import { titles } from '../text';
 
@@ -37,6 +40,10 @@ class Index extends PureComponent {
     active: 0,
   }
 
+  componentDidMount() {
+    this.props.measure();
+  }
+
   onChangeStart = (slider) => {
     if (this.state.active === last && slider.from > slider.to) return true;
     this.setState({ animating: true });
@@ -47,10 +54,17 @@ class Index extends PureComponent {
   }
 
   render() {
+    const {
+      measure,
+      measureRef,
+      contentRect: { bounds: { width } },
+      browser,
+      ...props,
+    } = this.props;
     const { active, animating } = this.state;
     const title = titles[active];
     return (
-      <Box position="relative" height="100vh" zIndex={0} {...this.props}>
+      <Box position="relative" height="100vh" zIndex={0} innerRef={measureRef} {...props}>
         <FullPage
           beforeChange={this.onChangeStart}
           afterChange={this.onChangeEnd}
@@ -58,7 +72,13 @@ class Index extends PureComponent {
         >
           {Sections.map((Content, index) => (
             <Slide key={index}>
-              <Content active={index === active} title={titles[index]} animating={animating} />
+              <Content
+                active={index === active}
+                title={titles[index]}
+                animating={animating}
+                windowWidth={width}
+                isMobile={browser.lessThan.md}
+              />
             </Slide>
           ))}
         </FullPage>
@@ -66,17 +86,22 @@ class Index extends PureComponent {
         <Title active={!animating}>
           {title}
         </Title>
-        <Box is={Flex} position="fixed" left={['0.5em', null, '1em']} bottom={['0.5em', null, '1em']}>
-          <RatioToggle id="bg-ratio-toggle" />
-          <label htmlFor="bg-ratio-toggle">
-            <Text.span f="0.8em" ml="0.25em">
-              背景同步
-            </Text.span>
-          </label>
-        </Box>
       </Box>
     );
   }
 }
 
-export default withHeader(Index);
+// <Box is={Flex} position="fixed" left={['0.5em', null, '1em']} bottom={['0.5em', null, '1em']}>
+//           <RatioToggle id="bg-ratio-toggle" />
+//           <label htmlFor="bg-ratio-toggle">
+//             <Text.span f="0.8em" ml="0.25em">
+//               背景同步
+//             </Text.span>
+//           </label>
+//         </Box>
+
+export default compose(
+  withHeader,
+  withResponsive,
+  withContentRect('bounds'),
+)(Index);

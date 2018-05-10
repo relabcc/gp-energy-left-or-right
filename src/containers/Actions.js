@@ -6,7 +6,6 @@ import Box from '../components/Box';
 import Grain from '../components/Backgrounds/Grain';
 import Actions from '../ai-canvas/Actions';
 import ActionsMobile from '../ai-canvas/ActionsMobile';
-import withResponsive from '../hoc/withResponsive'
 
 class ScrollableAction extends PureComponent {
   componentDidMount() {
@@ -16,21 +15,18 @@ class ScrollableAction extends PureComponent {
   render() {
     const {
       measureRef,
-      contentRect: { bounds: { height } },
-      browser,
+      contentRect: { bounds: { height, width } },
+      isMobile,
     } = this.props;
-    const isMobile = browser.lessThan.md;
+    const Canvas = isMobile ? ActionsMobile : Actions;
 
     return (
       <Box position="relative" bg="blue" height={height || '100%'}>
-        {isMobile ? <ActionsMobile innerRef={measureRef} /> : <Actions innerRef={measureRef} />}
+        <Canvas innerRef={measureRef} windowWidth={width} />
         <Grain />
       </Box>
     );
   }
 }
 
-export default compose(
-  withResponsive,
-  withContentRect('bounds')
-)(ScrollableAction);
+export default withContentRect('bounds')(ScrollableAction);

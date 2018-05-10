@@ -11,17 +11,8 @@ class Step extends PureComponent {
     hover: false,
   }
 
-  componentDidMount() {
-    const { isSm, active } = this.props;
-    if (!isSm && active) this.showTag();
-  }
-
-  handleMouseEnter = () => this.showTag()
+  handleMouseEnter = () => this.setState({ hover: true })
   handleMouseLeave = () => this.setState({ hover: false })
-
-  showTag = () => {
-    this.setState({ hover: true, hideSm: false });
-  }
 
   render() {
     const { hover } = this.state;
@@ -29,7 +20,7 @@ class Step extends PureComponent {
       active,
       title,
       onClick,
-      isSm,
+      isMobile,
       ...props
     } = this.props;
     return (
@@ -38,7 +29,7 @@ class Step extends PureComponent {
           {title && (
             <Box
               position="absolute"
-              opacity={+hover}
+              opacity={+(hover || (active && !isMobile))}
               w="11em"
               py="0.25em"
               bg="white"
@@ -75,7 +66,7 @@ Step.propTypes = {
   active: PropTypes.bool,
   title: PropTypes.string,
   onClick: PropTypes.func,
-  isSm: PropTypes.bool,
+  isMobile: PropTypes.bool,
 };
 
 export default Step;
