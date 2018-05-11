@@ -69,6 +69,10 @@ export default class FullPage extends React.Component {
     this.scrollToSlide(this.props.initialSlide);
   }
 
+  // componentWillReceiveProps({ allInited }) {
+  //   if (!this.props.allInited && allInited) this.checkChildrenOverflow();
+  // }
+
   componentWillUnmount() {
     if (typeof window === 'undefined') return;
     if (this._isMobile) {
@@ -155,6 +159,7 @@ export default class FullPage extends React.Component {
         if (slide.clientHeight > window.innerHeight) {
           slide.style.touchAction = 'pan-y';
           slide.style.overflowY = 'scroll';
+          slide.style.webkitOverflowScrolling = 'touch';
         }
         /* eslint-enable no-param-reassign */
       }
@@ -165,7 +170,7 @@ export default class FullPage extends React.Component {
     const overflow = this.chidrenOverflow[this.state.activeSlide];
     const slide = this.chidrenRef[this.state.activeSlide];
     if (overflow > 0 && slide.contains(target)) {
-      return scrollDown ? slide.scrollTop >= overflow / 2 : slide.scrollTop <= 0;
+      return scrollDown ? slide.scrollTop >= overflow : slide.scrollTop <= 0;
     }
     return true;
   }

@@ -5,6 +5,7 @@ import { withContentRect } from 'react-measure';
 import { FullPage, Slide } from '../vendor/FullPage';
 import withHeader from '../hoc/withHeader';
 import withResponsive from '../hoc/withResponsive';
+import withConnect from '../containers/DualBg/withConnect';
 
 import Title from '../components/Title';
 // import Text from '../components/Text';
@@ -59,16 +60,20 @@ class Index extends PureComponent {
       measureRef,
       contentRect: { bounds: { width } },
       browser,
+      setInited,
+      inited,
       ...props,
     } = this.props;
     const { active, animating } = this.state;
     const title = titles[active];
+    const allInited = inited && inited.every(Boolean);
     return (
-      <Box position="relative" height="100vh" zIndex={0} innerRef={measureRef} {...props}>
+      <Box position="relative" height="100vh" zIndex={0} innerRef={measureRef} opacity={Number(allInited)} {...props}>
         <FullPage
           beforeChange={this.onChangeStart}
           afterChange={this.onChangeEnd}
           controls={SideNav}
+          allInited={allInited}
         >
           {Sections.map((Content, index) => (
             <Slide key={index}>
@@ -78,6 +83,7 @@ class Index extends PureComponent {
                 animating={animating}
                 windowWidth={width}
                 isMobile={browser.lessThan.md}
+                onInited={() => setInited(index)}
               />
             </Slide>
           ))}
@@ -104,4 +110,5 @@ export default compose(
   withHeader,
   withResponsive,
   withContentRect('bounds'),
+  withConnect,
 )(Index);

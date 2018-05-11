@@ -34,7 +34,7 @@ class Step extends PureComponent {
               py="0.25em"
               bg="white"
               color="orange"
-              right="1.5em"
+              right="1.75em"
               bottom="0"
               transition="all 0.5s"
               borderRadius="0.5em"

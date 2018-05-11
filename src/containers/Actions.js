@@ -1,5 +1,4 @@
 import React, { PureComponent } from 'react';
-import { compose } from 'redux';
 import { withContentRect } from 'react-measure';
 
 import Box from '../components/Box';
@@ -17,12 +16,13 @@ class ScrollableAction extends PureComponent {
       measureRef,
       contentRect: { bounds: { height, width } },
       isMobile,
+      ...props,
     } = this.props;
     const Canvas = isMobile ? ActionsMobile : Actions;
 
     return (
       <Box position="relative" bg="blue" height={height || '100%'}>
-        <Canvas innerRef={measureRef} windowWidth={width} />
+        <Canvas innerRef={measureRef} windowWidth={width} {...props} />
         <Grain />
       </Box>
     );

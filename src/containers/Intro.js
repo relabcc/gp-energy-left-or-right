@@ -6,14 +6,14 @@ import IntroNew from '../ai-canvas/IntroNew';
 import IntroNewMobile from '../ai-canvas/IntroNewMobile';
 import IntroOldMobile from '../ai-canvas/IntroOldMobile';
 
-const Intro = ({ isMobile, windowWidth }) => {
+const Intro = ({ isMobile, ...props }) => {
   const Left = isMobile ? IntroNewMobile : IntroNew;
   const Right = isMobile ? IntroOldMobile : IntroOld;
   return (
     <DualBg
       isMobile={isMobile}
-      leftContent={<Left windowWidth={windowWidth} />}
-      rightContent={<Right windowWidth={windowWidth} />}
+      leftContent={<Left {...props} />}
+      rightContent={<Right {...props} />}
     />
   );
 };
