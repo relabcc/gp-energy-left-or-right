@@ -13,7 +13,7 @@ export const setInited = createAction(SET_INITED);
 const initialState = fromJS({
   ratio: 0.5,
   sync: false,
-  inited: titles.fill(false),
+  inited: titles.slice().fill(false),
 });
 
 export default handleActions({

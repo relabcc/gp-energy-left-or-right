@@ -74,7 +74,7 @@
 			"b": "323.46",
 			"width": "56.25",
 			"height": "8.87",
-			"layername": "txt|2008年 - 2015年[f:7.5]",
+			"layername": "txt|2008年 - 2015年[f:7.5,whiteSpace:nowrap]",
 			"name": "txt|2008年---2015年[f:7",
 			"type": "5]",
 			"filename": "txt|2008年---2015年[f:7.5]",
@@ -106,10 +106,10 @@
 			"b": "351.90",
 			"width": "7.50",
 			"height": "8.87",
-			"layername": "txt|元[f:7.5]",
+			"layername": "txt|元[f:7]",
 			"name": "txt|元[f:7",
 			"type": "5]",
-			"filename": "txt|元[f:7.5]",
+			"filename": "txt|元[f:7]",
 			"visible": true,
 			"items": [
 
@@ -122,10 +122,10 @@
 			"b": "351.90",
 			"width": "9.00",
 			"height": "8.87",
-			"layername": "txt|為[f:7.5]",
+			"layername": "txt|為[f:7]",
 			"name": "txt|為[f:7",
 			"type": "5]",
-			"filename": "txt|為[f:7.5]",
+			"filename": "txt|為[f:7]",
 			"visible": true,
 			"items": [
 
@@ -138,10 +138,10 @@
 			"b": "335.31",
 			"width": "45.00",
 			"height": "8.87",
-			"layername": "txt|健康衝擊成本[f:7.5]",
+			"layername": "txt|健康衝擊成本[f:7,whiteSpace:nowrap]",
 			"name": "txt|健康衝擊成本[f:7",
 			"type": "5]",
-			"filename": "txt|健康衝擊成本[f:7.5]",
+			"filename": "txt|健康衝擊成本[f:7]",
 			"visible": true,
 			"items": [
 
@@ -154,10 +154,10 @@
 			"b": "335.31",
 			"width": "39.00",
 			"height": "8.87",
-			"layername": "txt|燃煤發電之[f:7.5]",
+			"layername": "txt|燃煤發電之[f:7,whiteSpace:nowrap]",
 			"name": "txt|燃煤發電之[f:7",
 			"type": "5]",
-			"filename": "txt|燃煤發電之[f:7.5]",
+			"filename": "txt|燃煤發電之[f:7]",
 			"visible": true,
 			"items": [
 
@@ -199,12 +199,12 @@
 			"y": "201.79",
 			"r": "146.70",
 			"b": "223.67",
-			"width": "75.00",
+			"width": "76.00",
 			"height": "21.88",
-			"layername": "txt|是來自燃煤電廠排放， 會造成酸雨、空污[f:7.5,lineHeight:1.5]",
+			"layername": "txt|是來自燃煤電廠排放， 會造成酸雨、空污[f:7,lineHeight:1.5]",
 			"name": "txt|是來自燃煤電廠排放，-會造成酸雨、空污[f:7",
 			"type": "5,lineHeight:1",
-			"filename": "txt|是來自燃煤電廠排放，-會造成酸雨、空污[f:7.5,lineHeight:1",
+			"filename": "txt|是來自燃煤電廠排放，-會造成酸雨、空污[f:7,lineHeight:1",
 			"visible": true,
 			"items": [
 
@@ -230,12 +230,12 @@
 			"y": "317.93",
 			"r": "108.19",
 			"b": "339.80",
-			"width": "75.00",
+			"width": "76.00",
 			"height": "21.87",
-			"layername": "txt|是來自燃煤電廠排放， 會造成人體呼吸道危害[f:7.5,lineHeight:1.5]",
+			"layername": "txt|是來自燃煤電廠排放， 會造成人體呼吸道危害[f:7,lineHeight:1.5]",
 			"name": "txt|是來自燃煤電廠排放，-會造成人體呼吸道危害[f:7",
 			"type": "5,lineHeight:1",
-			"filename": "txt|是來自燃煤電廠排放，-會造成人體呼吸道危害[f:7.5,lineHeight:1",
+			"filename": "txt|是來自燃煤電廠排放，-會造成人體呼吸道危害[f:7,lineHeight:1",
 			"visible": true,
 			"items": [
 

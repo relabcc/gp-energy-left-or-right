@@ -47,7 +47,7 @@ class Header extends PureComponent {
 
   render() {
     const { browser } = this.props;
-    const isMobile = browser.lessThan.md;
+    const isDesktop = browser.greaterThan.sm;
     return (
       <Flex
         position="fixed"
@@ -60,7 +60,7 @@ class Header extends PureComponent {
       >
         <Logo w={175} color="cyan" />
         <Box flex={1} />
-        {!isMobile && (
+        {isDesktop && (
           <Flex align="center">
             {links.reduce((seprated, link, index) => {
               const ele = this.renderLink(link, index);
@@ -73,7 +73,7 @@ class Header extends PureComponent {
           <Button.icon mr="0.5em" w="2em"><Fb /></Button.icon>
           <Button.icon w="2em"><Line /></Button.icon>
         </Flex>
-        {isMobile && (
+        {!isDesktop && (
           <div>
             <Box is={Bars} color="cyan" f="1.75em" ml="0.5em" onClick={this.toggleOpen} />
             <Menu

@@ -45,14 +45,13 @@ export default class FullPage extends React.Component {
     this._slides = [];
     this._slidesCount = getChildrenCount(this.props.children);
     this._scrollSensitivity = 10;
-    this._touchSensitivity = 20;
+    this._touchSensitivity = 7;
     this._touchStart = 0;
     this._isMobile = null;
 
     this.state = {
       activeSlide: props.initialSlide,
     };
-    this.scrollToSlide = throttle(this.scrollToSlide, 1500);
   }
 
   componentDidMount() {
@@ -62,11 +61,12 @@ export default class FullPage extends React.Component {
       document.addEventListener('touchmove', this.onTouchMove);
       document.addEventListener('touchstart', this.onTouchStart);
     } else {
+      this.scrollToSlide = throttle(this.scrollToSlide, 1500);
       document.addEventListener('wheel', this.onScroll);
     }
     window.addEventListener('resize', this.onResize);
     this.onResize();
-    this.scrollToSlide(this.props.initialSlide);
+    // this.scrollToSlide(this.props.initialSlide);
   }
 
   // componentWillReceiveProps({ allInited }) {
@@ -84,7 +84,11 @@ export default class FullPage extends React.Component {
     window.removeEventListener('resize', this.onResize);
   }
 
-  onResize = () => {
+  onResize = (restore) => {
+    if (this._isScrollPending) {
+      this.deplayedOnresize = true;
+      return;
+    }
     this._slides = [];
 
     for (let i = 0; i < this._slidesCount; i++) {
@@ -95,6 +99,8 @@ export default class FullPage extends React.Component {
     this.setState({
       height: window.innerHeight,
     });
+    this.deplayedOnresize = false;
+    if (restore) this.requestSrcollAdjust();
   }
 
   onTouchStart = (evt) => {
@@ -111,14 +117,15 @@ export default class FullPage extends React.Component {
         if (this.checkOverflowScrolling(true, evt.target)) {
           evt.preventDefault();
           this.scrollToSlide(this.state.activeSlide + 1);
-        }
+        } else return;
       } else if (this._touchStart < touchEnd - this._touchSensitivity) {
         if (this.checkOverflowScrolling(false, evt.target)) {
           evt.preventDefault();
           this.scrollToSlide(this.state.activeSlide - 1);
-        }
+        } else return;
       }
     }
+    evt.preventDefault();
   }
 
   onScroll = (evt) => {
@@ -144,6 +151,10 @@ export default class FullPage extends React.Component {
     }
   }
 
+  requestSrcollAdjust = (slide = this.state.activeSlide) => {
+    this.scrollToSlide(slide, true);
+  }
+
   getSlidesCount = () => this._slidesCount
 
   getCurrentSlideIndex = () => this.state.activeSlide
@@ -154,12 +165,14 @@ export default class FullPage extends React.Component {
     this._container.childNodes.forEach((slide, index) => {
       if (index > 0) {
         this.chidrenRef.push(slide);
-        this.chidrenOverflow.push(slide.clientHeight - window.innerHeight);
+        this.chidrenOverflow.push(slide.firstChild.clientHeight - window.innerHeight);
         /* eslint-disable no-param-reassign */
-        if (slide.clientHeight > window.innerHeight) {
+        if (slide.firstChild.clientHeight > window.innerHeight) {
           slide.style.touchAction = 'pan-y';
           slide.style.overflowY = 'scroll';
-          slide.style.webkitOverflowScrolling = 'touch';
+        } else {
+          slide.style.touchAction = 'none';
+          slide.style.overflowY = 'unset';
         }
         /* eslint-enable no-param-reassign */
       }
@@ -168,6 +181,7 @@ export default class FullPage extends React.Component {
 
   checkOverflowScrolling = (scrollDown, target) => {
     const overflow = this.chidrenOverflow[this.state.activeSlide];
+
     const slide = this.chidrenRef[this.state.activeSlide];
     if (overflow > 0 && slide.contains(target)) {
       return scrollDown ? slide.scrollTop >= overflow : slide.scrollTop <= 0;
@@ -187,9 +201,15 @@ export default class FullPage extends React.Component {
     this.scrollToSlide(this.state.activeSlide - 1);
   }
 
-  scrollToSlide = (slide) => {
-    if (!this._isScrollPending && slide >= 0 && slide < this._slidesCount) {
+  scrollToSlide = (slide, force) => {
+    if (this._isScrollPending) return slide;
+    if (slide >= 0 && slide < this._slidesCount) {
       const currentSlide = this.state.activeSlide;
+      if (currentSlide === slide) {
+        if (!force) return;
+        return animatedScrollTo(this._slides[slide], 0);
+      }
+
       this.props.beforeChange({ from: currentSlide, to: slide });
 
       this.setState({
@@ -202,6 +222,7 @@ export default class FullPage extends React.Component {
         this._isScrolledAlready = true;
 
         this.props.afterChange({ from: currentSlide, to: slide });
+        if (this.deplayedOnresize) this.onResize(true);
       });
     }
   }
