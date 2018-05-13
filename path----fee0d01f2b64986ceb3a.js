@@ -1,0 +1,2 @@
+webpackJsonp([60335399758886],{180:function(t,a){t.exports={data:{site:{siteMetadata:{title:"Gatsby Default Starter",link:"https://relab.cc"}}},layoutContext:{}}}});
+//# sourceMappingURL=path----fee0d01f2b64986ceb3a.js.map
