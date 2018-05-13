@@ -11,6 +11,8 @@ import {
   borderRadius,
   letterSpacing,
   fontWeight,
+  display,
+  position,
 } from 'styled-system';
 import tag from 'clean-tag';
 
@@ -29,6 +31,8 @@ export const buttonStyle = css`
   font-family: inherit;
   line-height: 1;
   text-decoration: none;
+  ${position}
+  ${display}
   ${fontSize}
   ${space}
   ${color}
@@ -90,6 +94,17 @@ Button.icon = (props) => (
     px="0"
     py="0"
     borderRadius="50%"
+    {...props}
+  />
+);
+
+Button.plain = (props) => (
+  <Button
+    bg="none"
+    px="0"
+    py="0"
+    borderRadius="0"
+    border="none"
     {...props}
   />
 );

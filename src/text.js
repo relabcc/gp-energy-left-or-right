@@ -8,9 +8,21 @@ exports.titles = [
   null,
 ];
 
+const petition = '#';
+const entrySite = '#';
+const myth = '#';
+const think = '#';
+
 exports.links = [
-  { label: '連署支持', link: '#' },
-  { label: '能源傳送門', link: '#' },
-  { label: '迷思懶人包', link: '#' },
-  { label: '21道微想題', link: '#' },
+  { label: '連署支持', link: petition },
+  { label: '能源傳送門', link: entrySite },
+  { label: '迷思懶人包', link: myth },
+  { label: '21道微想題', link: think },
+];
+
+exports.actionLinks = [
+  { label: '要綠電，\n無霾無懼', title: '連署支持！', link: petition },
+  { label: '能源\n傳送門', title: '一網打盡\n能源傳送門', link: entrySite },
+  { label: '臺灣先生對\n綠電小姐的\n誤解與掙扎', title: '早就不該有的\n能源迷思', link: myth },
+  { label: '＿＿的時候\n想一想，\n21個微想題', title: '生活與能源\n的連結', link: think },
 ];

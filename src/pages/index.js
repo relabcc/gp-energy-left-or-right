@@ -79,7 +79,6 @@ class Index extends PureComponent {
             <Slide key={index}>
               <Content
                 active={index === active}
-                title={titles[index]}
                 animating={animating}
                 windowWidth={width}
                 isMobile={browser.lessThan.md}
