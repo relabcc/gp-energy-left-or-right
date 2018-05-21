@@ -5,9 +5,28 @@ import withConnect from './withConnect';
 
 import Backgrounds from '../../components/Backgrounds';
 
-const DualBg = ({ updateRatio, toggleSyncRatio, ...props }) => (
+const DualBg = ({
+  updateRatio,
+  toggleSyncRatio,
+  showHint,
+  dispatch,
+  inited,
+  setInited,
+  firstDragged,
+  ratio,
+  ratioSync,
+  introPlayed,
+  introPlayRequested,
+  introPlayFinished,
+  playIntro,
+  ...props
+}) => (
   <Backgrounds
     onRatioChange={updateRatio}
+    ratioSync={ratioSync}
+    ratio={ratio}
+    showHint={introPlayFinished && showHint}
+    firstDragged={firstDragged}
     {...props}
   />
 );
@@ -17,7 +36,7 @@ DualBg.propTypes = {
 };
 
 DualBg.defaultProps = {
-  ratioSync: false,
+  ratioSync: true,
 };
 
 export default withConnect(DualBg);

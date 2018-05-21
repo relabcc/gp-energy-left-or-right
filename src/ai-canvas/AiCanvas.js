@@ -5,7 +5,7 @@ import Box from '../components/Box';
 
 class AiCanvas extends PureComponent {
   componentWillReceiveProps({ windowWidth }) {
-    if (!this.props.windowWidth && this.props.onInited && !this.inited) {
+    if (windowWidth && this.props.onInited && !this.inited) {
       this.props.onInited();
       this.inited = true;
     }
@@ -17,6 +17,8 @@ class AiCanvas extends PureComponent {
       layers,
       canvasWidth,
       windowWidth,
+      animating,
+      onInited,
       ...props
     } = this.props;
     return (

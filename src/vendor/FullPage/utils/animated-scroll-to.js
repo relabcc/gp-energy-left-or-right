@@ -1,35 +1,27 @@
-const easeInOutCubic = require('./ease-in-out-cubic');
+import TWEEN from '@tweenjs/tween.js';
 
-export default function animatedScrollTo(scrollTo, duration, callback) {
+function animate() {
+  requestAnimationFrame(animate);
+  TWEEN.update();
+}
+
+export default function animatedScrollTo(scrollTop, duration, callback) {
   if (duration === 0) {
     if (callback) callback();
-    return window.scrollTo(0, scrollTo);
+    return window.scrollTo(0, scrollTop);
   }
 
-  let scrollFrom;
-  let scrollDiff;
-  let startTime;
-  let currentTime;
+  setTimeout(() => {
+    const tween = new TWEEN.Tween({ scrollTop: window.scrollY })
+    tween
+      .to({ scrollTop }, duration)
+      .easing(TWEEN.Easing.Cubic.InOut)
+      .onUpdate((object) => {
+        window.scrollTo(0, object.scrollTop);
+      })
+      .onComplete(callback)
+      .start();
 
-  function animateScroll(timestamp) {
-    if (!startTime) {
-      startTime = timestamp;
-    }
-    if (!scrollFrom) {
-      scrollFrom = window.scrollY;
-      scrollDiff = scrollTo - scrollFrom;
-    }
-    currentTime = timestamp - startTime;
-    const newScrollPos = easeInOutCubic(currentTime, scrollFrom, scrollDiff, duration);
-
-    window.scrollTo(0, newScrollPos);
-    if (currentTime > duration) {
-      if (callback) callback();
-      startTime = null;
-      return;
-    }
-
-    requestAnimationFrame(animateScroll);
-  }
-  setTimeout(() => requestAnimationFrame(animateScroll));
+    animate();
+  });
 }

@@ -34,8 +34,9 @@ class TwoBackgrounds extends PureComponent {
   }
 
   handleOnDrag = ({ srcEvent: { pageX } }) => {
-    const { onRatioChange, contentRect, ratioSync } = this.props;
+    const { onRatioChange, contentRect, ratioSync, firstDragged, showHint } = this.props;
     const newRatio = clamp(pageX / contentRect.bounds.width, 0, 1);
+    if (showHint) firstDragged();
     if (ratioSync && onRatioChange) {
       onRatioChange(newRatio);
     } else {
@@ -45,7 +46,6 @@ class TwoBackgrounds extends PureComponent {
 
   render() {
     const {
-      onDrag,
       ratio,
       leftContent,
       rightContent,
@@ -55,6 +55,7 @@ class TwoBackgrounds extends PureComponent {
       measure,
       isMobile,
       ratioSync,
+      showHint,
       ...props
     } = this.props;
     const leftPos = `${this.state.ratio * 100}%`;
@@ -85,6 +86,7 @@ class TwoBackgrounds extends PureComponent {
           transform="translate(-50%, 0)"
           innerRef={this.handleRef}
           style={{ left: leftPos }}
+          showHint={showHint}
         />
       </Box>
     );
@@ -97,6 +99,7 @@ TwoBackgrounds.propTypes = {
   leftContent: PropTypes.node,
   rightContent: PropTypes.node,
   ratioSync: PropTypes.bool,
+  showHint: PropTypes.bool,
 };
 
 TwoBackgrounds.defaultProps = {

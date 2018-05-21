@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import { compose } from 'redux';
 import { withContentRect } from 'react-measure';
+import TWEEN from '@tweenjs/tween.js';
 
 import { FullPage, Slide } from '../vendor/FullPage';
 import withHeader from '../hoc/withHeader';
@@ -8,6 +9,7 @@ import withResponsive from '../hoc/withResponsive';
 import withConnect from '../containers/DualBg/withConnect';
 
 import Title from '../components/Title';
+import Preloader from '../components/Preloader';
 // import Text from '../components/Text';
 // import Flex from '../components/Flex';
 import Box from '../components/Box';
@@ -23,6 +25,7 @@ import SideNav from '../containers/SideNav';
 // import RatioToggle from '../containers/RatioToggle';
 
 import { titles } from '../text';
+import preload from '../preload';
 
 const Sections = [
   Intro,
@@ -35,14 +38,39 @@ const Sections = [
 ];
 
 const last = Sections.length - 1;
+const isServer = typeof window === 'undefined';
+
+function animate() {
+  requestAnimationFrame(animate);
+  TWEEN.update();
+}
 
 class Index extends PureComponent {
-  state = {
-    active: 0,
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      active: 0,
+      isDesktop: !isServer && window.innerWidth > props.browser.breakpoints.sm,
+    }
   }
 
   componentDidMount() {
     this.props.measure();
+  }
+
+  componentWillReceiveProps({ inited }) {
+    this.setState({
+      allInited: inited && inited.every(Boolean),
+    });
+  }
+
+  componentDidUpdate() {
+    const { allInited, loaded } = this.state;
+    if (allInited && loaded && !this.props.introPlayRequested) {
+      this.props.playIntro();
+      this.playIntro();
+    }
   }
 
   onChangeStart = (slider) => {
@@ -54,6 +82,22 @@ class Index extends PureComponent {
     this.setState({ active: slider.to, animating: false });
   }
 
+  playIntro = () => {
+    const tween = new TWEEN.Tween({ ratio: 1 })
+    tween
+      .to({ ratio: [0.5, 0, 0.5] }, 3000)
+      .delay(1000)
+      .onUpdate(({ ratio }) => this.props.updateRatio(ratio))
+      .onComplete(this.props.introPlayFinished)
+      .start();
+
+    animate();
+  }
+
+  handleLoaded = () => {
+    this.setState({ loaded: true });
+  }
+
   render() {
     const {
       measure,
@@ -62,32 +106,49 @@ class Index extends PureComponent {
       browser,
       setInited,
       inited,
+      dispatch,
+      ratioSync,
+      updateRatio,
+      toggleSyncRatio,
+      showHint,
+      firstDragged,
+      introPlayed,
+      introPlayRequested,
+      playIntro,
+      introPlayFinished,
       ...props,
     } = this.props;
-    const { active, animating } = this.state;
+    const { active, animating, isDesktop, loaded, allInited } = this.state;
     const title = titles[active];
-    const allInited = inited && inited.every(Boolean);
     return (
-      <Box position="relative" height="100vh" zIndex={0} innerRef={measureRef} opacity={Number(allInited)} {...props}>
-        <FullPage
-          beforeChange={this.onChangeStart}
-          afterChange={this.onChangeEnd}
-          controls={SideNav}
-          allInited={allInited}
-        >
-          {Sections.map((Content, index) => (
-            <Slide key={index}>
-              <Content
-                active={index === active}
-                animating={animating}
-                windowWidth={width}
-                isMobile={browser.lessThan.md}
-                onInited={() => setInited(index)}
-              />
-            </Slide>
-          ))}
-        </FullPage>
-
+      <Box position="relative" height="100vh" zIndex={0} innerRef={measureRef} {...props}>
+        {(isServer || loaded) ? (
+          <Box height="100%" opacity={Number(allInited)} transition="opacity 0.5s">
+            <FullPage
+              beforeChange={this.onChangeStart}
+              afterChange={this.onChangeEnd}
+              controls={SideNav}
+              allInited={allInited}
+            >
+              {Sections.map((Content, index) => (
+                <Slide key={index}>
+                  <Content
+                    active={index === active}
+                    animating={animating}
+                    windowWidth={width}
+                    isMobile={browser.lessThan.md}
+                    onInited={() => setInited(index)}
+                  />
+                </Slide>
+              ))}
+            </FullPage>
+          </Box>
+        ) : (
+          <Preloader
+            images={preload[isDesktop ? 'desktop' : 'mobile']}
+            onLoaded={this.handleLoaded}
+          />
+        )}
         <Title active={!animating}>
           {title}
         </Title>

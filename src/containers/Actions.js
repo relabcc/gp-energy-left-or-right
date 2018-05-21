@@ -18,6 +18,7 @@ class ScrollableAction extends PureComponent {
 
   render() {
     const {
+      measure,
       measureRef,
       contentRect: { bounds: { height, width } },
       isMobile,
