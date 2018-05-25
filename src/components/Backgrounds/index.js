@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { withContentRect  } from 'react-measure';
 import clamp from 'lodash/clamp';
+import bowser from 'bowser';
 
 import Box from '../Box';
 import EnergyHandle from '../EnergyHandle';
@@ -11,8 +12,13 @@ import Grain from './Grain';
 import Hammer from '../../vendor/hammer';
 
 class TwoBackgrounds extends PureComponent {
-  state = {
-    ratio: this.props.ratio,
+  constructor(props) {
+    super(props);
+    this.state = {
+      ratio: this.props.ratio,
+    };
+    this.isIos = bowser.ios;
+    this.iosEdge = 0.05;
   }
 
   componentDidMount() {
@@ -35,7 +41,11 @@ class TwoBackgrounds extends PureComponent {
 
   handleOnDrag = ({ srcEvent: { pageX } }) => {
     const { onRatioChange, contentRect, ratioSync, firstDragged, showHint } = this.props;
-    const newRatio = clamp(pageX / contentRect.bounds.width, 0, 1);
+    const newRatio = clamp(
+      pageX / contentRect.bounds.width,
+      this.isIos ? this.iosEdge : 0,
+      this.isIos ? (1 - this.iosEdge) : 1
+    );
     if (showHint) firstDragged();
     if (ratioSync && onRatioChange) {
       onRatioChange(newRatio);

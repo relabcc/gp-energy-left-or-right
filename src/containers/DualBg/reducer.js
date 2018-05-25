@@ -17,8 +17,8 @@ export const firstDragged = createAction(FIRST_DRAGGED);
 export const playIntro = createAction(PALY_INTRO);
 
 const initialState = fromJS({
-  ratio: 1,
-  sync: true,
+  ratio: 0.5,
+  sync: false,
   inited: titles.slice().fill(false),
   showHint: true,
   introPlayRequested: false,

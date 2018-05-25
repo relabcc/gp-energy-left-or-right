@@ -65,13 +65,13 @@ class Index extends PureComponent {
     });
   }
 
-  componentDidUpdate() {
-    const { allInited, loaded } = this.state;
-    if (allInited && loaded && !this.props.introPlayRequested) {
-      this.props.playIntro();
-      this.playIntro();
-    }
-  }
+  // componentDidUpdate() {
+  //   const { allInited, loaded } = this.state;
+  //   if (allInited && loaded && !this.props.introPlayRequested) {
+  //     this.props.playIntro();
+  //     this.playIntro();
+  //   }
+  // }
 
   onChangeStart = (slider) => {
     if (this.state.active === last && slider.from > slider.to) return true;
@@ -129,6 +129,7 @@ class Index extends PureComponent {
               afterChange={this.onChangeEnd}
               controls={SideNav}
               allInited={allInited}
+              duration={1500}
             >
               {Sections.map((Content, index) => (
                 <Slide key={index}>
