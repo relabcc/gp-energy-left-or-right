@@ -123,7 +123,7 @@ class Index extends PureComponent {
     return (
       <Box position="relative" height="100vh" zIndex={0} innerRef={measureRef} {...props}>
         {(isServer || loaded) ? (
-          <Box height="100%" opacity={Number(allInited)} transition="opacity 0.5s">
+          <Box height="100%" opacity={Number(allInited || 0)} transition="opacity 0.5s">
             <FullPage
               beforeChange={this.onChangeStart}
               afterChange={this.onChangeEnd}
