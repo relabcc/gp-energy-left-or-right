@@ -19,7 +19,7 @@ class Preloader extends PureComponent {
         image.onload = resolve;
         image.onerror = resolve;
         image.src = src;
-      }))).then(this.props.onLoaded);
+      }))).then(() => this.props.onLoaded());
     }
   }
 

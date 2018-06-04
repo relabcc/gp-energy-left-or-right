@@ -66,14 +66,6 @@ class Index extends PureComponent {
     });
   }
 
-  // componentDidUpdate() {
-  //   const { allInited, firstLoaded } = this.state;
-  //   if (allInited && firstLoaded && !this.props.introPlayRequested) {
-  //     this.props.playIntro();
-  //     this.playIntro();
-  //   }
-  // }
-
   onChangeStart = (slider) => {
     if (this.state.active === last && slider.from > slider.to) return true;
     this.setState({ animating: true });
@@ -86,10 +78,10 @@ class Index extends PureComponent {
   playIntro = () => {
     const tween = new TWEEN.Tween({ ratio: 1 })
     tween
-      .to({ ratio: [0.5, 0, 0.5] }, 3000)
+      .to({ ratio: [0.5, 0, 0.5] }, 2000)
       .delay(1000)
       .onUpdate(({ ratio }) => this.props.updateRatio(ratio))
-      .onComplete(this.props.introPlayFinished)
+      .onComplete(() => setTimeout(this.props.introPlayFinished, 500))
       .start();
 
     animate();
@@ -97,6 +89,9 @@ class Index extends PureComponent {
 
   handleFirstLoaded = () => {
     this.setState({ firstLoaded: true });
+
+    this.props.playIntro();
+    this.playIntro();
   }
 
   handleLoaded = (index) => {
@@ -150,6 +145,7 @@ class Index extends PureComponent {
           list={preload[isDesktop ? 'desktop' : 'mobile']}
           onFirstLoaded={this.handleFirstLoaded}
           onLoaded={this.handleLoaded}
+          pause={introPlayRequested && !introPlayed}
         />
         <Title active={!animating}>
           {title}

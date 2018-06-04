@@ -28,7 +28,7 @@ class TwoBackgrounds extends PureComponent {
   }
 
   componentWillReceiveProps({ ratio }) {
-    if (ratio !== this.props.ratio) this.setState({ ratio });
+    if (ratio !== this.props.ratio) this.setRatio(ratio);
   }
 
   componentWillUnmount() {
@@ -40,18 +40,20 @@ class TwoBackgrounds extends PureComponent {
   }
 
   handleOnDrag = ({ srcEvent: { pageX } }) => {
-    const { onRatioChange, contentRect, ratioSync, firstDragged, showHint } = this.props;
+    const { contentRect, firstDragged, showHint } = this.props;
     const newRatio = clamp(
       pageX / contentRect.bounds.width,
       this.isIos ? this.iosEdge : 0,
       this.isIos ? (1 - this.iosEdge) : 1
     );
     if (showHint) firstDragged();
-    if (ratioSync && onRatioChange) {
-      onRatioChange(newRatio);
-    } else {
-      this.setState({ ratio: newRatio });
-    }
+    this.setRatio(newRatio);
+  }
+
+  setRatio = (ratio) => {
+    const leftPos = this.props.contentRect.bounds.width * ratio + 'px';
+    this.upperRef.style.width = leftPos;
+    this.handle.style.left = leftPos;
   }
 
   render() {
@@ -68,7 +70,6 @@ class TwoBackgrounds extends PureComponent {
       showHint,
       ...props
     } = this.props;
-    const leftPos = `${this.state.ratio * 100}%`;
 
     return (
       <Box position="relative" height="100%" overflow="hidden" innerRef={measureRef} {...props}>
@@ -78,9 +79,9 @@ class TwoBackgrounds extends PureComponent {
             top="0"
             left="0"
             bottom="0"
-            style={{ width: leftPos }}
             position="absolute"
             overflow="hidden"
+            innerRef={(ref) => { this.upperRef = ref; }}
           >
             <Box w={contentRect.bounds.width} height="100%">
               <OldBg isMobile={isMobile}>
@@ -95,7 +96,6 @@ class TwoBackgrounds extends PureComponent {
           bottom="6em"
           transform="translate(-50%, 0)"
           innerRef={this.handleRef}
-          style={{ left: leftPos }}
           showHint={showHint}
         />
       </Box>
