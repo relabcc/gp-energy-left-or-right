@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import withConnect from './withConnect';
 
 import Backgrounds from '../../components/Backgrounds';
+import Box from '../../components/Box';
 
 const DualBg = ({
   updateRatio,
@@ -20,7 +21,7 @@ const DualBg = ({
   introPlayFinished,
   playIntro,
   ...props
-}) => (
+}) => inited ? (
   <Backgrounds
     onRatioChange={updateRatio}
     ratioSync={ratioSync}
@@ -29,6 +30,8 @@ const DualBg = ({
     firstDragged={firstDragged}
     {...props}
   />
+) : (
+  <Box height="100vh" />
 );
 
 DualBg.propTypes = {

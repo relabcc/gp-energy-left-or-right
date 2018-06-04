@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { PureComponent, createElement } from 'react';
 import { compose } from 'redux';
 import { withContentRect } from 'react-measure';
 import TWEEN from '@tweenjs/tween.js';
@@ -9,7 +9,7 @@ import withResponsive from '../hoc/withResponsive';
 import withConnect from '../containers/DualBg/withConnect';
 
 import Title from '../components/Title';
-import Preloader from '../components/Preloader';
+import StepPreloader from '../components/StepPreloader';
 // import Text from '../components/Text';
 // import Flex from '../components/Flex';
 import Box from '../components/Box';
@@ -26,8 +26,9 @@ import SideNav from '../containers/SideNav';
 
 import { titles } from '../text';
 import preload from '../preload';
+import sections from '../sections';
 
-const Sections = [
+const Sections = {
   Intro,
   Cost,
   System,
@@ -35,9 +36,9 @@ const Sections = [
   Why,
   Potential,
   Actions,
-];
+};
 
-const last = Sections.length - 1;
+const last = sections.length - 1;
 const isServer = typeof window === 'undefined';
 
 function animate() {
@@ -66,8 +67,8 @@ class Index extends PureComponent {
   }
 
   // componentDidUpdate() {
-  //   const { allInited, loaded } = this.state;
-  //   if (allInited && loaded && !this.props.introPlayRequested) {
+  //   const { allInited, firstLoaded } = this.state;
+  //   if (allInited && firstLoaded && !this.props.introPlayRequested) {
   //     this.props.playIntro();
   //     this.playIntro();
   //   }
@@ -94,8 +95,12 @@ class Index extends PureComponent {
     animate();
   }
 
-  handleLoaded = () => {
-    this.setState({ loaded: true });
+  handleFirstLoaded = () => {
+    this.setState({ firstLoaded: true });
+  }
+
+  handleLoaded = (index) => {
+    this.props.setInited(index);
   }
 
   render() {
@@ -118,38 +123,34 @@ class Index extends PureComponent {
       introPlayFinished,
       ...props,
     } = this.props;
-    const { active, animating, isDesktop, loaded, allInited } = this.state;
+    const { active, animating, isDesktop, firstLoaded } = this.state;
     const title = titles[active];
     return (
       <Box position="relative" height="100vh" zIndex={0} innerRef={measureRef} {...props}>
-        {(isServer || loaded) ? (
-          <Box height="100%" opacity={Number(allInited || 0)} transition="opacity 0.5s">
-            <FullPage
-              beforeChange={this.onChangeStart}
-              afterChange={this.onChangeEnd}
-              controls={SideNav}
-              allInited={allInited}
-              duration={1500}
-            >
-              {Sections.map((Content, index) => (
-                <Slide key={index}>
-                  <Content
-                    active={index === active}
-                    animating={animating}
-                    windowWidth={width}
-                    isMobile={browser.lessThan.md}
-                    onInited={() => setInited(index)}
-                  />
-                </Slide>
-              ))}
-            </FullPage>
-          </Box>
-        ) : (
-          <Preloader
-            images={preload[isDesktop ? 'desktop' : 'mobile']}
-            onLoaded={this.handleLoaded}
-          />
-        )}
+        <Box height="100%" opacity={Number(firstLoaded)} transition="opacity 0.5s">
+          <FullPage
+            beforeChange={this.onChangeStart}
+            afterChange={this.onChangeEnd}
+            controls={SideNav}
+            duration={1500}
+          >
+            {sections.map((key, index) => (
+              <Slide key={key}>
+                {createElement(Sections[key], {
+                  active: index === active,
+                  animating,
+                  windowWidth: width,
+                  isMobile: browser.lessThan.md,
+                })}
+              </Slide>
+            ))}
+          </FullPage>
+        </Box>
+        <StepPreloader
+          list={preload[isDesktop ? 'desktop' : 'mobile']}
+          onFirstLoaded={this.handleFirstLoaded}
+          onLoaded={this.handleLoaded}
+        />
         <Title active={!animating}>
           {title}
         </Title>

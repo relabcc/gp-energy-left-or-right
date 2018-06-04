@@ -25,8 +25,7 @@ class AiCanvas extends PureComponent {
       <Box
         position="relative"
         overflow="hidden"
-        pb={`${ratio * 100}%`}
-        style={{ fontSize: `${(windowWidth / canvasWidth) * 1}px` }}
+        style={{ fontSize: `${(windowWidth / canvasWidth) * 1}px`, paddingBottom: `${ratio * 100}%` }}
         {...props}
       >
         {layers.map(({ attr, layer, name }) => (

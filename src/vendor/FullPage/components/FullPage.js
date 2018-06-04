@@ -69,10 +69,6 @@ export default class FullPage extends React.Component {
     this.scrollToSlide(this.props.initialSlide);
   }
 
-  // componentWillReceiveProps({ allInited }) {
-  //   if (!this.props.allInited && allInited) this.checkChildrenOverflow();
-  // }
-
   componentWillUnmount() {
     if (typeof window === 'undefined') return;
     if (this._isMobile) {

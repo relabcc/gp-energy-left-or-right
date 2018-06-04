@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import BackgroundImage from './BackgroundImage';
+import BackgroundImage from '../BackgroundImage';
 
 const Wrapper = styled.div`
   position: absolute;
@@ -12,15 +12,14 @@ const Wrapper = styled.div`
 `;
 
 class Preloader extends PureComponent {
-  constructor(props) {
-    super(props);
+  componentDidMount() {
     if (typeof Image !== 'undefined') {
-      Promise.all(props.images.map((src) => new Promise((resolve) => {
+      Promise.all(this.props.images.map((src) => new Promise((resolve) => {
         const image = new Image();
         image.onload = resolve;
         image.onerror = resolve;
         image.src = src;
-      }))).then(props.onLoaded);
+      }))).then(this.props.onLoaded);
     }
   }
 

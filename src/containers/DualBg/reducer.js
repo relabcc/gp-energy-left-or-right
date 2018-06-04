@@ -1,6 +1,6 @@
 import { fromJS } from 'immutable';
 import { createAction, handleActions } from 'redux-actions';
-import { titles } from '../../text';
+import sections from '../../sections';
 
 export const UPDATE_RATIO = 'Left-or-right/BG/UPDATE_RATIO';
 export const TOGGLE_SYNC_RATIO = 'Left-or-right/BG/TOGGLE_SYNC_RATIO';
@@ -19,7 +19,7 @@ export const playIntro = createAction(PALY_INTRO);
 const initialState = fromJS({
   ratio: 0.5,
   sync: false,
-  inited: titles.slice().fill(false),
+  inited: Array(sections.length).fill(false),
   showHint: true,
   introPlayRequested: false,
   introPlayed: false,
