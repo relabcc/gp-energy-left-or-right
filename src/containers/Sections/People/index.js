@@ -1,9 +1,9 @@
 import React from 'react';
 
-import Old from './intro-dt-2017.svg';
-import New from './intro-dt-2035.svg';
-import NewMobile from './intro-mb-2035.svg';
-import OldMobile from './intro-mb-2017.svg';
+import Old from './people-dt-2017.svg';
+import New from './people-dt-2035.svg';
+import NewMobile from './people-mb-2035.svg';
+import OldMobile from './people-mb-2017.svg';
 
 import SectionDual from '../SectionDual';
 

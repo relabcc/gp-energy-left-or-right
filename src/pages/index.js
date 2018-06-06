@@ -15,12 +15,12 @@ import StepPreloader from '../components/StepPreloader';
 import Box from '../components/Box';
 
 import Intro from '../containers/Sections/Intro';
-import Cost from '../containers/Cost';
-import System from '../containers/System';
-import People from '../containers/People';
-import Why from '../containers/Why';
-import Potential from '../containers/Potential';
-import Actions from '../containers/Actions';
+import Cost from '../containers/Sections/Cost';
+import System from '../containers/Sections/System';
+import People from '../containers/Sections/People';
+import Why from '../containers/Sections/Why';
+import Potential from '../containers/Sections/Potential';
+import Actions from '../containers/Sections/Actions';
 import SideNav from '../containers/SideNav';
 // import RatioToggle from '../containers/RatioToggle';
 
