@@ -14,7 +14,7 @@ import { actionLinks } from '../../text';
 
 const ratio = {
   mobile: 617.42 / 375,
-  desktop:
+  desktop: 1126.42 / 1334,
 };
 
 class ScrollableAction extends PureComponent {
