@@ -8,7 +8,7 @@ export const ratio = {
   desktop: 718 / 1334,
 };
 
-const SectionDual = ({ isMobile, left, right, no, ...props }) => {
+const SectionDual = ({ isMobile, left, right, ...props }) => {
   const r = ratio[isMobile ? 'mobile' : 'desktop'];
   return (
     <DualBg
