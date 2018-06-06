@@ -23,6 +23,7 @@ class TwoBackgrounds extends PureComponent {
 
   componentDidMount() {
     this.hammertime = new Hammer(this.handle);
+    this.hammertime.on('swipe', this.handleOnDrag);
     this.hammertime.on('pan', this.handleOnDrag);
     this.props.measure();
   }

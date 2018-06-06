@@ -5,14 +5,13 @@ import New from './intro-dt-2035.svg';
 import NewMobile from './intro-dt-2017.svg';
 import OldMobile from './intro-mb-2017.svg';
 
-import getSectionDual from '../getSectionDual';
+import SectionDual from '../SectionDual';
 
 const Cotnent = ({ isMobile, ...props }) => {
   const left = isMobile ? NewMobile : New;
   const right = isMobile ? OldMobile : Old;
-  const Section = getSectionDual({ left, right });
   return (
-    <Section />
+    <SectionDual left={left} right={right} isMobile={isMobile} />
   );
 };
 
