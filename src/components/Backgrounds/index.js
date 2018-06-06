@@ -23,9 +23,11 @@ class TwoBackgrounds extends PureComponent {
 
   componentDidMount() {
     this.hammertime = new Hammer(this.handle);
-    this.hammertime.on('swipe', this.handleOnDrag);
-    this.hammertime.on('pan', this.handleOnDrag);
+    this.hammertime.on('panstart', this.disableSlect);
+    this.hammertime.on('panend', this.enableSlect);
+    this.hammertime.on('panmove', this.handleOnDrag);
     this.props.measure();
+    setTimeout(() => this.setRatio(this.props.ratio));
   }
 
   componentWillReceiveProps({ ratio }) {
@@ -42,6 +44,7 @@ class TwoBackgrounds extends PureComponent {
 
   handleOnDrag = ({ srcEvent: { pageX } }) => {
     const { contentRect, firstDragged, showHint } = this.props;
+
     const newRatio = clamp(
       pageX / contentRect.bounds.width,
       this.isIos ? this.iosEdge : 0,
@@ -50,6 +53,9 @@ class TwoBackgrounds extends PureComponent {
     if (showHint) firstDragged();
     this.setRatio(newRatio);
   }
+
+  disableSlect = () => document.body.classList.add('ratio-dragging')
+  enableSlect = () => document.body.classList.remove('ratio-dragging')
 
   setRatio = (ratio) => {
     const leftPos = this.props.contentRect.bounds.width * ratio + 'px';
@@ -69,8 +75,11 @@ class TwoBackgrounds extends PureComponent {
       isMobile,
       ratioSync,
       showHint,
+      firstDragged,
       ...props
     } = this.props;
+
+    const leftPos = contentRect.bounds.width * this.state.ratio;
 
     return (
       <Box position="relative" height="100%" overflow="hidden" innerRef={measureRef} {...props}>
@@ -82,6 +91,7 @@ class TwoBackgrounds extends PureComponent {
             bottom="0"
             position="absolute"
             overflow="hidden"
+            style={{ width: leftPos }}
             innerRef={(ref) => { this.upperRef = ref; }}
           >
             <Box w={contentRect.bounds.width} height="100%">
@@ -98,6 +108,7 @@ class TwoBackgrounds extends PureComponent {
           transform="translate(-50%, 0)"
           innerRef={this.handleRef}
           showHint={showHint}
+          style={{ left: leftPos }}
         />
       </Box>
     );

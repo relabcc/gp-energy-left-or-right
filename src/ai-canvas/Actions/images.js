@@ -1,2 +1,0 @@
-/* eslint-disable */
-export default {'button-1': require('./button-1.svg'),'button-2': require('./button-2.svg'),'button-3': require('./button-3.svg'),'button-bubble-1': require('./button-bubble-1.svg'),'button-bubble-2': require('./button-bubble-2.svg'),'button-bubble-3': require('./button-bubble-3.svg'),'button-bubble': require('./button-bubble.svg'),'button': require('./button.svg'),'Layer-24': require('./Layer-24.svg'),'Layer-25': require('./Layer-25.svg'),'Layer-27': require('./Layer-27.svg'),'Layer-6': require('./Layer-6.svg'),'Layer-7': require('./Layer-7.svg')};

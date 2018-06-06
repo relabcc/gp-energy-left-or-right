@@ -27,9 +27,9 @@ export default {
 const handleGlob = (err, list) => {
   if (err) throw err;
   const assets = list.reduce((res, filename) => {
-    if (filename.includes('ai-canvas')) {
+    if (filename.includes('Sections')) {
       const pos = sections.findIndex((key) => filename.includes(key));
-      const type = filename.includes('Mobile') ? 'mobile' : 'desktop';
+      const type = filename.includes('-mb') ? 'mobile' : 'desktop';
       res[type][pos] = res[type][pos].concat(filename);
     } else {
       res.desktop[0] = res.desktop[0].concat(filename);

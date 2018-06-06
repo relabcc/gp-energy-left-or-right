@@ -2,6 +2,7 @@ import React, { PureComponent, createElement } from 'react';
 import { compose } from 'redux';
 import { withContentRect } from 'react-measure';
 import TWEEN from '@tweenjs/tween.js';
+import get from 'lodash/get';
 
 import { FullPage, Slide } from '../vendor/FullPage';
 import withHeader from '../hoc/withHeader';
@@ -81,7 +82,7 @@ class Index extends PureComponent {
       .to({ ratio: [0.5, 0, 0.5] }, 2000)
       .delay(1000)
       .onUpdate(({ ratio }) => this.props.updateRatio(ratio))
-      .onComplete(() => setTimeout(this.props.introPlayFinished, 500))
+      .onComplete(this.props.introPlayFinished)
       .start();
 
     animate();
@@ -133,12 +134,12 @@ class Index extends PureComponent {
           >
             {sections.map((key, index) => (
               <Slide key={key}>
-                {createElement(Sections[key], {
+                {inited && inited.get(index) ? createElement(Sections[key], {
                   active: index === active,
                   animating,
                   windowWidth: width,
                   isMobile: browser.lessThan.md,
-                })}
+                }) : <Box height="100vh" />}
               </Slide>
             ))}
           </FullPage>

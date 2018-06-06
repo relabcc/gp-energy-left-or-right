@@ -9,7 +9,7 @@ import Grain from '../../../components/Backgrounds/Grain';
 import EmbedSVG from '../../../components/EmbedSVG';
 import { ratio } from '../SectionDual';
 
-const Cotnent = ({ isMobile, ...props }) => {
+const Cotnent = ({ isMobile }) => {
   const src = isMobile ? NewMobile : New;
   const r = ratio[isMobile ? 'mobile' : 'desktop'];
   return (

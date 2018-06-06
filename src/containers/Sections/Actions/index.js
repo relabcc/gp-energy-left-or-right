@@ -1,20 +1,20 @@
 import React, { PureComponent } from 'react';
 import { withContentRect } from 'react-measure';
 
-import Box from '../../components/Box';
-import Flex from '../../components/Flex';
-import ActionButton from '../../components/ActionButton';
-import ActionButtonMobile from '../../components/ActionButtonMobile';
-import Grain from '../../components/Backgrounds/Grain';
+import Box from '../../../components/Box';
+import Flex from '../../../components/Flex';
+import ActionButton from '../../../components/ActionButton';
+import ActionButtonMobile from '../../../components/ActionButtonMobile';
+import Grain from '../../../components/Backgrounds/Grain';
 import EmbedSVG from '../../../components/EmbedSVG';
 import Actions from './actions-dt.svg';
 import ActionsMobile from './actions-mb.svg';
 
-import { actionLinks } from '../../text';
+import { actionLinks } from '../../../text';
 
 const ratio = {
-  mobile: 617.42 / 375,
-  desktop: 1126.42 / 1334,
+  mobile: 610 / 375,
+  desktop: 1200 / 1334,
 };
 
 class ScrollableAction extends PureComponent {
@@ -28,14 +28,17 @@ class ScrollableAction extends PureComponent {
       measureRef,
       contentRect: { bounds: { height } },
       isMobile,
+      loaded,
+      animating,
+      windowWidth,
       ...props,
     } = this.props;
     const src = isMobile ? ActionsMobile : Actions;
     const Button = isMobile ? ActionButtonMobile : ActionButton;
 
     return (
-      <Box position="relative" bg="blue" height={height || '100%'}>
-        <EmbedSVG innerRef={measureRef} src={src} {...props} />
+      <Box position="relative" height={height || '100%'}>
+        <EmbedSVG innerRef={measureRef} src={src} ratio={ratio[isMobile ? 'mobile' : 'desktop']} {...props} />
         <Flex
           position="absolute"
           left={['10%', null, '17.5%']}
