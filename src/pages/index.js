@@ -116,6 +116,8 @@ class Index extends PureComponent {
       introPlayRequested,
       playIntro,
       introPlayFinished,
+      right,
+      left,
       ...props,
     } = this.props;
     const { active, animating, isDesktop, firstLoaded } = this.state;

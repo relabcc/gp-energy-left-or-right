@@ -3,12 +3,12 @@ import React from 'react';
 import EmbedSVG from '../../components/EmbedSVG';
 import DualBg from '../DualBg';
 
-const ratio = {
+export const ratio = {
   mobile: 617.422 / 375,
   desktop: 718 / 1334,
 };
 
-const SectionDual = ({ isMobile, left, right, ...props }) => {
+const SectionDual = ({ isMobile, left, right, no, ...props }) => {
   const r = ratio[isMobile ? 'mobile' : 'desktop'];
   return (
     <DualBg
