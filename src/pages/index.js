@@ -14,7 +14,7 @@ import StepPreloader from '../components/StepPreloader';
 // import Flex from '../components/Flex';
 import Box from '../components/Box';
 
-import Intro from '../containers/Intro';
+import Intro from '../containers/Sections/Intro';
 import Cost from '../containers/Cost';
 import System from '../containers/System';
 import People from '../containers/People';
