@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import round from 'lodash/round';
 
 import Box from '../components/Box';
 
@@ -25,7 +26,7 @@ class AiCanvas extends PureComponent {
       <Box
         position="relative"
         overflow="hidden"
-        style={{ fontSize: `${(windowWidth / canvasWidth) * 1}px`, paddingBottom: `${ratio * 100}%` }}
+        style={{ fontSize: `${round(windowWidth / canvasWidth, 2)}px`, paddingBottom: `${ratio * 100}%` }}
         {...props}
       >
         {layers.map(({ attr, layer, name }) => (

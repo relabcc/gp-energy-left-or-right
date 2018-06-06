@@ -1,4 +1,5 @@
 import { createElement } from 'react';
+import round from 'lodash/round';
 
 import AiCanvas from './AiCanvas';
 import BackgroundImage from '../components/BackgroundImage';
@@ -6,13 +7,15 @@ import InlineStyleText from './InlineStyleText';
 
 import parseProps from './parseProps';
 
-const percents = (num) => `${num * 100}%`;
+
+const roundToFour = (num) => round(num, 4);
+const percents = (num) => `${roundToFour(num * 100)}%`;
 
 const styleParser = ({ width, height, x, y }, { width: canvasWidth, height: canvasHeight }) => ({
   top: percents(y / canvasHeight),
   left: percents(x / canvasWidth),
   width: percents(width / canvasWidth),
-  ratio: height / width,
+  ratio: roundToFour(height / width),
 });
 
 const texParser = (txt) => {
@@ -29,7 +32,7 @@ const texParser = (txt) => {
 export default (data, images) => {
   const { width, height, layers } = data;
   return (props) => createElement(AiCanvas, {
-    ratio: height / width,
+    ratio: roundToFour(height / width),
     canvasWidth: width,
     layers: layers.slice().reverse().map((d) => {
       const { ratio, ...attr } = styleParser(d, { width, height });
