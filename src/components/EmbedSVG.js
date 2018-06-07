@@ -13,10 +13,16 @@ const Container = styled(Box)`
 class EmbedSVG extends PureComponent {
   constructor(props) {
     super(props);
-    fetch(props.src)
-      .then((response) => response.text()).then(this.handleOnLoad)
-      .catch(console.error);
+    this.loadSvg(props.src);
   }
+
+  componentWillReceiveProps({ src }) {
+    if (src !== this.props.src) this.loadSvg(src);
+  }
+
+  loadSvg = (src) => fetch(src)
+    .then((response) => response.text()).then(this.handleOnLoad)
+    .catch(console.error);
 
   handleOnLoad = (svgContent) => {
     if (!this.container) {
@@ -33,7 +39,6 @@ class EmbedSVG extends PureComponent {
   render() {
     const {
       ratio,
-      src,
       ...props
     } = this.props;
     return (
