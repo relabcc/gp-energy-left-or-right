@@ -18,6 +18,10 @@ injectGlobal`
     margin: 0;
     font-family: ${theme.font};
   }
+
+  body.ratio-dragging * {
+    user-select: none;
+  }
 `;
 
 export default (props) => (

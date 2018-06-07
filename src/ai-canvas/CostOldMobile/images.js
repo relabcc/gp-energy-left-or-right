@@ -1,2 +1,0 @@
-/* eslint-disable */
-export default {'Layer-11': require('./Layer-11.svg'),'Layer-14': require('./Layer-14.svg'),'Layer-15': require('./Layer-15.svg'),'Layer-16': require('./Layer-16.svg'),'Layer-3': require('./Layer-3.svg'),'Layer-6': require('./Layer-6.svg'),'Layer-8': require('./Layer-8.svg')};

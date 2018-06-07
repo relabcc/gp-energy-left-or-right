@@ -7,15 +7,15 @@ import heavyTtf from './minified/GenJyuuGothicX-Monospace-Heavy.ttf';
 
 injectGlobal`
   @font-face {
-    font-family: 'Gen Jyuu Gothic X Monospace';
-    src: local("Gen Jyuu Gothic X Monospace Black"),
+    font-family: 'GenJyuuGothicX-Monospace-Heavy;
+    src: local("Gen Jyuu Gothic X Monospace Heavy"),
       url(${heavyWoff}),
       url(${heavyTtf});
     font-weight: 900;
   }
 
   @font-face {
-    font-family: 'Gen Jyuu Gothic X Monospace';
+    font-family: 'GenJyuuGothicX-Monospace-Bold';
     src: local("Gen Jyuu Gothic X Monospace Bold"),
       url(${boldWoff}),
       url(${boldTtf});
