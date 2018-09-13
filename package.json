@@ -26,6 +26,7 @@
     "react-burger-menu": "^2.4.4",
     "react-helmet": "^5.2.0",
     "react-icons": "^2.2.7",
+    "react-inlinesvg": "^0.8.1",
     "react-measure": "^2.0.2",
     "react-redux": "^5.0.7",
     "react-toggle": "^4.0.2",

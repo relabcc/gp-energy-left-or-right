@@ -45,5 +45,5 @@ export default merge(constants, {
   containerWidth,
   font,
   duration: 250,
-  headerHeight: [50],
+  headerHeight: 50,
 });

@@ -1,5 +1,4 @@
 import React, { PureComponent } from 'react';
-import { withContentRect } from 'react-measure';
 
 import Box from '../../../components/Box';
 import Flex from '../../../components/Flex';
@@ -18,15 +17,8 @@ const ratio = {
 };
 
 class ScrollableAction extends PureComponent {
-  componentDidMount() {
-    this.props.measure();
-  }
-
   render() {
     const {
-      measure,
-      measureRef,
-      contentRect: { bounds: { height } },
       isMobile,
       loaded,
       animating,
@@ -37,18 +29,18 @@ class ScrollableAction extends PureComponent {
     const Button = isMobile ? ActionButtonMobile : ActionButton;
 
     return (
-      <Box position="relative" height={height || '100%'}>
-        <EmbedSVG innerRef={measureRef} src={src} ratio={ratio[isMobile ? 'mobile' : 'desktop']} {...props} />
+      <Box position="relative">
+        <EmbedSVG src={src} ratio={ratio[isMobile ? 'mobile' : 'desktop']} {...props} />
         <Flex
           position="absolute"
           left={['10%', null, '17.5%']}
           right={['10%', null, '17.5%']}
           top={['65%', null, '78%']}
-          flexWrap="wrap"
+          justify="space-around"
         >
           {actionLinks.map(({ label, link, title }, index) => (
             <Button
-              w={[1 / 2, null, 1 / 4]}
+              w={[1 / 3, null, 1 / 4]}
               href={link}
               title={title}
               target="_blank"
@@ -65,4 +57,4 @@ class ScrollableAction extends PureComponent {
   }
 }
 
-export default withContentRect('bounds')(ScrollableAction);
+export default ScrollableAction;

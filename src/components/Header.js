@@ -21,7 +21,7 @@ const styles = {
     width: '100%',
   },
   bmOverlay: {
-    top: theme.headerHeight[0],
+    top: theme.headerHeight,
     left: 0,
     background: theme.colors.fade.black[50],
   },

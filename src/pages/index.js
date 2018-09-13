@@ -2,7 +2,6 @@ import React, { PureComponent, createElement } from 'react';
 import { compose } from 'redux';
 import { withContentRect } from 'react-measure';
 import TWEEN from '@tweenjs/tween.js';
-import get from 'lodash/get';
 
 import { FullPage, Slide } from '../vendor/FullPage';
 import withHeader from '../hoc/withHeader';
@@ -11,6 +10,7 @@ import withConnect from '../containers/DualBg/withConnect';
 
 import Title from '../components/Title';
 import StepPreloader from '../components/StepPreloader';
+import theme from '../components/ThemeProvider/theme';
 // import Text from '../components/Text';
 // import Flex from '../components/Flex';
 import Box from '../components/Box';
