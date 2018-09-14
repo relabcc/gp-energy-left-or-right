@@ -10,7 +10,6 @@ import withConnect from '../containers/DualBg/withConnect';
 
 import Title from '../components/Title';
 import StepPreloader from '../components/StepPreloader';
-import theme from '../components/ThemeProvider/theme';
 // import Text from '../components/Text';
 // import Flex from '../components/Flex';
 import Box from '../components/Box';

@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import Bars from 'react-icons/lib/fa/bars';
+import Close from 'react-icons/lib/fa/close';
 import { slide as Menu } from 'react-burger-menu';
 
 import theme from './ThemeProvider/theme';
@@ -21,9 +22,9 @@ const styles = {
     width: '100%',
   },
   bmOverlay: {
-    top: theme.headerHeight,
+    top: 0,
     left: 0,
-    background: theme.colors.fade.black[50],
+    background: theme.colors.fade.black[70],
   },
 };
 
@@ -36,17 +37,18 @@ class Header extends PureComponent {
 
   handleStateChange = ({ isOpen }) => this.setState({ isOpen })
 
-  renderLink = ({ link, label }, index) => (
+  renderLink = ({ label, ...a }, index) => (
     <Link
       key={index}
-      href={link}
       color={['white', null, 'gray']}
       f={['1em', null, '0.875em']}
       my={['1em', null, 0]}
+      {...a}
     >{label}</Link>);
 
   render() {
     const { browser } = this.props;
+    const { isOpen } = this.state;
     const isDesktop = browser.greaterThan.sm;
     return (
       <Flex
@@ -75,10 +77,18 @@ class Header extends PureComponent {
         </Flex>
         {!isDesktop && (
           <div>
-            <Box is={Bars} color="cyan" f="1.75em" ml="0.5em" onClick={this.toggleOpen} />
+            <Box
+              is={isOpen ? Close : Bars}
+              position="relative"
+              color={isOpen ? 'white' : 'cyan'}
+              f="1.75em"
+              ml="0.5em"
+              onClick={this.toggleOpen}
+              zIndex={9999}
+            />
             <Menu
               right
-              isOpen={this.state.isOpen}
+              isOpen={isOpen}
               onStateChange={this.handleStateChange}
               customBurgerIcon={false}
               customCrossIcon={false}

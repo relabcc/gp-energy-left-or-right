@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 
+import Link from '../../../components/Link';
 import Box from '../../../components/Box';
 import Flex from '../../../components/Flex';
 import ActionButton from '../../../components/ActionButton';
@@ -38,17 +39,18 @@ class ScrollableAction extends PureComponent {
           top={['65%', null, '78%']}
           justify="space-around"
         >
-          {actionLinks.map(({ label, link, title }, index) => (
-            <Button
-              w={[1 / 3, null, 1 / 4]}
-              href={link}
-              title={title}
-              target="_blank"
+          {actionLinks.map(({ label, title, ...a }, index) => (
+            <Box
               key={index}
               my="0.5em"
+              w={[1 / 3, null, 1 / 4]}
             >
-              {label}
-            </Button>
+              <Link w={1} {...a}>
+                <Button title={title}>
+                  {label}
+                </Button>
+              </Link>
+            </Box>
           ))}
         </Flex>
         <Grain />

@@ -3,7 +3,7 @@ const path = require('path');
 const range = require('lodash/range');
 const compact = require('lodash/compact');
 const map = require('lodash/map');
-const { titles, links } = require('../text');
+const { titles, links, actionLinks, myth } = require('../text');
 
 const nums = range(0, 10);
 
@@ -11,7 +11,9 @@ const getPath = (p) => path.resolve(__dirname, p);
 
 const moreText = compact(titles)
   .concat(map(links, 'label'))
-  .concat('背景同步');
+  .concat(map(myth))
+  .concat(map(actionLinks, 'label'))
+  .concat(map(actionLinks, 'title'));
 
 const fontMinGen = (src, text) => [
   new Fontmin()

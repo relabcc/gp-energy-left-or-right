@@ -41,6 +41,7 @@ const Box = styled(tag)`
   ${borderRadius}
   ${flex}
   ${injectProps('overflow')}
+  ${injectProps('lineHeight')}
   ${injectProps.responsive('transform')}
   ${injectProps('transition')}
   ${injectProps.responsive('opacity', { alias: 'alpha' })}
