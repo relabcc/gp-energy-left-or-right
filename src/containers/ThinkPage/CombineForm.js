@@ -2,26 +2,35 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { withFormik } from 'formik';
-import { object, number } from 'yup';
+import { object, number, boolean, string } from 'yup';
 
 import Slider from '../../components/Slider';
 import Box from '../../components/Box';
 import Flex from '../../components/Flex';
 import Text from '../../components/Text';
-import Button from '../../components/Button';
+import Border from '../../components/Border';
+import Checkbox from '../../components/Checkbox';
+import Input from '../../components/Input';
+
+import ButtonSvg from './ButtonSvg';
 
 const validationSchema = object({
   helpful: number().required(),
+  wantEmail: boolean(),
+  email: string().email('E-mail格式有問題喔').when('wantEmail', (wantEmail, schema) => wantEmail
+    ? schema.required('E-mail為必填欄位')
+    : schema),
 });
 
 // Injected Form
 const InnerForm = ({
   values,
+  touched,
+  errors,
   handleChange,
   handleBlur,
   handleSubmit,
   isSubmitting,
-  submitted,
 }) => {
   // 表單內容
   return (
@@ -34,26 +43,51 @@ const InnerForm = ({
           你覺得我們挑出的這條線索，對你想像<strong>「能源轉型」</strong>有幫助嗎？
         </Text>
       </Box>
-      {!submitted && (
-        <Flex
-          my="1.5em"
-          // justify="center"
-        >
-          <Box flex={[1, null, 'none']} w={[null, null, '80%', '50%']}>
-            <Slider
-              name="helpful"
-              minLabel="沒幫助"
-              maxLabel="有幫助"
-              value={values.helpful}
+      <Flex
+        my="1.5em"
+        justify="center"
+      >
+        <Box flex={[1, null, 'none']} w={[null, null, '80%', '50%']}>
+          <Slider
+            name="helpful"
+            minLabel="沒幫助"
+            maxLabel="有幫助"
+            value={values.helpful}
+            onChange={handleChange}
+            onBlur={handleBlur}
+          />
+        </Box>
+      </Flex>
+      <Border borderBottom="2px solid" borderColor="lightGray" />
+      <Flex py="1.5em">
+        <Box w={1 / 2}>
+          <Checkbox
+            name="wantEmail"
+            onChange={handleChange}
+            onBlur={handleBlur}
+          >
+            <Text fontWeight="bold">我願意收到能源轉型計畫相關信息</Text>
+          </Checkbox>
+        </Box>
+        {values.wantEmail && (
+          <Box w={1 / 2}>
+            <Input
+              name="email"
+              values={values.email}
               onChange={handleChange}
               onBlur={handleBlur}
+              error={touched.email && errors.email}
+              label="E-mail:"
             />
           </Box>
-          <Box ml="2em" w="6em">
-            <Button type="submit" disabled={isSubmitting}>送出</Button>
-          </Box>
-        </Flex>
-      )}
+        )}
+      </Flex>
+      <ButtonSvg
+        w="15em"
+        mx="auto"
+        disabled={isSubmitting}
+        type="submit"
+      />
     </Box>
   );
 };
@@ -71,7 +105,7 @@ InnerForm.propTypes = {
   formSubmitted: PropTypes.bool,
 };
 
-const ScoreSurvey = withFormik({
+const CombineForm = withFormik({
   validationSchema,
   initialValues: {
     helpful: 50,
@@ -83,7 +117,7 @@ const ScoreSurvey = withFormik({
   }) => {
     console.log(values);
     setSubmitting(true);
-    props.onSubmit(values.helpful)
+    props.onSubmit(values.helpful, values.email)
       .then(() => setSubmitting(false))
       .catch((error) => {
         console.log(error);
@@ -92,4 +126,4 @@ const ScoreSurvey = withFormik({
   },
 })(InnerForm);
 
-export default ScoreSurvey;
+export default CombineForm;

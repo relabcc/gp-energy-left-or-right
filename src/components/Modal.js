@@ -3,7 +3,9 @@ import ReactModal from 'react-modal';
 import PropTypes from 'prop-types';
 import scroll from 'window-scroll';
 
-ReactModal.setAppElement('#___gatsby');
+if (typeof window !== 'undefined') {
+  ReactModal.setAppElement('#___gatsby');
+}
 
 const customStyles = {
   overlay: {
@@ -32,10 +34,6 @@ export default class Modal extends PureComponent {
         this.unfreeze();
       }
     }
-  }
-
-  componentWillUnmount() {
-    console.log('unmount');
   }
 
   freeze = () => {

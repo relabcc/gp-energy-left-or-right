@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import MdClose from 'react-icons/lib/md/close';
+// import MdClose from 'react-icons/lib/md/close';
 
 import Box from '../../../components/Box';
 import Flex from '../../../components/Flex';
 import Text from '../../../components/Text';
 import Link from '../../../components/Link';
-import Circle from '../../../components/Circle';
+// import Circle from '../../../components/Circle';
 import Modal from '../../../components/Modal';
 import Border from '../../../components/Border';
 import BackgroundImage from '../../../components/BackgroundImage';
@@ -21,30 +21,28 @@ import heart from './heart.svg';
 const linkPics = [
   {
     Pic: Transform,
-    to: '/',
+    href: '/',
   },
   {
     Pic: Myth,
-    to: '/',
+    href: '/myth',
   },
   {
     Pic: Info,
-    to: '/',
+    href: 'https://relabcc.github.io/gp-monopoly/',
   },
   {
     Pic: Clue,
-    to: '/',
   },
 ];
 
-const OpenModal = ({ isOpen, onRequestClose, ...props }) => (
+const OpenModal = ({ isOpen, ...props }) => (
   <Modal
     isOpen={isOpen}
     position="relative"
-    onRequestClose={onRequestClose}
     {...props}
   >
-    <Box position="absolute" right="3%" top="3%">
+    {/* <Box position="absolute" right="3%" top="3%">
       <Circle
         border="1px solid"
         w="3rem"
@@ -53,7 +51,7 @@ const OpenModal = ({ isOpen, onRequestClose, ...props }) => (
       >
         <MdClose />
       </Circle>
-    </Box>
+    </Box> */}
     <Flex mx="10%" mt="5em" justifyContent="center">
       <Box w="5em">
         <BackgroundImage src={heart} ratio={1} />
