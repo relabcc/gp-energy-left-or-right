@@ -1,5 +1,6 @@
 const glob = require('glob');
 const fs = require('fs');
+const path = require('path');
 const svgson = require('svgson');
 const get = require('lodash/get');
 const set = require('lodash/set');
@@ -49,7 +50,7 @@ const hanldeText = (fontFamilyNodes) => {
 
 const handleFiles = (files) => files.reduce((list, file) => list.concat(findNodeByAttr('fontFamily', file.childs)), []);
 
-glob('../containers/Sections/*/*.svg', (er, files) => {
+glob(path.resolve(__dirname, '../containers/Sections/*/*.svg'), (er, files) => {
   console.log(files);
   Promise.all(files.map(handleRead))
     .then(handleFiles)

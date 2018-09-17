@@ -11,4 +11,8 @@ const Image = styled(tag.img)`
   ${width}
 `;
 
+Image.defaultProps = {
+  w: 1,
+};
+
 export default Image;

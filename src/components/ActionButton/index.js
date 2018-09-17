@@ -17,9 +17,6 @@ class ActionButton extends PureComponent {
 
   render() {
     const {
-      href,
-      onClick,
-      target,
       title,
       children,
       measureRef,
@@ -34,10 +31,6 @@ class ActionButton extends PureComponent {
             position="relative"
             align="center"
             display="block"
-            href={href}
-            onClick={onClick}
-            target={target}
-            is="a"
             innerRef={measureRef}
             f={(width / 135) * 15}
             color="orange"
@@ -76,8 +69,6 @@ class ActionButton extends PureComponent {
 }
 
 ActionButton.propTypes = {
-  href: PropTypes.string,
-  target: PropTypes.string,
   title: PropTypes.string,
   onClick: PropTypes.func,
   children: PropTypes.node,

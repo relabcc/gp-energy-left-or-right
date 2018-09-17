@@ -26,6 +26,6 @@ injectGlobal`
 
 export default (props) => (
   <ThemeProvider theme={theme}>
-    <Box color="text" bg="blue" f={[14, null, 16]} {...props} />
+    <Box color="text" f={[14, null, 16]} {...props} />
   </ThemeProvider>
 );

@@ -80,6 +80,7 @@ export default class FullPage extends React.Component {
     window.removeEventListener('resize', this.onResize);
   }
 
+
   onResize = (restore) => {
     if (this._isScrollPending) {
       this.deplayedOnresize = true;
@@ -87,13 +88,14 @@ export default class FullPage extends React.Component {
     }
     this._slides = [];
 
+    const { height } = this._container.parentNode.getBoundingClientRect();
     for (let i = 0; i < this._slidesCount; i++) {
-      this._slides.push(window.innerHeight * i);
+      this._slides.push(height * i);
     }
     this.checkChildrenOverflow();
 
     this.setState({
-      height: window.innerHeight,
+      height,
     });
     this.deplayedOnresize = false;
     if (restore) this.requestSrcollAdjust();
@@ -168,7 +170,7 @@ export default class FullPage extends React.Component {
           slide.style.overflowY = 'scroll';
         } else {
           slide.style.touchAction = 'none';
-          slide.style.overflowY = 'unset';
+          slide.style.overflowY = 'auto';
         }
         /* eslint-enable no-param-reassign */
       }

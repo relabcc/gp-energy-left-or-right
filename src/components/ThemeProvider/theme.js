@@ -11,7 +11,7 @@ export const containerWidth = [36, 46, 58].map(emToPx);
 const generateFade = (r, g, b) => range(10, 100, 10)
   .reduce((fade, opacity) => merge(fade, { [opacity]: `rgba(${[r, g, b, opacity / 100].join()})` }), {});
 
-const font = 'GenJyuuGothicX-Monospace-Bold, sans-serif';
+const font = '"PingFang TC", "HeiTi TC", "Microsoft JhengHei", sans-serif';
 
 const white = '#fff';
 const black = '#000';
@@ -40,10 +40,16 @@ export default merge(constants, {
       white: generateFade(255, 255, 255),
       black: generateFade(0, 0, 0),
     },
+    input: {
+      main: darkBlue,
+      active: cyan,
+      error: darkRed,
+      disabled: gray,
+    },
   },
   breakpoints,
   containerWidth,
   font,
   duration: 250,
-  headerHeight: [50],
+  headerHeight: 50,
 });
