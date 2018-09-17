@@ -123,7 +123,15 @@ class Index extends PureComponent {
     const { active, animating, isDesktop, firstLoaded } = this.state;
     const title = titles[active];
     return (
-      <Box position="relative" height="100vh" zIndex={0} innerRef={measureRef} {...props}>
+      <Box
+        fontFamily="GenJyuuGothicX-Monospace-Bold"
+        position="relative"
+        height="100vh"
+        zIndex={0}
+        innerRef={measureRef}
+        bg="blue"
+        {...props}
+      >
         <Box height="100%" opacity={Number(firstLoaded)} transition="opacity 0.5s">
           <FullPage
             beforeChange={this.onChangeStart}

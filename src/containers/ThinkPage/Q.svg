@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #27c1ae;
+      }
+
+      .cls-2 {
+        fill: #fff;
+        font-size: 52px;
+        font-family: YuGothicUI-Bold, Yu Gothic UI;
+        font-weight: 700;
+      }
+    </style>
+  </defs>
+  <g id="Group_30" data-name="Group 30" transform="translate(-588 -124)">
+    <circle id="Ellipse_24" data-name="Ellipse 24" class="cls-1" cx="40" cy="40" r="40" transform="translate(588 124)"/>
+    <text id="_" data-name="Ｑ" class="cls-2" transform="translate(602.857 181.143)"><tspan x="0" y="0">Ｑ</tspan></text>
+  </g>
+</svg>
