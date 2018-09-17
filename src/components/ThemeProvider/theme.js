@@ -28,7 +28,7 @@ export default merge(constants, {
     white,
     black,
     text: darkBlue,
-    primary: orange,
+    primary: cyan,
     secondary: darkRed,
     lightGray,
     gray,
