@@ -1,44 +1,59 @@
 const glob = require('glob');
 const fs = require('fs');
-const merge = require('lodash/merge');
-const fromPairs = require('lodash/fromPairs');
+const svgson = require('svgson');
+const get = require('lodash/get');
+const set = require('lodash/set');
 
 const fontMin = require('./fontMin');
 
-const textParser = (txt) => {
-  const re = /txt\|([^[]+)\[([^\]]+)/g;
-  const res = re.exec(txt);
-  const [, text, props] = res;
-  const { fontWeight } = fromPairs(props.split(',').map((p) => p.split(':')));
-  return merge({ fontWeight: 700 }, {
-    text,
-    fontWeight,
-  });
-};
+const variations = [
+  'Heavy',
+  'Bold',
+];
 
 const handleRead = (path) => new Promise((res, rej) => {
   fs.readFile(path, (err, data) => {
     if (err) rej(err);
-    res(JSON.parse(data));
+    svgson(data, {}, res);
   });
 });
 
-const handleLayer = (all, { name, layername }) => {
-  if (layername.startsWith('txt')) {
-    const { text, fontWeight } = textParser(layername);
-    all[fontWeight].push(text);
+const findNodeByAttr = (attrName, nodeList) => nodeList.reduce((list, node) => {
+  if (get(node, ['attrs', attrName])) {
+    return list.concat(node);
+  } else if (node.childs) {
+    return list.concat(findNodeByAttr(attrName, node.childs));
   }
-  return all;
+  return list;
+}, []);
+
+const extractText = (nodeList) => nodeList.reduce((list, node) => {
+  if (node.text) {
+    return list.concat(node.text);
+  } else if (node.childs) {
+    return list.concat(extractText(node.childs));
+  }
+  return list;
+}, []);
+
+const hanldeText = (fontFamilyNodes) => {
+  const fontWeights = fontFamilyNodes.reduce((weights, node) => {
+    const weight = variations.find((key) => node.attrs.fontFamily.includes(key));
+    if (weight) {
+      weights[weight] = weights[weight].concat(extractText(node.childs));
+    }
+    return weights;
+  }, variations.reduce((obj, key) => set(obj, key, []), {}));
+  return fontWeights;
 };
 
-const handleFiles = (files) => files.reduce((all, { layers }) => layers.reduce(handleLayer, all), {
-  700: [],
-  900: [],
-});
+const handleFiles = (files) => files.reduce((list, file) => list.concat(findNodeByAttr('fontFamily', file.childs)), []);
 
-glob('../ai-canvas/*/data.json', (er, files) => {
+glob('../containers/Sections/*/*.svg', (er, files) => {
+  console.log(files);
   Promise.all(files.map(handleRead))
     .then(handleFiles)
+    .then(hanldeText)
     .then(fontMin)
     .then(process.exit)
     .catch((err) => {

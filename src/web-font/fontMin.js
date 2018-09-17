@@ -25,11 +25,11 @@ const fontMinGen = (src, text) => [
 module.exports = (charMap) => {
   const fontminBold = fontMinGen(
     './source/GenJyuuGothicX-Monospace-Bold.ttf',
-    charMap[700].concat(nums).concat(moreText).join('')
+    charMap.Bold.concat(nums).concat(moreText).join('')
   );
   const fontminHeavy = fontMinGen(
     './source/GenJyuuGothicX-Monospace-Heavy.ttf',
-    charMap[900].concat(nums).join('')
+    charMap.Heavy.concat(nums).join('')
   );
 
   return Promise.all([...fontminBold, ...fontminHeavy].map((task) => new Promise((res, rej) => {
