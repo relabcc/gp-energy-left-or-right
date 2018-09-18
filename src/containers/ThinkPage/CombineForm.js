@@ -5,21 +5,17 @@ import { withFormik } from 'formik';
 import { object, number, boolean, string } from 'yup';
 
 import Slider from '../../components/Slider';
-import Border from '../../components/Border';
-import Flex from '../../components/Flex';
 import Box from '../../components/Box';
-import Input from '../../components/Input';
+import Flex from '../../components/Flex';
 import Text from '../../components/Text';
+import Border from '../../components/Border';
 import Checkbox from '../../components/Checkbox';
-import BackgroundImage from '../../components/BackgroundImage';
+import Input from '../../components/Input';
 
 import ButtonSvg from './ButtonSvg';
 
-import Q from './Q.svg';
-import flowerdecoration from './flowerdecoration.svg';
-
 const validationSchema = object({
-  helpful: number(),
+  helpful: number().required(),
   wantEmail: boolean(),
   email: string().email('E-mail格式有問題喔').when('wantEmail', (wantEmail, schema) => wantEmail
     ? schema.required('E-mail為必填欄位')
@@ -29,45 +25,39 @@ const validationSchema = object({
 // Injected Form
 const InnerForm = ({
   values,
-  errors,
   touched,
+  errors,
   handleChange,
   handleBlur,
   handleSubmit,
   isSubmitting,
-  scene,
 }) => {
   // 表單內容
   return (
     <Box is="form" onSubmit={handleSubmit} position="relative">
-      <Flex align="left">
-        <Box w="3.75em">
-          <BackgroundImage src={Q} />
-        </Box>
-        <Box pl="1.25em" pb="1em">
-          <Text.h2 color="cyan">{scene.title}</Text.h2>
-          <Box fontWeight={600}>{scene.sub}</Box>
-        </Box>
-      </Flex>
-      <Border borderBottom="2px solid" borderColor="cyan" />
       <Box py="1em">
         <Text my="0.5em">
-          這條線索來自綠色和平研究報告和我們查詢的無數論文資料以及《歐洲的心臟》與《能源大騙局》。
+          這條線索來自綠色和平的研究報告和我們查詢的無數論文資料以及《歐洲的心臟》與《能源大騙局》兩本著作。
         </Text>
         <Text my="0.5em">
-          你覺得我們挑出的這條線索，對你想像能源轉型有幫助嗎？
+          你覺得我們挑出的這條線索，對你想像<strong>「能源轉型」</strong>有幫助嗎？
         </Text>
       </Box>
-      <Slider
-        name="helpful"
-        px="25%"
-        pb="1.5em"
-        minLabel="沒幫助"
-        maxLabel="有幫助"
-        value={values.helpful}
-        onChange={handleChange}
-        onBlur={handleBlur}
-      />
+      <Flex
+        my="1.5em"
+        justify="center"
+      >
+        <Box flex={[1, null, 'none']} w={[null, null, '80%', '50%']}>
+          <Slider
+            name="helpful"
+            minLabel="沒幫助"
+            maxLabel="有幫助"
+            value={values.helpful}
+            onChange={handleChange}
+            onBlur={handleBlur}
+          />
+        </Box>
+      </Flex>
       <Border borderBottom="2px solid" borderColor="lightGray" />
       <Flex py="1.5em">
         <Box w={1 / 2}>
@@ -95,12 +85,9 @@ const InnerForm = ({
       <ButtonSvg
         w="15em"
         mx="auto"
-        disabled={isSubmitting || !touched.helpful}
+        disabled={isSubmitting}
         type="submit"
       />
-      <Box position="absolute" right="0" bottom="0" w="25%" transform="translateY(25%)">
-        <BackgroundImage src={flowerdecoration} ratio={107 / 206.227} />
-      </Box>
     </Box>
   );
 };
@@ -118,19 +105,25 @@ InnerForm.propTypes = {
   formSubmitted: PropTypes.bool,
 };
 
-const MyForm = withFormik({
+const CombineForm = withFormik({
   validationSchema,
   initialValues: {
-    email: '',
     helpful: 50,
   },
   handleSubmit: (values, {
     setSubmitting,
+    setStatus,
     props,
   }) => {
     console.log(values);
     setSubmitting(true);
+    props.onSubmit(values.helpful, values.email)
+      .then(() => setSubmitting(false))
+      .catch((error) => {
+        console.log(error);
+        setSubmitting(false);
+      });
   },
 })(InnerForm);
 
-export default MyForm;
+export default CombineForm;
