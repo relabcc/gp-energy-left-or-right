@@ -20,7 +20,7 @@ class Myth extends PureComponent {
       <Flex height="100vh" align="center" bg="white" {...props}>
         <Box w={1}>
           <Text.h1>{myth.title}</Text.h1>
-          <Text.h3>{myth.sub}</Text.h3>
+          <Text.h4 my="0.25em">{myth.sub}</Text.h4>
           <MythSlick my="2em" />
         </Box>
       </Flex>
