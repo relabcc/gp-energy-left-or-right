@@ -9,10 +9,10 @@ import BackgroundImage from '../../components/BackgroundImage';
 import theme from '../../components/ThemeProvider/theme';
 
 import scenes from '../../scenes';
-import covers from '../../scenes/Covers';
+import covers from '../../scenes/covers';
 import { WithHover } from '../../hoc/withHover';
 
-const Story = ({ isHovered, src, ...props }) => (
+const Story = ({ isHovered, src, index, ...props }) => (
   <Box overflow="hidden" position="relative" {...props}>
     <BackgroundImage
       src={src}
@@ -38,9 +38,7 @@ const Story = ({ isHovered, src, ...props }) => (
         transform="translate(-50%, -20%)"
       >
         <Text f="5em" mb="1.5rem">Q</Text>
-        {scenes.map((scene, index) => (
-          <Text color="white">{scene.title}</Text>
-        ))}
+        <Text color="white">{scenes[index].title}</Text>
       </Box>
     </Box>
   </Box>
@@ -63,7 +61,7 @@ class StoriesGrid extends React.PureComponent {
       <Flex pt={theme.headerHeight} mx="5em" flexWrap="wrap" {...props}>
         {covers.map((cover, index) =>
           <Box p="1em" w={[1, null, 1 / 3]} key={index}>
-            <StorywithHover src={cover} onClick={this.handleOpen} />
+            <StorywithHover src={cover} onClick={this.handleOpen} index={index} />
           </Box>
         )}
         <OpenModal isOpen={isOpen} onClick={this.handleClose} />

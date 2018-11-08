@@ -16,7 +16,7 @@ const QuestionTitle = ({ scene }) => (
       </Box>
       <Box flex={1} pl="1.25em">
         <Text.h2 f="1.75em" color="cyan">{scene.title}</Text.h2>
-        <Box f="1.25em" my="0.25rem">{scene.sub}</Box>
+        <Box f="1.25em" my="0.25rem">{scene.sub}的時候想一想</Box>
       </Box>
     </Flex>
     <Border mt="0.5em" borderBottom="2px solid" borderColor="cyan" />

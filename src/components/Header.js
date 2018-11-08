@@ -60,7 +60,9 @@ class Header extends PureComponent {
         w={1}
         zIndex={99}
       >
+        <Link to="/">
         <Logo w={175} color="cyan" />
+        </Link>
         <Box flex={1} />
         {isDesktop && (
           <Flex align="center">

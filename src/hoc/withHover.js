@@ -1,5 +1,4 @@
-import { Component } from 'react';
-import { h } from 'react-hyperscript-helpers';
+import { Component, createElement } from 'react';
 
 export function WithHover(WrappedComponent) {
   return class extends Component {
@@ -16,7 +15,7 @@ export function WithHover(WrappedComponent) {
     }
 
     render() {
-      return h(WrappedComponent, {
+      return createElement(WrappedComponent, {
         ...this.props,
         isHovered: this.state.isHovered,
         onMouseEnter: this.onMouseEnter,
