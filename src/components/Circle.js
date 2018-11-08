@@ -2,11 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Box from './Box';
+import Border from './Border';
 
 const Circle = ({ children, border, borderColor, bg, is, ...props }) => (
   <Box {...props}>
     <Box position="relative" pt="100%">
-      <Box
+      <Border
         position="absolute"
         top="0"
         left="0"
@@ -29,7 +30,7 @@ const Circle = ({ children, border, borderColor, bg, is, ...props }) => (
         >
           {children}
         </Box>
-      </Box>
+      </Border>
     </Box>
   </Box>
 );

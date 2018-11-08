@@ -10,9 +10,8 @@ import StoriesGrid from '../containers/StoriesGrid';
 import withHeader from '../hoc/withHeader'
 
 class Stories extends React.PureComponent {
-  state = {
-    isOpen: false,
-  }
+  state = {}
+
   render() {
     return (
       <Box {...this.props} align="center">

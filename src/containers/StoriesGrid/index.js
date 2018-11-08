@@ -1,5 +1,7 @@
 import React from 'react';
 
+import OpenModal from './OpenModal';
+
 import Box from '../../components/Box';
 import Flex from '../../components/Flex';
 import Text from '../../components/Text';
@@ -35,7 +37,7 @@ const Story = ({ isHovered, src, ...props }) => (
         color="cyan"
         transform="translate(-50%, -20%)"
       >
-        <Text f="5em" mb="1rem">Q</Text>
+        <Text f="5em" mb="1.5rem">Q</Text>
         {scenes.map((scene, index) => (
           <Text color="white">{scene.title}</Text>
         ))}
@@ -46,14 +48,28 @@ const Story = ({ isHovered, src, ...props }) => (
 
 const StorywithHover = WithHover(Story);
 
-const StoriesGrid = (props) => (
-  <Flex pt={theme.headerHeight} mx="5em" flexWrap="wrap" {...props}>
-    {covers.map((cover, index) =>
-      <Box p="1em" w={[1, null, 1 / 3]} key={index}>
-        <StorywithHover src={cover} />
-      </Box>
-    )}
-  </Flex>
-);
+class StoriesGrid extends React.PureComponent {
+  state = {
+    isOpen: false,
+  }
+
+  handleOpen = () => this.setState({ isOpen: true });
+  handleClose = () => this.setState({ isOpen: false });
+
+  render() {
+    const { onClick, ...props } = this.props;
+    const { isOpen } = this.state;
+    return (
+      <Flex pt={theme.headerHeight} mx="5em" flexWrap="wrap" {...props}>
+        {covers.map((cover, index) =>
+          <Box p="1em" w={[1, null, 1 / 3]} key={index}>
+            <StorywithHover src={cover} onClick={this.handleOpen} />
+          </Box>
+        )}
+        <OpenModal isOpen={isOpen} onClick={this.handleClose} />
+      </Flex>
+    );
+  }
+}
 
 export default StoriesGrid;
