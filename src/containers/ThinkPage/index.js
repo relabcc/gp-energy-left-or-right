@@ -98,7 +98,7 @@ class ThinkPage extends React.PureComponent {
     return (
       <Box>
         {!noHeader && <Header />}
-        <Box pt={theme.headerHeight}>
+        <Box pt={[0,0,theme.headerHeight]}>
           {browser.greaterThan.sm && (
             <Flex p="2em">
               <Box w={1 / 3}>

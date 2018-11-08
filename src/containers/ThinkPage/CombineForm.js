@@ -60,9 +60,9 @@ const InnerForm = ({
         </Box>
       </Flex>
       <Border borderBottom="2px solid" borderColor="lightGray" />
-      <Flex py="1.5em">
+      <Flex py="1.5em" flexDirection={['column', null, 'row']}>
         {!noEmail && (
-        <Box w={1 / 2}>
+        <Box w={[1, null, 1 / 2]} my="0.5em">
           <Checkbox
             name="wantEmail"
             onChange={handleChange}
@@ -73,7 +73,7 @@ const InnerForm = ({
         </Box>
         )}
         {values.wantEmail && (
-          <Box w={1 / 2}>
+          <Box w={1 / 2} my="0.5em">
             <Input
               name="email"
               values={values.email}

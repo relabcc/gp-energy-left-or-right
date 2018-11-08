@@ -13,7 +13,7 @@ const customStyles = {
     zIndex: 99,
   },
   content: {
-    top: 'calc(50% + 1em)',
+    top: '50%',
     left: '50%',
     right: 'auto',
     bottom: 'auto',
@@ -21,7 +21,9 @@ const customStyles = {
     transform: 'translate(-50%, -50%)',
     padding: 0,
     border: 'none',
-    overflow: 'visible',
+    overflow: 'auto',
+    maxHeight: '100vh',
+    borderRadius: '0',
   },
 };
 

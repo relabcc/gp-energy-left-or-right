@@ -19,7 +19,7 @@ class OpenModal extends React.PureComponent {
         position="relative"
         {...props}
       >
-        <Box position="absolute" right="3%" top="3%" onClick={onClick}>
+        <Box position="absolute" zIndex={1} right="3%" top="3%" onClick={onClick}>
           <Circle
             border="1px solid black"
             w="3rem"
