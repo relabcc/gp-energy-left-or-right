@@ -4,10 +4,14 @@
   "license": "MIT",
   "scripts": {
     "start": "npm run develop",
-    "develop": "gatsby develop",
+    "cleanup": "rimraf public",
+    "prebuild": "npm run cleanup",
     "build": "gatsby build",
+    "develop": "gatsby develop",
+    "preserve": "npm run build",
     "serve": "gatsby serve",
-    "deploy": "gatsby build --prefix-paths && gh-pages -d public",
+    "predeploy": "npm run build -- --prefix-paths",
+    "deploy": "gh-pages -d public",
     "storybook": "start-storybook -p 9001 -c .storybook"
   },
   "dependencies": {
@@ -39,7 +43,7 @@
     "redux": "^4.0.0",
     "redux-actions": "^2.3.0",
     "redux-immutable": "^4.0.0",
-    "redux-responsive": "^4.3.7",
+    "redux-responsive": "3.2.2",
     "sanitize.css": "^5.0.0",
     "slick-carousel": "^1.8.1",
     "styled-components": "^3.2.6",
@@ -61,6 +65,7 @@
     "eslint-plugin-react": "^7.1.0",
     "fontmin": "^0.9.6",
     "gh-pages": "^1.1.0",
+    "rimraf": "^2.6.2",
     "svgson": "^2.1.1"
   }
 }

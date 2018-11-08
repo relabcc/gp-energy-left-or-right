@@ -34,6 +34,23 @@ class MythSlick extends PureComponent {
     currentSlide: 0
   }
 
+  componentDidMount() {
+    if (typeof document !== 'undefined') {
+      this.keyListener = document.addEventListener('keyup', this.handleKeyUp);
+    }
+  }
+
+  componentWillUnmount() {
+    if (this.keyListener) {
+      document.removeEventListener('keyup', this.handleKeyUp);
+    }
+  }
+
+  handleKeyUp = ({ keyCode }) => {
+    if (keyCode === 37) this.slickRef.slickPrev();
+    if (keyCode === 39) this.slickRef.slickNext();
+  }
+
   handleChange = (ls, currentSlide) => this.setState({ currentSlide })
 
   render() {
@@ -46,6 +63,7 @@ class MythSlick extends PureComponent {
             <Slider
               ref={(slick) => { this.slickRef = slick; }}
               onInit={() => this.setState({ loaded: true })}
+              accessibility={false}
               slidesToShow={3}
               arrows={false}
               centerMode
