@@ -51,20 +51,22 @@ class StoriesGrid extends React.PureComponent {
     isOpen: false,
   }
 
-  handleOpen = () => this.setState({ isOpen: true });
+  handleOpen = (value) => {
+    this.setState({ isOpen: true, id: value });
+  }
   handleClose = () => this.setState({ isOpen: false });
 
   render() {
     const { onClick, ...props } = this.props;
-    const { isOpen } = this.state;
+    const { isOpen, id } = this.state;
     return (
       <Flex pt={theme.headerHeight} mx="5em" flexWrap="wrap" {...props}>
         {covers.map((cover, index) =>
           <Box p="1em" w={[1, null, 1 / 3]} key={index}>
-            <StorywithHover src={cover} onClick={this.handleOpen} index={index} />
+            <StorywithHover src={cover} onClick={() => this.handleOpen(index)} index={index} />
           </Box>
         )}
-        <OpenModal isOpen={isOpen} onClick={this.handleClose} />
+        <OpenModal isOpen={isOpen} Id={id} onClick={this.handleClose} />
       </Flex>
     );
   }

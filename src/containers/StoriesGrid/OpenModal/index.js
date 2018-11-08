@@ -12,7 +12,7 @@ class OpenModal extends React.PureComponent {
   state = {}
 
   render() {
-    const { onClick, isOpen, ...props } = this.props;
+    const { onClick, isOpen, Id, ...props } = this.props;
     return (
       <Modal
         isOpen={isOpen}
@@ -28,7 +28,7 @@ class OpenModal extends React.PureComponent {
             <MdClose />
           </Circle>
         </Box>
-        <ThinkPage pathContext={{ id: 1 }} noHeader noEmail />
+        <ThinkPage pathContext={{ id: Id + 1 }} noHeader noEmail />
       </Modal>
     );
   }
