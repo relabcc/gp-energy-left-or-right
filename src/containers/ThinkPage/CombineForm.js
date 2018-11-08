@@ -31,6 +31,7 @@ const InnerForm = ({
   handleBlur,
   handleSubmit,
   isSubmitting,
+  noEmail,
 }) => {
   // 表單內容
   return (
@@ -60,6 +61,7 @@ const InnerForm = ({
       </Flex>
       <Border borderBottom="2px solid" borderColor="lightGray" />
       <Flex py="1.5em">
+        {!noEmail && (
         <Box w={1 / 2}>
           <Checkbox
             name="wantEmail"
@@ -69,6 +71,7 @@ const InnerForm = ({
             <Text fontWeight="bold">我願意收到能源轉型計畫相關信息</Text>
           </Checkbox>
         </Box>
+        )}
         {values.wantEmail && (
           <Box w={1 / 2}>
             <Input

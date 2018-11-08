@@ -65,7 +65,7 @@ class ThinkPage extends React.PureComponent {
       .then(() => email ? this.handleEmailSubmit(email) : this.handleOpen());
 
   render() {
-    const { browser } = this.props;
+    const { browser, noHeader, noEmail } = this.props;
     const { isOpen, scoreAnswered } = this.state;
     const scene = scenes[this.sceneIndex - 1];
     const image = <Image src={pics[this.sceneIndex - 1]} />;
@@ -88,7 +88,7 @@ class ThinkPage extends React.PureComponent {
       <Box>
         <QuestionTitle scene={scene} />
         {this.twoStep ? form : (
-          <CombineForm onSubmit={this.handleSubmit} />
+          <CombineForm noEmail={noEmail} onSubmit={this.handleSubmit} />
         )}
         <Box ml="auto" w="25%">
           <BackgroundImage src={flowerdecoration} ratio={107 / 206.227} />
@@ -97,7 +97,7 @@ class ThinkPage extends React.PureComponent {
     );
     return (
       <Box>
-        <Header />
+        {!noHeader && <Header />}
         <Box pt={theme.headerHeight}>
           {browser.greaterThan.sm && (
             <Flex p="2em">
