@@ -38,11 +38,16 @@ export default class Modal extends PureComponent {
     }
   }
 
+  componentWillUnmount() {
+    if (this.isFreeze) this.unfreeze();
+  }
+
   freeze = () => {
     this.scrollY = scroll.getScrollY();
     setTimeout(() => {
       document.body.style.setProperty('position', 'fixed');
       document.body.style.setProperty('top', `-${this.scrollY}px`);
+      this.isFreeze = true;
     });
   }
 
@@ -51,6 +56,7 @@ export default class Modal extends PureComponent {
     document.body.style.setProperty('top', 'auto');
     setTimeout(() => {
       window.scrollTo(0, this.scrollY);
+      this.isFreeze = false;
     });
   }
 
