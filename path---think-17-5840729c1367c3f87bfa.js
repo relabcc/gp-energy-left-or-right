@@ -1,2 +1,2 @@
-webpackJsonp([97543219760917],{1121:function(t,e){t.exports={pathContext:{id:17,index:16,title:"食物浪費令人不捨，但你知道非電過程也浪費很多電嗎？",sub:"倒廚餘"}}}});
+webpackJsonp([97543219760917],{1117:function(t,e){t.exports={pathContext:{id:17,index:16,title:"食物浪費令人不捨，但你知道非電過程也浪費很多電嗎？",sub:"倒廚餘"}}}});
 //# sourceMappingURL=path---think-17-5840729c1367c3f87bfa.js.map
