@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import { withPrefix } from 'gatsby-link';
 
 import FaAngleLeft from 'react-icons/lib/fa/angle-left';
 import FaAngleRight from 'react-icons/lib/fa/angle-right';
@@ -30,8 +31,11 @@ const ArrowButton = ({ left, right, transform, ...props }) => (
 );
 
 class MythSlick extends PureComponent {
-  state = {
-    currentSlide: 0
+  constructor(props) {
+    super(props);
+    this.state = {
+      currentSlide: props.pathContext.index || 0,
+    };
   }
 
   componentDidMount() {
@@ -51,11 +55,14 @@ class MythSlick extends PureComponent {
     if (keyCode === 39) this.slickRef.slickNext();
   }
 
-  handleChange = (ls, currentSlide) => this.setState({ currentSlide })
+  handleChange = (ls, currentSlide) => {
+    this.setState({ currentSlide });
+    window.history.pushState(null, null, window.location.origin + withPrefix(`myth/${currentSlide + 1}`));
+  }
 
   render() {
     const { currentSlide, loaded } = this.state;
-    const { browser, ...props } = this.props;
+    const { browser, pathContext, ...props } = this.props;
     const isDesktop = browser.greaterThan.sm;
     const arrowPos = ['1em', null, 'calc((160% - 72px) / 6 * 0.975)'];
     return (
@@ -64,6 +71,7 @@ class MythSlick extends PureComponent {
           <Box w={[1, null, '160%']} ml={[0, 0, '-30%']}>
             <Slider
               ref={(slick) => { this.slickRef = slick; }}
+              initialSlide={currentSlide}
               onInit={() => this.setState({ loaded: true })}
               accessibility={false}
               slidesToShow={3}
@@ -132,4 +140,5 @@ class MythSlick extends PureComponent {
     );
   }
 }
+
 export default withResponsive(MythSlick);

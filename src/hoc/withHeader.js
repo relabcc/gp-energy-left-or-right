@@ -7,7 +7,7 @@ export default (Page) => {
   const WithHeader = (props) => (
     <div>
       <Header data={props.data} />
-      <Page pt={theme.headerHeight} />
+      <Page pt={theme.headerHeight} {...props} />
     </div>
   );
 
