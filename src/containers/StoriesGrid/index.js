@@ -17,6 +17,7 @@ import scenes from '../../scenes';
 import covers from '../../scenes/covers';
 import pics from '../../scenes/pics';
 import { WithHover } from '../../hoc/withHover';
+import gtagEvent from '../../utils/gtagEvent';
 
 const Story = ({ isHovered, src, index, ...props }) => (
   <Box overflow="hidden" position="relative" {...props}>
@@ -87,8 +88,13 @@ class StoriesGrid extends React.PureComponent {
     image.src = src;
   })
 
-  handleOpen = (value) => {
-    this.setState({ isOpen: true, id: value });
+  handleOpen = (id) => {
+    gtagEvent({
+      action: 'Click',
+      category: '想一想',
+      label: scenes[id].title,
+    });
+    this.setState({ isOpen: true, id });
   }
 
   handleClose = () => this.setState({ isOpen: false });

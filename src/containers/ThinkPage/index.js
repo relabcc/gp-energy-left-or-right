@@ -1,12 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import random from 'lodash/random';
-import queryString from 'query-string';
 
 import Flex from '../../components/Flex';
 import Box from '../../components/Box';
 import Image from '../../components/Image';
-import Text from '../../components/Text';
 import theme from '../../components/ThemeProvider/theme';
 import BackgroundImage from '../../components/BackgroundImage';
 
@@ -15,14 +13,14 @@ import { firebase } from '../../services/firebase';
 
 import Header from './Header';
 import OpenModal from './OpenModal';
-import WantEmail from './WantEmail';
-import ScoreSurvey from './ScoreSurvey';
 import QuestionTitle from './QuestionTitle';
 import CombineForm from './CombineForm';
+import Thanks from './OpenModal/Thanks';
 
 import flowerdecoration from './flowerdecoration.svg';
 import scenes from '../../scenes';
 import pics from '../../scenes/pics';
+import gtagEvent from '../../utils/gtagEvent';
 
 const database = firebase.database();
 
@@ -31,8 +29,6 @@ class ThinkPage extends React.PureComponent {
     super(props);
 
     this.sceneIndex = props.pathContext.id || random(1, scenes.length);
-    const parsed = queryString.parse(typeof window === 'undefined' ? '' : window.location.search);
-    this.twoStep = Boolean(parsed.twoStep);
   }
 
   state = {
@@ -42,14 +38,21 @@ class ThinkPage extends React.PureComponent {
 
   handleOpen = () => this.setState({ isOpen: true })
 
-  handleScoreSubmit = (score) =>
-    database.ref('qa')
+  handleScoreSubmit = (score) => {
+    gtagEvent({
+      action: '有沒有幫助',
+      category: '評分',
+      label: `${scenes[this.sceneIndex - 1].title}`,
+      value: score,
+    });
+    return database.ref('qa')
       .push({
         score,
         index: this.sceneIndex,
         timestamp: firebase.database.ServerValue.TIMESTAMP
       })
       .then(({ key }) => this.setState({ surveyKey: key, scoreAnswered: true }));
+  }
 
   handleEmailSubmit = (email) =>
     database.ref('subscribe')
@@ -69,27 +72,10 @@ class ThinkPage extends React.PureComponent {
     const { isOpen, scoreAnswered } = this.state;
     const scene = scenes[this.sceneIndex - 1];
     const image = <Image src={pics[this.sceneIndex - 1]} />;
-    const form = (
-      <div>
-        {scoreAnswered ? (
-          <Box py="1em">
-            <Text py="0.5em">謝謝您的回饋!</Text>
-            <Text py="0.5em">此外，我們也想知道，<strong>您是否願意收到能源轉型計畫相關信息呢?</strong></Text>
-          </Box>
-        ) : (
-          <ScoreSurvey onSubmit={this.handleScoreSubmit} />
-        )}
-        {scoreAnswered && (
-          <WantEmail onNo={this.handleOpen} onSubmit={this.handleEmailSubmit} />
-        )}
-      </div>
-    );
-    const content = (
+    const content = noHeader && scoreAnswered ? <Thanks /> : (
       <Box>
         <QuestionTitle scene={scene} />
-        {this.twoStep ? form : (
-          <CombineForm noEmail={noEmail} onSubmit={this.handleSubmit} />
-        )}
+        <CombineForm noEmail={noEmail} onSubmit={this.handleSubmit} />
         <Box ml="auto" w="25%">
           <BackgroundImage src={flowerdecoration} ratio={107 / 206.227} />
         </Box>
@@ -117,7 +103,7 @@ class ThinkPage extends React.PureComponent {
               </Box>
             </Box>
           )}
-          <OpenModal isOpen={isOpen} />
+          <OpenModal isOpen={!noHeader && isOpen} />
         </Box>
       </Box>
     );

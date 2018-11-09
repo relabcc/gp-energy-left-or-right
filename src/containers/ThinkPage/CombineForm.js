@@ -36,7 +36,7 @@ const InnerForm = ({
   // 表單內容
   return (
     <Box is="form" onSubmit={handleSubmit} position="relative">
-      <Box py="1em">
+      <Box py="1em" textAlign="left">
         <Text my="0.5em">
           這條線索來自綠色和平的研究報告和我們查詢的無數論文資料以及《歐洲的心臟》與《能源大騙局》兩本著作。
         </Text>
@@ -118,7 +118,6 @@ const CombineForm = withFormik({
     setStatus,
     props,
   }) => {
-    console.log(values);
     setSubmitting(true);
     props.onSubmit(values.helpful, values.email)
       .then(() => setSubmitting(false))
