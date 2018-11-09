@@ -14,6 +14,8 @@ import Circle from '../../components/Circle';
 import BackgroundImage from '../../components/BackgroundImage';
 import { breakpoints } from '../../components/ThemeProvider/theme';
 
+import config from '../../../gatsby-config';
+
 import pics from './pics';
 
 const ArrowButton = ({ left, right, transform, ...props }) => (
@@ -57,7 +59,11 @@ class MythSlick extends PureComponent {
 
   handleChange = (ls, currentSlide) => {
     this.setState({ currentSlide });
-    window.history.pushState(null, null, window.location.origin + withPrefix(`myth/${currentSlide + 1}`));
+    const nextPath = withPrefix(`/myth/${currentSlide + 1}`);
+    window.history.pushState(null, null, nextPath);
+    if (window.gtag) {
+      window.gtag('config', config.siteMetadata.gaId, { 'page_path': nextPath });
+    }
   }
 
   render() {
