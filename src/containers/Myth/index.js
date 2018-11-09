@@ -56,6 +56,8 @@ class MythSlick extends PureComponent {
   render() {
     const { currentSlide, loaded } = this.state;
     const { browser, ...props } = this.props;
+    const isDesktop = browser.greaterThan.sm;
+    const arrowPos = ['1em', null, 'calc((160% - 72px) / 6 * 0.975)'];
     return (
       <Box overflow="hidden" {...props}>
         <Box position="relative">
@@ -75,12 +77,13 @@ class MythSlick extends PureComponent {
                   breakpoint: breakpoints[1],
                   settings: {
                     slidesToShow: 1,
+                    centerPadding: '4px',
                   }
                 }
               ]}
             >
               {pics.map((src, index) => (
-                <Box key={index} px="2.5%">
+                <Box key={index} px={['6px', null, '2.5%']}>
                   <Box position="relative">
                     <BackgroundImage
                       ratio={1875 / 2500}
@@ -99,14 +102,14 @@ class MythSlick extends PureComponent {
                   </Box>
                 </Box>
               ))}
-              {browser.greaterThan.sm && <div />}
-              {browser.greaterThan.sm && <div />}
+              {isDesktop && <div />}
+              {isDesktop && <div />}
             </Slider>
           </Box>
           {loaded && (
             <ArrowButton
               transform="translate(-50%,-50%)"
-              left={['calc(36px + (100% - 72px) * 0.025)', null, 'calc((160% - 72px) / 6 * 0.975)']}
+              left={arrowPos}
               onClick={this.slickRef.slickPrev}
             >
               <FaAngleLeft />
@@ -115,7 +118,7 @@ class MythSlick extends PureComponent {
           {loaded && (
             <ArrowButton
               transform="translate(50%,-50%)"
-              right={['calc(36px + (100% - 72px) * 0.025)', null, 'calc((160% - 72px) / 6 * 0.975)']}
+              right={arrowPos}
               onClick={this.slickRef.slickNext}
             >
               <FaAngleRight />

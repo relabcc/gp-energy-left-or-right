@@ -38,12 +38,13 @@ class ScrollableAction extends PureComponent {
           right={['10%', null, '17.5%']}
           top={['65%', null, '78%']}
           justify="space-around"
+          flexWrap="wrap"
         >
           {actionLinks.map(({ label, title, ...a }, index) => (
             <Box
               key={index}
               my="0.5em"
-              w={[1 / 3, null, 1 / 4]}
+              w={[1 / 2, null, 1 / 4]}
             >
               <Link w={1} {...a}>
                 <Button title={title}>

@@ -1,11 +1,14 @@
 import React, { PureComponent } from 'react';
 import ReactModal from 'react-modal';
 import PropTypes from 'prop-types';
-import scroll from 'window-scroll';
+
+import FreezeScroll from '../utils/FreezeScroll';
 
 if (typeof window !== 'undefined') {
   ReactModal.setAppElement('#___gatsby');
 }
+
+const freezer = new FreezeScroll();
 
 const customStyles = {
   overlay: {
@@ -43,21 +46,13 @@ export default class Modal extends PureComponent {
   }
 
   freeze = () => {
-    this.scrollY = scroll.getScrollY();
-    setTimeout(() => {
-      document.body.style.setProperty('position', 'fixed');
-      document.body.style.setProperty('top', `-${this.scrollY}px`);
-      this.isFreeze = true;
-    });
+    freezer.freeze();
+    this.isFreeze = true;
   }
 
   unfreeze = () => {
-    document.body.style.setProperty('position', 'static');
-    document.body.style.setProperty('top', 'auto');
-    setTimeout(() => {
-      window.scrollTo(0, this.scrollY);
-      this.isFreeze = false;
-    });
+    freezer.unfreeze();
+    this.isFreeze = false;
   }
 
   handleRef = (ref) => {
