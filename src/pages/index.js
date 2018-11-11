@@ -53,7 +53,7 @@ class Index extends PureComponent {
   onChangeEnd = (slider) => {
     const active = slider.to;
     this.setState({ active, animating: false });
-    virtualPageview(sections[active].toLowerCase());
+    virtualPageview(`/${sections[active].toLowerCase()}`);
   }
 
   handleFirstLoaded = () => {

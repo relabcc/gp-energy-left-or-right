@@ -16,6 +16,10 @@ import withResponsive from '../hoc/withResponsive'
 
 import { links } from '../text';
 
+import config from '../../gatsby-config';
+
+const url = config.siteMetadata.host + config.pathPrefix;
+
 const styles = {
   bmMenuWrap: {
     paddingTop: '1em',
@@ -74,8 +78,17 @@ class Header extends PureComponent {
           </Flex>
         )}
         <Flex align="center" pl="1em">
-          <Button.icon mr="0.5em" w="2em"><Fb /></Button.icon>
-          <Button.icon w="2em"><Line /></Button.icon>
+          <Button.icon
+            is={Link}
+            href={`https://www.facebook.com/sharer/sharer.php?u=${url}`}
+            mr="0.5em"
+            w="2em"
+          ><Fb /></Button.icon>
+          <Button.icon
+            w="2em"
+            is={Link}
+            href={`https://social-plugins.line.me/lineit/share?url=${url}`}
+          ><Line /></Button.icon>
         </Flex>
         {!isDesktop && (
           <div>

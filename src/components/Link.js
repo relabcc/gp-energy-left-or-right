@@ -14,6 +14,8 @@ import GatsbyLink from 'gatsby-link';
 import blacklist from './utils/blacklist';
 import { getColorByPropKey } from './utils/getColor';
 
+import gtagEvent from '../utils/gtagEvent';
+
 const LinkBase = styled(tag.a)`
   ${fontSize}
   ${space}
@@ -28,11 +30,17 @@ const LinkBase = styled(tag.a)`
   }
 `;
 
+const clickTrack = (e) => gtagEvent({
+  action: 'Click',
+  category: 'Outbound Links',
+  label: e.target.href,
+});
+
 const Link = ({ to, ...props }) => {
   if (to) {
     return <LinkBase is={GatsbyLink} to={to} {...props} />;
   }
-  return <LinkBase target="_blank" {...props} />
+  return <LinkBase target="_blank" onClick={clickTrack} {...props} />;
 };
 
 Link.defaultProps = {

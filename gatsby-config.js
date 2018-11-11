@@ -5,7 +5,7 @@ module.exports = {
     title: '能源也能左右世界 - 一個關於現在、未來能源情報的網站',
     description: '當臺灣的能源能被你左右，你決定往左還是往右？',
     gaId,
-    link: 'https://relab.cc',
+    host: 'https://relabcc.github.io',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
