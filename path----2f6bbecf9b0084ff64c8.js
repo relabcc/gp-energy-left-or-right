@@ -1,2 +1,2 @@
-webpackJsonp([60335399758886],{439:function(t,e){t.exports={data:{site:{siteMetadata:{title:"能源也能左右世界 - 一個關於現在、未來能源情報的網站",description:"當臺灣的能源能被你左右，你決定往左還是往右？"}}},layoutContext:{}}}});
+webpackJsonp([60335399758886],{440:function(t,e){t.exports={data:{site:{siteMetadata:{title:"能源也能左右世界 - 一個關於現在、未來能源情報的網站",description:"當臺灣的能源能被你左右，你決定往左還是往右？"}}},layoutContext:{}}}});
 //# sourceMappingURL=path----2f6bbecf9b0084ff64c8.js.map
