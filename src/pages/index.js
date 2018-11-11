@@ -1,7 +1,6 @@
 import React, { PureComponent, createElement } from 'react';
 import { compose } from 'redux';
 import { withContentRect } from 'react-measure';
-import TWEEN from '@tweenjs/tween.js';
 
 import { FullPage, Slide } from '../vendor/FullPage';
 import withHeader from '../hoc/withHeader';
@@ -10,41 +9,21 @@ import withConnect from '../containers/DualBg/withConnect';
 
 import Title from '../components/Title';
 import StepPreloader from '../components/StepPreloader';
-// import Text from '../components/Text';
-// import Flex from '../components/Flex';
 import Box from '../components/Box';
 
-import Intro from '../containers/Sections/Intro';
-import Cost from '../containers/Sections/Cost';
-import System from '../containers/Sections/System';
-import People from '../containers/Sections/People';
-import Why from '../containers/Sections/Why';
-import Potential from '../containers/Sections/Potential';
-import Actions from '../containers/Sections/Actions';
 import SideNav from '../containers/SideNav';
+import Sections from '../containers/Sections';
 // import RatioToggle from '../containers/RatioToggle';
 
 import { titles } from '../text';
 import preload from '../preload';
 import sections from '../sections';
 
-const Sections = {
-  Intro,
-  Cost,
-  System,
-  People,
-  Why,
-  Potential,
-  Actions,
-};
+import virtualPageview from '../utils/virtualPageview';
 
 const last = sections.length - 1;
 const isServer = typeof window === 'undefined';
 
-function animate() {
-  requestAnimationFrame(animate);
-  TWEEN.update();
-}
 
 class Index extends PureComponent {
   constructor(props) {
@@ -72,26 +51,13 @@ class Index extends PureComponent {
   }
 
   onChangeEnd = (slider) => {
-    this.setState({ active: slider.to, animating: false });
-  }
-
-  playIntro = () => {
-    const tween = new TWEEN.Tween({ ratio: 1 })
-    tween
-      .to({ ratio: [0.5, 0, 0.5] }, 2000)
-      .delay(1000)
-      .onUpdate(({ ratio }) => this.props.updateRatio(ratio))
-      .onComplete(this.props.introPlayFinished)
-      .start();
-
-    animate();
+    const active = slider.to;
+    this.setState({ active, animating: false });
+    virtualPageview(sections[active].toLowerCase());
   }
 
   handleFirstLoaded = () => {
     this.setState({ firstLoaded: true });
-
-    this.props.playIntro();
-    this.playIntro();
   }
 
   handleLoaded = (index) => {
@@ -146,6 +112,8 @@ class Index extends PureComponent {
                   animating,
                   windowWidth: width,
                   isMobile: browser.lessThan.md,
+                  name: key,
+                  firstLoaded,
                 }) : <Box height="100vh" />}
               </Slide>
             ))}

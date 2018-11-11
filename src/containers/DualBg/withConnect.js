@@ -13,8 +13,8 @@ import reducer, {
 import injectReducer from '../../utils/injectReducer';
 
 const mapStateToProps = (state) => ({
-  ratio: state.getIn(['BG', 'ratio']),
-  ratioSync: state.getIn(['BG', 'sync']),
+  // ratio: state.getIn(['BG', 'ratio']),
+  // ratioSync: state.getIn(['BG', 'sync']),
   inited: state.getIn(['BG', 'inited']),
   showHint: state.getIn(['BG', 'showHint']),
   introPlayRequested: state.getIn(['BG', 'introPlayRequested']),

@@ -2,7 +2,6 @@ import React, { PureComponent } from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import { withPrefix } from 'gatsby-link';
 
 import FaAngleLeft from 'react-icons/lib/fa/angle-left';
 import FaAngleRight from 'react-icons/lib/fa/angle-right';
@@ -14,8 +13,7 @@ import Circle from '../../components/Circle';
 import BackgroundImage from '../../components/BackgroundImage';
 import { breakpoints } from '../../components/ThemeProvider/theme';
 
-import config from '../../../gatsby-config';
-
+import virtualPageview from '../../utils/virtualPageview';
 import pics from './pics';
 
 const ArrowButton = ({ left, right, transform, ...props }) => (
@@ -59,11 +57,7 @@ class MythSlick extends PureComponent {
 
   handleChange = (ls, currentSlide) => {
     this.setState({ currentSlide });
-    const nextPath = withPrefix(`/myth/${currentSlide + 1}`);
-    window.history.pushState(null, null, nextPath);
-    if (window.gtag) {
-      window.gtag('config', config.siteMetadata.gaId, { 'page_path': nextPath });
-    }
+    virtualPageview(`/myth/${currentSlide + 1}`);
   }
 
   render() {

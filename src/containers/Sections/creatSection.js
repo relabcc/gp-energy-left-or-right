@@ -8,15 +8,16 @@ export const ratio = {
   desktop: 718 / 1334,
 };
 
-const SectionDual = ({ isMobile, left, right, ...props }) => {
+export default (desktop, mobile) => (props) => {
+  const { isMobile } = props;
+  const left = isMobile ? mobile[1] : desktop[1];
+  const right = isMobile ? mobile[0] : desktop[0];
   const r = ratio[isMobile ? 'mobile' : 'desktop'];
   return (
     <DualBg
-      isMobile={isMobile}
       leftContent={<EmbedSVG ratio={r} src={left} />}
       rightContent={<EmbedSVG ratio={r} src={right} />}
+      {...props}
     />
   );
-};
-
-export default SectionDual;
+}

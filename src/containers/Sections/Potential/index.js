@@ -7,7 +7,7 @@ import Box from '../../../components/Box';
 import NewBg from '../../../components/Backgrounds/NewBg';
 import Grain from '../../../components/Backgrounds/Grain';
 import EmbedSVG from '../../../components/EmbedSVG';
-import { ratio } from '../SectionDual';
+import { ratio } from '../creatSection';
 
 const Cotnent = ({ isMobile }) => {
   const src = isMobile ? NewMobile : New;

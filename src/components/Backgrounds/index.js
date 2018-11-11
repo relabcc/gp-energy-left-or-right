@@ -11,12 +11,11 @@ import OldBg from './OldBg';
 import Grain from './Grain';
 import Hammer from '../../vendor/hammer';
 
+import gatgEvent from '../../utils/gtagEvent';
+
 class TwoBackgrounds extends PureComponent {
   constructor(props) {
     super(props);
-    this.state = {
-      ratio: this.props.ratio,
-    };
     this.isIos = bowser.ios;
     this.iosEdge = 0.05;
   }
@@ -55,12 +54,22 @@ class TwoBackgrounds extends PureComponent {
   }
 
   disableSlect = () => document.body.classList.add('ratio-dragging')
-  enableSlect = () => document.body.classList.remove('ratio-dragging')
+
+  enableSlect = () => {
+    gatgEvent({
+      action: '左右比較',
+      category: '調整拉桿',
+      label: this.props.name,
+      value: Math.round(100 * this.ratio),
+    });
+    document.body.classList.remove('ratio-dragging');
+  }
 
   setRatio = (ratio) => {
     const leftPos = this.props.contentRect.bounds.width * ratio + 'px';
     this.upperRef.style.width = leftPos;
     this.handle.style.left = leftPos;
+    this.ratio = ratio;
   }
 
   render() {
@@ -76,10 +85,9 @@ class TwoBackgrounds extends PureComponent {
       ratioSync,
       showHint,
       firstDragged,
+      name,
       ...props
     } = this.props;
-
-    const leftPos = contentRect.bounds.width * this.state.ratio;
 
     return (
       <Box position="relative" height="100%" overflow="hidden" innerRef={measureRef} {...props}>
@@ -91,7 +99,7 @@ class TwoBackgrounds extends PureComponent {
             bottom="0"
             position="absolute"
             overflow="hidden"
-            style={{ width: leftPos }}
+            w={0.5}
             innerRef={(ref) => { this.upperRef = ref; }}
           >
             <Box w={contentRect.bounds.width} height="100%">
@@ -106,9 +114,9 @@ class TwoBackgrounds extends PureComponent {
           position="absolute"
           bottom="6em"
           transform="translate(-50%, 0)"
+          left="50%"
           innerRef={this.handleRef}
           showHint={showHint}
-          style={{ left: leftPos }}
         />
       </Box>
     );
