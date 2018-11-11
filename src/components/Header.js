@@ -32,6 +32,20 @@ const styles = {
   },
 };
 
+const SocialLink = (props) => (
+  <Button.icon
+    is={(p) => (
+      <Link
+        color="text"
+        hoverColor="primary"
+        {...p}
+      />
+    )}
+    w="2em"
+    {...props}
+  />
+);
+
 class Header extends PureComponent {
   state = {
     isOpen: false,
@@ -78,17 +92,13 @@ class Header extends PureComponent {
           </Flex>
         )}
         <Flex align="center" pl="1em">
-          <Button.icon
-            is={Link}
+          <SocialLink
             href={`https://www.facebook.com/sharer/sharer.php?u=${url}`}
             mr="0.5em"
-            w="2em"
-          ><Fb /></Button.icon>
-          <Button.icon
-            w="2em"
-            is={Link}
+          ><Fb /></SocialLink>
+          <SocialLink
             href={`https://social-plugins.line.me/lineit/share?url=${url}`}
-          ><Line /></Button.icon>
+          ><Line /></SocialLink>
         </Flex>
         {!isDesktop && (
           <div>

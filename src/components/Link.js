@@ -30,11 +30,13 @@ const LinkBase = styled(tag.a)`
   }
 `;
 
-const clickTrack = (e) => gtagEvent({
-  action: 'Click',
-  category: 'Outbound Links',
-  label: e.target.href,
-});
+const clickTrack = (e) => {
+  gtagEvent({
+    action: 'Click',
+    category: 'Outbound Links',
+    label: e.currentTarget.href,
+  });
+};
 
 const Link = ({ to, ...props }) => {
   if (to) {
