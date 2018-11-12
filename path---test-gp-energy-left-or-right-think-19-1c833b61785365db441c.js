@@ -1,0 +1,2 @@
+webpackJsonp([0xae3f40245ac4],{1215:function(t,e){t.exports={pathContext:{id:19,index:18,title:"食物都有生產履歷了，能源也可以有履歷嗎？",sub:"買有機"}}}});
+//# sourceMappingURL=path---test-gp-energy-left-or-right-think-19-1c833b61785365db441c.js.map

@@ -1,2 +1,0 @@
-webpackJsonp([0xf2c01b9e76c7],{1211:function(t,e){t.exports={pathContext:{id:14,index:13,title:"為什麼我只能跟台電買電？",sub:"抄電表"}}}});
-//# sourceMappingURL=path---test-gp-energy-left-or-rightthink-14-91a7b66ec28b938edde7.js.map

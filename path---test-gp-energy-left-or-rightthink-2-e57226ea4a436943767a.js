@@ -1,2 +1,0 @@
-webpackJsonp([0x912b5fece233],{1217:function(e,t){e.exports={pathContext:{id:2,index:1,title:"你知道現在最值得投資的是什麼嗎？",sub:"看走勢"}}}});
-//# sourceMappingURL=path---test-gp-energy-left-or-rightthink-2-e57226ea4a436943767a.js.map

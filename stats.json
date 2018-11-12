@@ -1,8 +1,12 @@
 {
   "assetsByChunkName": {
-    "path---test-gp-energy-left-or-rightsystem": [
-      "path---test-gp-energy-left-or-rightsystem-a0e39f21c11f6a62c5ab.js",
-      "path---test-gp-energy-left-or-rightsystem-a0e39f21c11f6a62c5ab.js.map"
+    "path---test-gp-energy-left-or-right-think-3": [
+      "path---test-gp-energy-left-or-right-think-3-c1357fd9efd58ce68510.js",
+      "path---test-gp-energy-left-or-right-think-3-c1357fd9efd58ce68510.js.map"
+    ],
+    "path---test-gp-energy-left-or-right-myth-6": [
+      "path---test-gp-energy-left-or-right-myth-6-4882e092ee2178e12235.js",
+      "path---test-gp-energy-left-or-right-myth-6-4882e092ee2178e12235.js.map"
     ],
     "path---think-3": [
       "path---think-3-c1357fd9efd58ce68510.js",
@@ -20,6 +24,10 @@
       "path---cost-a0e39f21c11f6a62c5ab.js",
       "path---cost-a0e39f21c11f6a62c5ab.js.map"
     ],
+    "path---test-gp-energy-left-or-right-people": [
+      "path---test-gp-energy-left-or-right-people-a0e39f21c11f6a62c5ab.js",
+      "path---test-gp-energy-left-or-right-people-a0e39f21c11f6a62c5ab.js.map"
+    ],
     "component---src-pages-clues-js": [
       "component---src-pages-clues-js-6a54ad9b429b8730f50c.js",
       "component---src-pages-clues-js-6a54ad9b429b8730f50c.js.map"
@@ -28,37 +36,61 @@
       "path---think-15-e6da626de4156b6debf0.js",
       "path---think-15-e6da626de4156b6debf0.js.map"
     ],
-    "path---test-gp-energy-left-or-rightthink-19": [
-      "path---test-gp-energy-left-or-rightthink-19-1c833b61785365db441c.js",
-      "path---test-gp-energy-left-or-rightthink-19-1c833b61785365db441c.js.map"
+    "path---test-gp-energy-left-or-right-myth-4": [
+      "path---test-gp-energy-left-or-right-myth-4-47e859951c27b2a24a71.js",
+      "path---test-gp-energy-left-or-right-myth-4-47e859951c27b2a24a71.js.map"
     ],
-    "path---test-gp-energy-left-or-rightthink-13": [
-      "path---test-gp-energy-left-or-rightthink-13-799bf010063c8fa5c9b1.js",
-      "path---test-gp-energy-left-or-rightthink-13-799bf010063c8fa5c9b1.js.map"
+    "path---test-gp-energy-left-or-right-potential": [
+      "path---test-gp-energy-left-or-right-potential-a0e39f21c11f6a62c5ab.js",
+      "path---test-gp-energy-left-or-right-potential-a0e39f21c11f6a62c5ab.js.map"
     ],
     "path---test-gp-energy-left-or-right-myth-js": [
       "path---test-gp-energy-left-or-right-myth-js-a0e39f21c11f6a62c5ab.js",
       "path---test-gp-energy-left-or-right-myth-js-a0e39f21c11f6a62c5ab.js.map"
     ],
-    "path---test-gp-energy-left-or-rightmyth-8": [
-      "path---test-gp-energy-left-or-rightmyth-8-1f38bdc99f9d1a4ccb0e.js",
-      "path---test-gp-energy-left-or-rightmyth-8-1f38bdc99f9d1a4ccb0e.js.map"
+    "path---test-gp-energy-left-or-right-think-15": [
+      "path---test-gp-energy-left-or-right-think-15-e6da626de4156b6debf0.js",
+      "path---test-gp-energy-left-or-right-think-15-e6da626de4156b6debf0.js.map"
+    ],
+    "path---test-gp-energy-left-or-right-think-14": [
+      "path---test-gp-energy-left-or-right-think-14-91a7b66ec28b938edde7.js",
+      "path---test-gp-energy-left-or-right-think-14-91a7b66ec28b938edde7.js.map"
+    ],
+    "path---test-gp-energy-left-or-right-system": [
+      "path---test-gp-energy-left-or-right-system-a0e39f21c11f6a62c5ab.js",
+      "path---test-gp-energy-left-or-right-system-a0e39f21c11f6a62c5ab.js.map"
     ],
     "component---src-pages-index-js": [
       "component---src-pages-index-js-b8c7150b0f8e9760e341.js",
       "component---src-pages-index-js-b8c7150b0f8e9760e341.js.map"
     ],
-    "path---test-gp-energy-left-or-rightthink-3": [
-      "path---test-gp-energy-left-or-rightthink-3-c1357fd9efd58ce68510.js",
-      "path---test-gp-energy-left-or-rightthink-3-c1357fd9efd58ce68510.js.map"
+    "path---test-gp-energy-left-or-right-think-9": [
+      "path---test-gp-energy-left-or-right-think-9-f3e7cd11c14d685dd888.js",
+      "path---test-gp-energy-left-or-right-think-9-f3e7cd11c14d685dd888.js.map"
     ],
-    "path---test-gp-energy-left-or-rightthink-15": [
-      "path---test-gp-energy-left-or-rightthink-15-e6da626de4156b6debf0.js",
-      "path---test-gp-energy-left-or-rightthink-15-e6da626de4156b6debf0.js.map"
+    "path---test-gp-energy-left-or-right-think-6": [
+      "path---test-gp-energy-left-or-right-think-6-258fce9761aaa7589f4e.js",
+      "path---test-gp-energy-left-or-right-think-6-258fce9761aaa7589f4e.js.map"
+    ],
+    "path---test-gp-energy-left-or-right-think-18": [
+      "path---test-gp-energy-left-or-right-think-18-8b841d175c0de7cd2704.js",
+      "path---test-gp-energy-left-or-right-think-18-8b841d175c0de7cd2704.js.map"
     ],
     "path---myth-9": [
       "path---myth-9-79c2fdc061fb53061ae4.js",
       "path---myth-9-79c2fdc061fb53061ae4.js.map"
+    ],
+    "path---test-gp-energy-left-or-right-think-11": [
+      "path---test-gp-energy-left-or-right-think-11-09351458fef3e4e0809f.js",
+      "path---test-gp-energy-left-or-right-think-11-09351458fef3e4e0809f.js.map"
+    ],
+    "path---test-gp-energy-left-or-right-think-16": [
+      "path---test-gp-energy-left-or-right-think-16-73c2734a1b3521dcab07.js",
+      "path---test-gp-energy-left-or-right-think-16-73c2734a1b3521dcab07.js.map"
+    ],
+    "path---test-gp-energy-left-or-right-think-17": [
+      "path---test-gp-energy-left-or-right-think-17-5840729c1367c3f87bfa.js",
+      "path---test-gp-energy-left-or-right-think-17-5840729c1367c3f87bfa.js.map"
     ],
     "path---potential": [
       "path---potential-a0e39f21c11f6a62c5ab.js",
@@ -68,21 +100,13 @@
       "path----557518bd178906f8d58a.js",
       "path----557518bd178906f8d58a.js.map"
     ],
-    "path---test-gp-energy-left-or-rightthink-8": [
-      "path---test-gp-energy-left-or-rightthink-8-2e60709bbce32e3a1eaa.js",
-      "path---test-gp-energy-left-or-rightthink-8-2e60709bbce32e3a1eaa.js.map"
+    "path---test-gp-energy-left-or-right-myth-3": [
+      "path---test-gp-energy-left-or-right-myth-3-7af084cff4e15e5d0dff.js",
+      "path---test-gp-energy-left-or-right-myth-3-7af084cff4e15e5d0dff.js.map"
     ],
     "path---think-4": [
       "path---think-4-f17fa8bf2f1f33733111.js",
       "path---think-4-f17fa8bf2f1f33733111.js.map"
-    ],
-    "path---test-gp-energy-left-or-rightthink-10": [
-      "path---test-gp-energy-left-or-rightthink-10-a6fe1899361f860d23ec.js",
-      "path---test-gp-energy-left-or-rightthink-10-a6fe1899361f860d23ec.js.map"
-    ],
-    "path---test-gp-energy-left-or-rightintro": [
-      "path---test-gp-energy-left-or-rightintro-a0e39f21c11f6a62c5ab.js",
-      "path---test-gp-energy-left-or-rightintro-a0e39f21c11f6a62c5ab.js.map"
     ],
     "path---think-19": [
       "path---think-19-1c833b61785365db441c.js",
@@ -100,21 +124,17 @@
       "path---think-2-e57226ea4a436943767a.js",
       "path---think-2-e57226ea4a436943767a.js.map"
     ],
+    "path---test-gp-energy-left-or-right-cost": [
+      "path---test-gp-energy-left-or-right-cost-a0e39f21c11f6a62c5ab.js",
+      "path---test-gp-energy-left-or-right-cost-a0e39f21c11f6a62c5ab.js.map"
+    ],
     "path---think-9": [
       "path---think-9-f3e7cd11c14d685dd888.js",
       "path---think-9-f3e7cd11c14d685dd888.js.map"
     ],
-    "path---test-gp-energy-left-or-rightpeople": [
-      "path---test-gp-energy-left-or-rightpeople-a0e39f21c11f6a62c5ab.js",
-      "path---test-gp-energy-left-or-rightpeople-a0e39f21c11f6a62c5ab.js.map"
-    ],
-    "path---test-gp-energy-left-or-rightthink-16": [
-      "path---test-gp-energy-left-or-rightthink-16-73c2734a1b3521dcab07.js",
-      "path---test-gp-energy-left-or-rightthink-16-73c2734a1b3521dcab07.js.map"
-    ],
-    "path---test-gp-energy-left-or-rightthink-17": [
-      "path---test-gp-energy-left-or-rightthink-17-5840729c1367c3f87bfa.js",
-      "path---test-gp-energy-left-or-rightthink-17-5840729c1367c3f87bfa.js.map"
+    "path---test-gp-energy-left-or-right-think-20": [
+      "path---test-gp-energy-left-or-right-think-20-afd68cad45022d18dc31.js",
+      "path---test-gp-energy-left-or-right-think-20-afd68cad45022d18dc31.js.map"
     ],
     "path---think-13": [
       "path---think-13-799bf010063c8fa5c9b1.js",
@@ -124,9 +144,9 @@
       "path---think-17-5840729c1367c3f87bfa.js",
       "path---think-17-5840729c1367c3f87bfa.js.map"
     ],
-    "path---test-gp-energy-left-or-rightmyth-2": [
-      "path---test-gp-energy-left-or-rightmyth-2-a4b028cf6390c3f8613b.js",
-      "path---test-gp-energy-left-or-rightmyth-2-a4b028cf6390c3f8613b.js.map"
+    "path---test-gp-energy-left-or-right-why": [
+      "path---test-gp-energy-left-or-right-why-a0e39f21c11f6a62c5ab.js",
+      "path---test-gp-energy-left-or-right-why-a0e39f21c11f6a62c5ab.js.map"
     ],
     "path---think-20": [
       "path---think-20-afd68cad45022d18dc31.js",
@@ -136,21 +156,17 @@
       "path---system-a0e39f21c11f6a62c5ab.js",
       "path---system-a0e39f21c11f6a62c5ab.js.map"
     ],
-    "path---test-gp-energy-left-or-rightthink-1": [
-      "path---test-gp-energy-left-or-rightthink-1-9734ff297db92ab61d6b.js",
-      "path---test-gp-energy-left-or-rightthink-1-9734ff297db92ab61d6b.js.map"
-    ],
     "path---think-14": [
       "path---think-14-91a7b66ec28b938edde7.js",
       "path---think-14-91a7b66ec28b938edde7.js.map"
     ],
+    "path---test-gp-energy-left-or-right-myth-7": [
+      "path---test-gp-energy-left-or-right-myth-7-dcdadd76e0557d700a79.js",
+      "path---test-gp-energy-left-or-right-myth-7-dcdadd76e0557d700a79.js.map"
+    ],
     "component---src-layouts-index-js": [
       "component---src-layouts-index-js-c1019436e578de284739.js",
       "component---src-layouts-index-js-c1019436e578de284739.js.map"
-    ],
-    "path---test-gp-energy-left-or-rightthink-7": [
-      "path---test-gp-energy-left-or-rightthink-7-3f22aac89d267bfb1d0d.js",
-      "path---test-gp-energy-left-or-rightthink-7-3f22aac89d267bfb1d0d.js.map"
     ],
     "path---think-7": [
       "path---think-7-3f22aac89d267bfb1d0d.js",
@@ -160,13 +176,13 @@
       "path---myth-1-8ce19e98d8a5b384d1b1.js",
       "path---myth-1-8ce19e98d8a5b384d1b1.js.map"
     ],
+    "path---test-gp-energy-left-or-right-actions": [
+      "path---test-gp-energy-left-or-right-actions-a0e39f21c11f6a62c5ab.js",
+      "path---test-gp-energy-left-or-right-actions-a0e39f21c11f6a62c5ab.js.map"
+    ],
     "path---why": [
       "path---why-a0e39f21c11f6a62c5ab.js",
       "path---why-a0e39f21c11f6a62c5ab.js.map"
-    ],
-    "path---test-gp-energy-left-or-rightthink-5": [
-      "path---test-gp-energy-left-or-rightthink-5-72bff8b8efe60fb87d78.js",
-      "path---test-gp-energy-left-or-rightthink-5-72bff8b8efe60fb87d78.js.map"
     ],
     "path---people": [
       "path---people-a0e39f21c11f6a62c5ab.js",
@@ -175,10 +191,6 @@
     "path---myth-6": [
       "path---myth-6-4882e092ee2178e12235.js",
       "path---myth-6-4882e092ee2178e12235.js.map"
-    ],
-    "path---test-gp-energy-left-or-rightmyth-5": [
-      "path---test-gp-energy-left-or-rightmyth-5-28219180d13c12377f39.js",
-      "path---test-gp-energy-left-or-rightmyth-5-28219180d13c12377f39.js.map"
     ],
     "path---test-gp-energy-left-or-right-think-js": [
       "path---test-gp-energy-left-or-right-think-js-a0e39f21c11f6a62c5ab.js",
@@ -192,29 +204,21 @@
       "path---think-8-2e60709bbce32e3a1eaa.js",
       "path---think-8-2e60709bbce32e3a1eaa.js.map"
     ],
+    "path---test-gp-energy-left-or-right-think-2": [
+      "path---test-gp-energy-left-or-right-think-2-e57226ea4a436943767a.js",
+      "path---test-gp-energy-left-or-right-think-2-e57226ea4a436943767a.js.map"
+    ],
     "path---myth-7": [
       "path---myth-7-dcdadd76e0557d700a79.js",
       "path---myth-7-dcdadd76e0557d700a79.js.map"
     ],
-    "path---test-gp-energy-left-or-rightcost": [
-      "path---test-gp-energy-left-or-rightcost-a0e39f21c11f6a62c5ab.js",
-      "path---test-gp-energy-left-or-rightcost-a0e39f21c11f6a62c5ab.js.map"
-    ],
-    "path---test-gp-energy-left-or-rightmyth-4": [
-      "path---test-gp-energy-left-or-rightmyth-4-47e859951c27b2a24a71.js",
-      "path---test-gp-energy-left-or-rightmyth-4-47e859951c27b2a24a71.js.map"
+    "path---test-gp-energy-left-or-right-think-12": [
+      "path---test-gp-energy-left-or-right-think-12-52dec5c6e1a39303c7ed.js",
+      "path---test-gp-energy-left-or-right-think-12-52dec5c6e1a39303c7ed.js.map"
     ],
     "path---myth-5": [
       "path---myth-5-28219180d13c12377f39.js",
       "path---myth-5-28219180d13c12377f39.js.map"
-    ],
-    "path---test-gp-energy-left-or-rightthink-21": [
-      "path---test-gp-energy-left-or-rightthink-21-c8c7186e0df32ad5dbf5.js",
-      "path---test-gp-energy-left-or-rightthink-21-c8c7186e0df32ad5dbf5.js.map"
-    ],
-    "path---test-gp-energy-left-or-rightthink-2": [
-      "path---test-gp-energy-left-or-rightthink-2-e57226ea4a436943767a.js",
-      "path---test-gp-energy-left-or-rightthink-2-e57226ea4a436943767a.js.map"
     ],
     "component---src-pages-404-js": [
       "component---src-pages-404-js-4503918ea3a16cfcdb75.js",
@@ -226,10 +230,6 @@
       "commons-76cb4d0256d7b75cdcdd.js.map",
       "build-js-styles.css.map"
     ],
-    "path---test-gp-energy-left-or-rightthink-18": [
-      "path---test-gp-energy-left-or-rightthink-18-8b841d175c0de7cd2704.js",
-      "path---test-gp-energy-left-or-rightthink-18-8b841d175c0de7cd2704.js.map"
-    ],
     "path---actions": [
       "path---actions-a0e39f21c11f6a62c5ab.js",
       "path---actions-a0e39f21c11f6a62c5ab.js.map"
@@ -238,17 +238,37 @@
       "path---404-html-a0e39f21c11f6a62c5ab.js",
       "path---404-html-a0e39f21c11f6a62c5ab.js.map"
     ],
-    "path---test-gp-energy-left-or-rightwhy": [
-      "path---test-gp-energy-left-or-rightwhy-a0e39f21c11f6a62c5ab.js",
-      "path---test-gp-energy-left-or-rightwhy-a0e39f21c11f6a62c5ab.js.map"
+    "path---test-gp-energy-left-or-right-myth-5": [
+      "path---test-gp-energy-left-or-right-myth-5-28219180d13c12377f39.js",
+      "path---test-gp-energy-left-or-right-myth-5-28219180d13c12377f39.js.map"
+    ],
+    "path---test-gp-energy-left-or-right-intro": [
+      "path---test-gp-energy-left-or-right-intro-a0e39f21c11f6a62c5ab.js",
+      "path---test-gp-energy-left-or-right-intro-a0e39f21c11f6a62c5ab.js.map"
     ],
     "path---think": [
       "path---think-a0e39f21c11f6a62c5ab.js",
       "path---think-a0e39f21c11f6a62c5ab.js.map"
     ],
+    "path---test-gp-energy-left-or-right-myth-2": [
+      "path---test-gp-energy-left-or-right-myth-2-a4b028cf6390c3f8613b.js",
+      "path---test-gp-energy-left-or-right-myth-2-a4b028cf6390c3f8613b.js.map"
+    ],
+    "path---test-gp-energy-left-or-right-think-8": [
+      "path---test-gp-energy-left-or-right-think-8-2e60709bbce32e3a1eaa.js",
+      "path---test-gp-energy-left-or-right-think-8-2e60709bbce32e3a1eaa.js.map"
+    ],
+    "path---test-gp-energy-left-or-right-think-7": [
+      "path---test-gp-energy-left-or-right-think-7-3f22aac89d267bfb1d0d.js",
+      "path---test-gp-energy-left-or-right-think-7-3f22aac89d267bfb1d0d.js.map"
+    ],
     "path---think-12": [
       "path---think-12-52dec5c6e1a39303c7ed.js",
       "path---think-12-52dec5c6e1a39303c7ed.js.map"
+    ],
+    "path---test-gp-energy-left-or-right-think-19": [
+      "path---test-gp-energy-left-or-right-think-19-1c833b61785365db441c.js",
+      "path---test-gp-energy-left-or-right-think-19-1c833b61785365db441c.js.map"
     ],
     "path---test-gp-energy-left-or-right-clues-js": [
       "path---test-gp-energy-left-or-right-clues-js-a0e39f21c11f6a62c5ab.js",
@@ -258,10 +278,6 @@
       "path---think-11-09351458fef3e4e0809f.js",
       "path---think-11-09351458fef3e4e0809f.js.map"
     ],
-    "path---test-gp-energy-left-or-rightthink-4": [
-      "path---test-gp-energy-left-or-rightthink-4-f17fa8bf2f1f33733111.js",
-      "path---test-gp-energy-left-or-rightthink-4-f17fa8bf2f1f33733111.js.map"
-    ],
     "path---think-18": [
       "path---think-18-8b841d175c0de7cd2704.js",
       "path---think-18-8b841d175c0de7cd2704.js.map"
@@ -270,17 +286,13 @@
       "path---test-gp-energy-left-or-right-index-js-a0e39f21c11f6a62c5ab.js",
       "path---test-gp-energy-left-or-right-index-js-a0e39f21c11f6a62c5ab.js.map"
     ],
-    "path---test-gp-energy-left-or-rightactions": [
-      "path---test-gp-energy-left-or-rightactions-a0e39f21c11f6a62c5ab.js",
-      "path---test-gp-energy-left-or-rightactions-a0e39f21c11f6a62c5ab.js.map"
-    ],
     "path---myth-2": [
       "path---myth-2-a4b028cf6390c3f8613b.js",
       "path---myth-2-a4b028cf6390c3f8613b.js.map"
     ],
-    "path---test-gp-energy-left-or-rightmyth-1": [
-      "path---test-gp-energy-left-or-rightmyth-1-8ce19e98d8a5b384d1b1.js",
-      "path---test-gp-energy-left-or-rightmyth-1-8ce19e98d8a5b384d1b1.js.map"
+    "path---test-gp-energy-left-or-right-think-4": [
+      "path---test-gp-energy-left-or-right-think-4-f17fa8bf2f1f33733111.js",
+      "path---test-gp-energy-left-or-right-think-4-f17fa8bf2f1f33733111.js.map"
     ],
     "path---myth-3": [
       "path---myth-3-7af084cff4e15e5d0dff.js",
@@ -290,31 +302,31 @@
       "component---src-pages-think-js-587e7d19567a9f48bb1f.js",
       "component---src-pages-think-js-587e7d19567a9f48bb1f.js.map"
     ],
-    "path---test-gp-energy-left-or-rightpotential": [
-      "path---test-gp-energy-left-or-rightpotential-a0e39f21c11f6a62c5ab.js",
-      "path---test-gp-energy-left-or-rightpotential-a0e39f21c11f6a62c5ab.js.map"
-    ],
-    "path---test-gp-energy-left-or-rightthink-20": [
-      "path---test-gp-energy-left-or-rightthink-20-afd68cad45022d18dc31.js",
-      "path---test-gp-energy-left-or-rightthink-20-afd68cad45022d18dc31.js.map"
+    "path---test-gp-energy-left-or-right-think-13": [
+      "path---test-gp-energy-left-or-right-think-13-799bf010063c8fa5c9b1.js",
+      "path---test-gp-energy-left-or-right-think-13-799bf010063c8fa5c9b1.js.map"
     ],
     "app": [
-      "app-6219a2ffa497995aeb4c.js",
+      "app-cd76768aee9af760ed3d.js",
       "build-js-styles.css",
-      "app-6219a2ffa497995aeb4c.js.map",
+      "app-cd76768aee9af760ed3d.js.map",
       "build-js-styles.css.map"
     ],
     "path---think-6": [
       "path---think-6-258fce9761aaa7589f4e.js",
       "path---think-6-258fce9761aaa7589f4e.js.map"
     ],
-    "path---test-gp-energy-left-or-rightthink-6": [
-      "path---test-gp-energy-left-or-rightthink-6-258fce9761aaa7589f4e.js",
-      "path---test-gp-energy-left-or-rightthink-6-258fce9761aaa7589f4e.js.map"
-    ],
     "path---clues": [
       "path---clues-a0e39f21c11f6a62c5ab.js",
       "path---clues-a0e39f21c11f6a62c5ab.js.map"
+    ],
+    "path---test-gp-energy-left-or-right-think-10": [
+      "path---test-gp-energy-left-or-right-think-10-a6fe1899361f860d23ec.js",
+      "path---test-gp-energy-left-or-right-think-10-a6fe1899361f860d23ec.js.map"
+    ],
+    "path---test-gp-energy-left-or-right-myth-1": [
+      "path---test-gp-energy-left-or-right-myth-1-8ce19e98d8a5b384d1b1.js",
+      "path---test-gp-energy-left-or-right-myth-1-8ce19e98d8a5b384d1b1.js.map"
     ],
     "path---myth-8": [
       "path---myth-8-1f38bdc99f9d1a4ccb0e.js",
@@ -336,29 +348,21 @@
       "component---src-pages-myth-js-c9de05bedabe7327fd33.js",
       "component---src-pages-myth-js-c9de05bedabe7327fd33.js.map"
     ],
-    "path---test-gp-energy-left-or-rightmyth-6": [
-      "path---test-gp-energy-left-or-rightmyth-6-4882e092ee2178e12235.js",
-      "path---test-gp-energy-left-or-rightmyth-6-4882e092ee2178e12235.js.map"
-    ],
-    "path---test-gp-energy-left-or-rightthink-11": [
-      "path---test-gp-energy-left-or-rightthink-11-09351458fef3e4e0809f.js",
-      "path---test-gp-energy-left-or-rightthink-11-09351458fef3e4e0809f.js.map"
-    ],
     "path---404": [
       "path---404-a0e39f21c11f6a62c5ab.js",
       "path---404-a0e39f21c11f6a62c5ab.js.map"
     ],
-    "path---test-gp-energy-left-or-rightthink-12": [
-      "path---test-gp-energy-left-or-rightthink-12-52dec5c6e1a39303c7ed.js",
-      "path---test-gp-energy-left-or-rightthink-12-52dec5c6e1a39303c7ed.js.map"
+    "path---test-gp-energy-left-or-right-myth-9": [
+      "path---test-gp-energy-left-or-right-myth-9-79c2fdc061fb53061ae4.js",
+      "path---test-gp-energy-left-or-right-myth-9-79c2fdc061fb53061ae4.js.map"
     ],
-    "path---test-gp-energy-left-or-rightthink-9": [
-      "path---test-gp-energy-left-or-rightthink-9-f3e7cd11c14d685dd888.js",
-      "path---test-gp-energy-left-or-rightthink-9-f3e7cd11c14d685dd888.js.map"
+    "path---test-gp-energy-left-or-right-think-1": [
+      "path---test-gp-energy-left-or-right-think-1-9734ff297db92ab61d6b.js",
+      "path---test-gp-energy-left-or-right-think-1-9734ff297db92ab61d6b.js.map"
     ],
-    "path---test-gp-energy-left-or-rightmyth-9": [
-      "path---test-gp-energy-left-or-rightmyth-9-79c2fdc061fb53061ae4.js",
-      "path---test-gp-energy-left-or-rightmyth-9-79c2fdc061fb53061ae4.js.map"
+    "path---test-gp-energy-left-or-right-myth-8": [
+      "path---test-gp-energy-left-or-right-myth-8-1f38bdc99f9d1a4ccb0e.js",
+      "path---test-gp-energy-left-or-right-myth-8-1f38bdc99f9d1a4ccb0e.js.map"
     ],
     "path---myth": [
       "path---myth-a0e39f21c11f6a62c5ab.js",
@@ -368,21 +372,17 @@
       "path---intro-a0e39f21c11f6a62c5ab.js",
       "path---intro-a0e39f21c11f6a62c5ab.js.map"
     ],
-    "path---test-gp-energy-left-or-rightmyth-3": [
-      "path---test-gp-energy-left-or-rightmyth-3-7af084cff4e15e5d0dff.js",
-      "path---test-gp-energy-left-or-rightmyth-3-7af084cff4e15e5d0dff.js.map"
-    ],
-    "path---test-gp-energy-left-or-rightmyth-7": [
-      "path---test-gp-energy-left-or-rightmyth-7-dcdadd76e0557d700a79.js",
-      "path---test-gp-energy-left-or-rightmyth-7-dcdadd76e0557d700a79.js.map"
-    ],
-    "path---test-gp-energy-left-or-rightthink-14": [
-      "path---test-gp-energy-left-or-rightthink-14-91a7b66ec28b938edde7.js",
-      "path---test-gp-energy-left-or-rightthink-14-91a7b66ec28b938edde7.js.map"
+    "path---test-gp-energy-left-or-right-think-21": [
+      "path---test-gp-energy-left-or-right-think-21-c8c7186e0df32ad5dbf5.js",
+      "path---test-gp-energy-left-or-right-think-21-c8c7186e0df32ad5dbf5.js.map"
     ],
     "path---test-gp-energy-left-or-right-404-js": [
       "path---test-gp-energy-left-or-right-404-js-a0e39f21c11f6a62c5ab.js",
       "path---test-gp-energy-left-or-right-404-js-a0e39f21c11f6a62c5ab.js.map"
+    ],
+    "path---test-gp-energy-left-or-right-think-5": [
+      "path---test-gp-energy-left-or-right-think-5-72bff8b8efe60fb87d78.js",
+      "path---test-gp-energy-left-or-right-think-5-72bff8b8efe60fb87d78.js.map"
     ]
   }
 }

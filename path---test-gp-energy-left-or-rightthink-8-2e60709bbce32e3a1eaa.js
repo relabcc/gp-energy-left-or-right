@@ -1,2 +1,0 @@
-webpackJsonp([64104012036853],{1225:function(t,e){t.exports={pathContext:{id:8,index:7,title:"好的企業該如何做到企業社會責任？",sub:"看雜誌"}}}});
-//# sourceMappingURL=path---test-gp-energy-left-or-rightthink-8-2e60709bbce32e3a1eaa.js.map

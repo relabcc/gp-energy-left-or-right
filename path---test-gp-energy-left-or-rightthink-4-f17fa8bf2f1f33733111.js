@@ -1,2 +1,0 @@
-webpackJsonp([0xb14e50022e22],{1221:function(e,t){e.exports={pathContext:{id:4,index:3,title:"你知道空氣污染對你的孩子會有什麼樣的傷害嗎？",sub:"送孩子上學"}}}});
-//# sourceMappingURL=path---test-gp-energy-left-or-rightthink-4-f17fa8bf2f1f33733111.js.map
