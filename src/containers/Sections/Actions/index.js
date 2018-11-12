@@ -12,7 +12,7 @@ import ActionsMobile from './actions-mb.svg';
 
 import { actionLinks } from '../../../text';
 
-const ratio = {
+export const ratio = {
   mobile: 610 / 375,
   desktop: 1200 / 1334,
 };

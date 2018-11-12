@@ -1,6 +1,7 @@
 import React, { PureComponent, createElement } from 'react';
 import { compose } from 'redux';
 import { withContentRect } from 'react-measure';
+import Helmet from 'react-helmet';
 
 import { FullPage, Slide } from '../vendor/FullPage';
 import withHeader from '../hoc/withHeader';
@@ -13,6 +14,7 @@ import Box from '../components/Box';
 
 import SideNav from '../containers/SideNav';
 import Sections from '../containers/Sections';
+import { ratio } from '../containers/Sections/Actions';
 // import RatioToggle from '../containers/RatioToggle';
 
 import { titles } from '../text';
@@ -23,7 +25,6 @@ import virtualPageview from '../utils/virtualPageview';
 
 const last = sections.length - 1;
 const isServer = typeof window === 'undefined';
-
 
 class Index extends PureComponent {
   constructor(props) {
@@ -98,6 +99,12 @@ class Index extends PureComponent {
         bg="blue"
         {...props}
       >
+        <Helmet
+          title="能源也能左右世界 - 一個關於現在、未來能源情報的網站"
+          meta={[
+            { name: 'description', content: '當臺灣的能源能被你左右，你決定往左還是往右？' },
+          ]}
+        />
         <Box height="100%" opacity={Number(firstLoaded)} transition="opacity 0.5s">
           <FullPage
             beforeChange={this.onChangeStart}
@@ -114,7 +121,7 @@ class Index extends PureComponent {
                   isMobile: browser.lessThan.md,
                   name: key,
                   firstLoaded,
-                }) : <Box height="100vh" />}
+                }) : <Box height={key === 'Actions' ? `${(isDesktop ? ratio.desktop : ratio.mobile) * 100}vw` : '100%'} />}
               </Slide>
             ))}
           </FullPage>
@@ -123,7 +130,6 @@ class Index extends PureComponent {
           list={preload[isDesktop ? 'desktop' : 'mobile']}
           onFirstLoaded={this.handleFirstLoaded}
           onLoaded={this.handleLoaded}
-          pause={introPlayRequested && !introPlayed}
         />
         <Title active={!animating}>
           {title}

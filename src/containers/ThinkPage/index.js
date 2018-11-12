@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import random from 'lodash/random';
+import Helmet from 'react-helmet';
 
 import Flex from '../../components/Flex';
 import Box from '../../components/Box';
@@ -83,6 +84,12 @@ class ThinkPage extends React.PureComponent {
     );
     return (
       <Box>
+        <Helmet
+          title={scene.title}
+          meta={[
+            { name: 'description', content: scene.sub },
+          ]}
+        />
         {!noHeader && <Header />}
         <Box pt={[0,0,theme.headerHeight]}>
           {browser.greaterThan.sm && (

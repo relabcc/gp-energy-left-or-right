@@ -1,21 +1,18 @@
+import 'babel-polyfill';
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
-import 'babel-polyfill';
-
 import { Provider } from 'react-redux';
 
 import ThemeProvider from '../components/ThemeProvider';
 import configureStore from '../configureStore';
+import config from '../../gatsby-config';
 
-const Layout = ({ children, data }) => (
+const Layout = ({ children }) => (
   <div>
-    <Helmet
-      title={data.site.siteMetadata.title}
-      meta={[
-        { name: 'description', content: data.site.siteMetadata.description },
-      ]}
-    />
+    <Helmet>
+      <meta name="og:image" content={'https:' + config.siteMetadata.remote + '/og-image.jpg'} />
+    </Helmet>
     <Provider store={configureStore()}>
       <ThemeProvider>
         {children()}
@@ -29,14 +26,3 @@ Layout.propTypes = {
 };
 
 export default Layout;
-
-export const query = graphql`
-  query SiteTitleQuery {
-    site {
-      siteMetadata {
-        title,
-        description
-      }
-    }
-  }
-`;

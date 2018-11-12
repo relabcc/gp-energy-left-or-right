@@ -12,12 +12,7 @@ class StepPreloader extends PureComponent {
     this.total = props.list.length;
   }
 
-  componentWillReceiveProps({ pause }) {
-    if (this.props.pause && !pause) this.handleOnLoad(pause);
-  }
-
-  handleOnLoad = (pause = this.props.pause) => {
-    if (pause) return;
+  handleOnLoad = () => {
     const { step } = this.state;
     const next = step + 1;
     if (!this.firstLoaded) this.handleFirstLoaded();

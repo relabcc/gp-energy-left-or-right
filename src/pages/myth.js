@@ -1,4 +1,5 @@
 import React from 'react';
+import Helmet from 'react-helmet';
 
 import { myth } from '../text';
 import Flex from '../components/Flex';
@@ -10,6 +11,12 @@ import MythSlick from '../containers/Myth';
 
 const Myth = ({ pathContext, ...props }) => (
   <Flex height="100vh" align="center" bg="white" {...props}>
+    <Helmet
+      title={myth.title}
+      meta={[
+        { name: 'description', content: myth.sub },
+      ]}
+    />
     <Box w={1}>
       <Text.h1>{myth.title}</Text.h1>
       <Text.h4 my="0.25em">{myth.sub}</Text.h4>

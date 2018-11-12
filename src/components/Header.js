@@ -18,7 +18,8 @@ import { links } from '../text';
 
 import config from '../../gatsby-config';
 
-const url = config.siteMetadata.host + config.pathPrefix;
+const url = config.siteMetadata.host + config.siteMetadata.prefix;
+const withPrefix = (link) => config.siteMetadata.prefix + link;
 
 const styles = {
   bmMenuWrap: {
@@ -78,7 +79,7 @@ class Header extends PureComponent {
         w={1}
         zIndex={99}
       >
-        <Link to="/">
+        <Link to={withPrefix('/')}>
         <Logo w={175} color="cyan" />
         </Link>
         <Box flex={1} />

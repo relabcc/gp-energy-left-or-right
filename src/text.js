@@ -1,3 +1,4 @@
+const config = require('../gatsby-config');
 exports.titles = [
   null,
   '能源的真實成本',
@@ -8,18 +9,21 @@ exports.titles = [
   null,
 ];
 
-const entrySite = 'https://relabcc.github.io/gp-monopoly/';
+const entrySite = 'https://www.greenpeace.org/taiwan/RE-monopoly/';
+const withPrefix = (link) => `${config.siteMetadata.prefix}${link}`;
+
+exports.entrySite = entrySite;
 
 exports.links = [
   { label: '能源傳送門', href: entrySite },
-  { label: '迷思懶人包', to: '/myth' },
-  { label: '能源線索大蒐集', to: '/clues' },
+  { label: '迷思懶人包', to: withPrefix('/myth') },
+  { label: '能源線索大蒐集', to: withPrefix('/clues') },
 ];
 
 exports.actionLinks = [
   { label: '能源\n傳送門', title: '一網打盡\n能源傳送門', href: entrySite },
-  { label: '臺灣先生對\n綠電小姐的\n誤解與掙扎', title: '早就不該有的\n能源迷思', to: '/myth' },
-  { label: '能源線索\n大蒐集', title: '生活與能源\n的連結', to: '/clues' },
+  { label: '臺灣先生對\n綠電小姐的\n誤解與掙扎', title: '早就不該有的\n能源迷思', href: withPrefix('/myth') },
+  { label: '能源線索\n大蒐集', title: '生活與能源\n的連結', href: withPrefix('/clues') },
   { label: '屋頂的\n小太陽', title: '太陽能板\n能省多少電', href: 'https://act.gp/2ytDMi3' },
 ];
 

@@ -4,7 +4,6 @@ import throttle from 'lodash/throttle';
 
 import animatedScrollTo from '../utils/animated-scroll-to';
 import isMobileDevice from '../utils/is-mobile';
-import Slide from './Slide';
 import Controls from './Controls';
 
 const getChildrenCount = (children) => {
@@ -79,7 +78,6 @@ export default class FullPage extends React.Component {
     }
     window.removeEventListener('resize', this.onResize);
   }
-
 
   onResize = (restore) => {
     if (this._isScrollPending) {
@@ -160,12 +158,13 @@ export default class FullPage extends React.Component {
   checkChildrenOverflow = () => {
     this.chidrenOverflow = [];
     this.chidrenRef = [];
+    const containerHeight = this._container.parentNode.clientHeight;
     this._container.childNodes.forEach((slide, index) => {
       if (index > 0) {
         this.chidrenRef.push(slide);
-        this.chidrenOverflow.push(slide.firstChild.clientHeight - window.innerHeight);
+        this.chidrenOverflow.push(slide.firstChild.clientHeight - containerHeight);
         /* eslint-disable no-param-reassign */
-        if (slide.firstChild.clientHeight > window.innerHeight) {
+        if (slide.firstChild.clientHeight > containerHeight) {
           slide.style.touchAction = 'pan-y';
           slide.style.overflowY = 'scroll';
         } else {

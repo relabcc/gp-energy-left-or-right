@@ -8,6 +8,8 @@ import Link from '../../../components/Link';
 // import Circle from '../../../components/Circle';
 import Modal from '../../../components/Modal';
 import Border from '../../../components/Border';
+import config from '../../../../gatsby-config';
+import { entrySite } from '../../../text';
 
 import Transform from './TransformSvg';
 import Myth from './MythSvg';
@@ -15,22 +17,24 @@ import Info from './InfoSvg';
 import Clue from './ClueSvg';
 
 import Thanks from './Thanks';
+const withPrefix = (link) => config.siteMetadata.prefix + link;
 
 const linkPics = [
   {
     Pic: Transform,
-    href: '/',
+    href: withPrefix('/'),
   },
   {
     Pic: Myth,
-    href: '/myth',
+    href: withPrefix('/myth'),
   },
   {
     Pic: Info,
-    href: 'https://relabcc.github.io/gp-monopoly/',
+    href: entrySite,
   },
   {
     Pic: Clue,
+    href: withPrefix('/clues'),
   },
 ];
 
