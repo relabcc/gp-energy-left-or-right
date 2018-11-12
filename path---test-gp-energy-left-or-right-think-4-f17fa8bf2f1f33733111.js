@@ -1,2 +1,2 @@
-webpackJsonp([0xc845f5f776c9],{1220:function(t,e){t.exports={pathContext:{id:4,index:3,title:"你知道空氣污染對你的孩子會有什麼樣的傷害嗎？",sub:"送孩子上學"}}}});
+webpackJsonp([0xc845f5f776c9],{1217:function(t,e){t.exports={pathContext:{id:4,index:3,title:"你知道空氣污染對你的孩子會有什麼樣的傷害嗎？",sub:"送孩子上學"}}}});
 //# sourceMappingURL=path---test-gp-energy-left-or-right-think-4-f17fa8bf2f1f33733111.js.map

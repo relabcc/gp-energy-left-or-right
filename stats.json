@@ -192,10 +192,6 @@
       "path---people-a0e39f21c11f6a62c5ab.js",
       "path---people-a0e39f21c11f6a62c5ab.js.map"
     ],
-    "path---test-gp-energy-left-or-right-404": [
-      "path---test-gp-energy-left-or-right-404-a0e39f21c11f6a62c5ab.js",
-      "path---test-gp-energy-left-or-right-404-a0e39f21c11f6a62c5ab.js.map"
-    ],
     "path---myth-6": [
       "path---myth-6-4882e092ee2178e12235.js",
       "path---myth-6-4882e092ee2178e12235.js.map"
@@ -227,6 +223,10 @@
     "component---src-pages-404-js": [
       "component---src-pages-404-js-4503918ea3a16cfcdb75.js",
       "component---src-pages-404-js-4503918ea3a16cfcdb75.js.map"
+    ],
+    "path---test-gp-energy-left-or-right": [
+      "path---test-gp-energy-left-or-right-a0e39f21c11f6a62c5ab.js",
+      "path---test-gp-energy-left-or-right-a0e39f21c11f6a62c5ab.js.map"
     ],
     "commons": [
       "commons-76cb4d0256d7b75cdcdd.js",
@@ -302,14 +302,10 @@
       "path---test-gp-energy-left-or-right-think-13-799bf010063c8fa5c9b1.js",
       "path---test-gp-energy-left-or-right-think-13-799bf010063c8fa5c9b1.js.map"
     ],
-    "path---test-gp-energy-left-or-right-index": [
-      "path---test-gp-energy-left-or-right-index-a0e39f21c11f6a62c5ab.js",
-      "path---test-gp-energy-left-or-right-index-a0e39f21c11f6a62c5ab.js.map"
-    ],
     "app": [
-      "app-68836a237c82907f6e2a.js",
+      "app-8a80f0f61d6b68464914.js",
       "build-js-styles.css",
-      "app-68836a237c82907f6e2a.js.map",
+      "app-8a80f0f61d6b68464914.js.map",
       "build-js-styles.css.map"
     ],
     "path---think-6": [

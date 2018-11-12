@@ -1,2 +1,2 @@
-webpackJsonp([34320500062613],{1211:function(t,e){t.exports={pathContext:{id:15,index:14,title:"臺灣製造的下一個關鍵是什麼？",sub:"滑新聞"}}}});
+webpackJsonp([34320500062613],{1208:function(t,e){t.exports={pathContext:{id:15,index:14,title:"臺灣製造的下一個關鍵是什麼？",sub:"滑新聞"}}}});
 //# sourceMappingURL=path---test-gp-energy-left-or-right-think-15-e6da626de4156b6debf0.js.map
