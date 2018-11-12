@@ -1,0 +1,2 @@
+webpackJsonp([0xe625dde1dd3c],{1195:function(e,t){e.exports={pathContext:{id:17,index:16,title:"食物浪費令人不捨，但你知道非電過程也浪費很多電嗎？",sub:"倒廚餘"}}}});
+//# sourceMappingURL=path---gp-energy-left-or-right-think-17-5840729c1367c3f87bfa.js.map
