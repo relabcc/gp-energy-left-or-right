@@ -1,2 +1,0 @@
-webpackJsonp([0xef82dd980b06],{1190:function(t,e){t.exports={pathContext:{id:12,index:11,title:"你覺得十年後工廠的電費成本是多少呢？",sub:"看損益表"}}}});
-//# sourceMappingURL=path---gp-energy-left-or-right-think-12-52dec5c6e1a39303c7ed.js.map

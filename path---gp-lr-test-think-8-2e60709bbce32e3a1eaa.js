@@ -1,0 +1,2 @@
+webpackJsonp([0xf3610cca3a4c],{1206:function(t,c){t.exports={pathContext:{id:8,index:7,title:"好的企業該如何做到企業社會責任？",sub:"看雜誌"}}}});
+//# sourceMappingURL=path---gp-lr-test-think-8-2e60709bbce32e3a1eaa.js.map

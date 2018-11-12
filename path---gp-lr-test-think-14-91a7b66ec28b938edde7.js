@@ -1,0 +1,2 @@
+webpackJsonp([39886736614192],{1192:function(t,e){t.exports={pathContext:{id:14,index:13,title:"為什麼我只能跟台電買電？",sub:"抄電表"}}}});
+//# sourceMappingURL=path---gp-lr-test-think-14-91a7b66ec28b938edde7.js.map

@@ -1,2 +1,0 @@
-webpackJsonp([0xe410860ef059],{1201:function(e,t){e.exports={pathContext:{id:3,index:2,title:"現在電費的計算方式真的合理嗎？",sub:"抄電表"}}}});
-//# sourceMappingURL=path---gp-energy-left-or-right-think-3-c1357fd9efd58ce68510.js.map

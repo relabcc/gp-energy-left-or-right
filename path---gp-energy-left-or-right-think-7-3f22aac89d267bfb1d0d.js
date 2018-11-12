@@ -1,2 +1,0 @@
-webpackJsonp([37575381795406],{1205:function(t,e){t.exports={pathContext:{id:7,index:6,title:"你想過工廠的電可以自己發嗎？",sub:"視察工廠"}}}});
-//# sourceMappingURL=path---gp-energy-left-or-right-think-7-3f22aac89d267bfb1d0d.js.map

@@ -1,0 +1,2 @@
+webpackJsonp([0xf8beb90de154],{1189:function(e,t){e.exports={pathContext:{id:11,index:10,title:"你知道臺灣風電發展條件超好嗎？",sub:"抓住財經趨勢"}}}});
+//# sourceMappingURL=path---gp-lr-test-think-11-09351458fef3e4e0809f.js.map
