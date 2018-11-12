@@ -1,0 +1,2 @@
+webpackJsonp([0xec42108afa6d],{1226:function(t,e){t.exports={pathContext:{id:9,index:8,title:"除了衣服外，未來「用電」也可以選擇環境友善的商品嗎？",sub:"Shopping"}}}});
+//# sourceMappingURL=path---test-gp-energy-left-or-rightthink-9-f3e7cd11c14d685dd888.js.map
