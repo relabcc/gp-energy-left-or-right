@@ -50,8 +50,8 @@ class Header extends PureComponent {
     const paths = [
       '/clues',
     ];
-    const ogImageMeta = find(document.getElementsByTagName('META'), (meta) => meta.getAttribute('name') === 'og:image');
-    const url = ogImageMeta ? ogImageMeta.getAttribute('content').replace('og-image.jpg', '') : (window.location.origin + window.location.pathname);
+    const ogUrlMeta = find(document.getElementsByTagName('META'), (meta) => meta.getAttribute('name') === 'og:url');
+    const url = ogUrlMeta ? ogUrlMeta.getAttribute('content') : (window.location.origin + window.location.pathname);
     return {
       solid: paths.some((path) => path === nextProps.match.path),
       url,
