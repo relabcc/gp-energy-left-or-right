@@ -5,7 +5,7 @@ import ReactGA from 'react-ga';
 
 class ScrollToTop extends Component {
   componentDidMount() {
-    ReactGA.initialize('UA-58674730-16');
+    ReactGA.initialize('UA-36627671-1');
     ReactGA.pageview(window.location.pathname + '#' + this.props.location.pathname + window.location.search);
   }
 
