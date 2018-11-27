@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// import MdClose from 'react-icons/lib/md/close';
 
 import Flex from '../../../components/Flex';
 import Text from '../../../components/Text';
@@ -8,6 +7,7 @@ import Link from '../../../components/Link';
 // import Circle from '../../../components/Circle';
 import Modal from '../../../components/Modal';
 import Border from '../../../components/Border';
+import { thinkLinks } from '../../../text';
 
 import Transform from './TransformSvg';
 import Myth from './MythSvg';
@@ -16,23 +16,17 @@ import Clue from './ClueSvg';
 
 import Thanks from './Thanks';
 
-const linkPics = [
-  {
-    Pic: Transform,
-    href: '/',
-  },
-  {
-    Pic: Myth,
-    href: '/myth',
-  },
-  {
-    Pic: Info,
-    href: 'https://relabcc.github.io/gp-monopoly/',
-  },
-  {
-    Pic: Clue,
-  },
-];
+const pics = {
+  Transform,
+  Myth,
+  Info,
+  Clue,
+};
+
+const linkPics = thinkLinks.map(({ pic, href }) => ({
+  Pic: pics[pic],
+  href,
+}));
 
 const OpenModal = ({ isOpen, ...props }) => (
   <Modal

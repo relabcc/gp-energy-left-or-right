@@ -10,6 +10,7 @@ exports.titles = [
   null,
 ];
 
+const thisSite = find(document.getElementsByTagName('META'), (meta) => meta.getAttribute('name') === 'og:url').getAttribute('content');
 const entrySite = find(document.getElementsByTagName('META'), (meta) => meta.getAttribute('name') === 'monopoly').getAttribute('content');
 
 exports.links = [
@@ -41,3 +42,22 @@ exports.myth = {
   title: '早該破解的綠電迷思',
   sub: '2018年你對綠電的誤解還停在2008嗎？'
 };
+
+exports.thinkLinks = [
+  {
+    pic: 'Transform',
+    href: thisSite,
+  },
+  {
+    pic: 'Myth',
+    href: thisSite + '#/myth',
+  },
+  {
+    pic: 'Info',
+    href: entrySite,
+  },
+  {
+    pic: 'Clue',
+    href: thisSite + '#/clues',
+  },
+];
