@@ -91,7 +91,9 @@ class TwoBackgrounds extends PureComponent {
     return (
       <Box position="relative" height="100%" overflow="hidden" innerRef={measureRef} {...props}>
         <Box height="100%">
-          <NewBg isMobile={isMobile}>{leftContent}</NewBg>
+          <NewBg isMobile={isMobile}>
+            {leftContent}
+          </NewBg>
           <Box
             top="0"
             left="0"

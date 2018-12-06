@@ -7,8 +7,10 @@ import ActionButton from '../../../components/ActionButton';
 import ActionButtonMobile from '../../../components/ActionButtonMobile';
 import Grain from '../../../components/Backgrounds/Grain';
 import EmbedSVG from '../../../components/EmbedSVG';
-import Actions from './actions-dt.svg';
-import ActionsMobile from './actions-mb.svg';
+import Actions from './actions-dt/text.svg';
+import ActionsMobile from './actions-mb/text.svg';
+import ActionsBg from './actions-dt/image.png';
+import ActionsMobileBg from './actions-mb/image.png';
 
 import { actionLinks } from '../../../text';
 
@@ -27,11 +29,12 @@ class ScrollableAction extends PureComponent {
       ...props
     } = this.props;
     const src = isMobile ? ActionsMobile : Actions;
+    const bg = isMobile ? ActionsMobileBg : ActionsBg;
     const Button = isMobile ? ActionButtonMobile : ActionButton;
 
     return (
       <Box position="relative">
-        <EmbedSVG src={src} ratio={ratio[isMobile ? 'mobile' : 'desktop']} {...props} />
+        <EmbedSVG src={src} ratio={ratio[isMobile ? 'mobile' : 'desktop']} bg={bg} {...props} />
         <Flex
           position="absolute"
           left={['10%', null, '17.5%']}

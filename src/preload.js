@@ -8,30 +8,30 @@ export default {
       require('./components/EnergyHandle/energy-handle.svg'),
       require('./components/Title/title-plate.svg'),
       require('./components/Title/title-plate.svg'),
-      require('./containers/Sections/Intro/intro-mb-2017.svg'),
-      require('./containers/Sections/Intro/intro-mb-2035.svg')
+      require('./containers/Sections/Intro/intro-mb-2017/image.png'),
+      require('./containers/Sections/Intro/intro-mb-2035/image.png')
     ],
     [
-      require('./containers/Sections/Cost/cost-mb-2017.svg'),
-      require('./containers/Sections/Cost/cost-mb-2035.svg')
+      require('./containers/Sections/Cost/cost-mb-2017/image.png'),
+      require('./containers/Sections/Cost/cost-mb-2035/image.png')
     ],
     [
-      require('./containers/Sections/System/system-mb-2017.svg'),
-      require('./containers/Sections/System/system-mb-2035.svg')
+      require('./containers/Sections/System/system-mb-2017/image.png'),
+      require('./containers/Sections/System/system-mb-2035/image.png')
     ],
     [
-      require('./containers/Sections/People/people-mb-2017.svg'),
-      require('./containers/Sections/People/people-mb-2035.svg')
+      require('./containers/Sections/People/people-mb-2017/image.png'),
+      require('./containers/Sections/People/people-mb-2035/image.png')
     ],
     [
-      require('./containers/Sections/Why/why-mb-2017.svg'),
-      require('./containers/Sections/Why/why-mb-2035.svg')
+      require('./containers/Sections/Why/why-mb-2017/image.png'),
+      require('./containers/Sections/Why/why-mb-2035/image.png')
     ],
     [
-      require('./containers/Sections/Potential/potential-mb.svg')
+      require('./containers/Sections/Potential/potential-mb/image.png')
     ],
     [
-      require('./containers/Sections/Actions/actions-mb.svg')
+      require('./containers/Sections/Actions/actions-mb/image.png')
     ]
   ],
   desktop: [
@@ -41,30 +41,30 @@ export default {
       require('./components/Backgrounds/Grain/grain-pattern.svg'),
       require('./components/EnergyHandle/energy-handle.svg'),
       require('./components/Title/title-plate.svg'),
-      require('./containers/Sections/Intro/intro-dt-2017.svg'),
-      require('./containers/Sections/Intro/intro-dt-2035.svg')
+      require('./containers/Sections/Intro/intro-dt-2017/image.png'),
+      require('./containers/Sections/Intro/intro-dt-2035/image.png')
     ],
     [
-      require('./containers/Sections/Cost/cost-dt-2017.svg'),
-      require('./containers/Sections/Cost/cost-dt-2035.svg')
+      require('./containers/Sections/Cost/cost-dt-2017/image.png'),
+      require('./containers/Sections/Cost/cost-dt-2035/image.png')
     ],
     [
-      require('./containers/Sections/System/system-dt-2017.svg'),
-      require('./containers/Sections/System/system-dt-2035.svg')
+      require('./containers/Sections/System/system-dt-2017/image.png'),
+      require('./containers/Sections/System/system-dt-2035/image.png')
     ],
     [
-      require('./containers/Sections/People/people-dt-2017.svg'),
-      require('./containers/Sections/People/people-dt-2035.svg')
+      require('./containers/Sections/People/people-dt-2017/image.png'),
+      require('./containers/Sections/People/people-dt-2035/image.png')
     ],
     [
-      require('./containers/Sections/Why/why-dt-2017.svg'),
-      require('./containers/Sections/Why/why-dt-2035.svg')
+      require('./containers/Sections/Why/why-dt-2017/image.png'),
+      require('./containers/Sections/Why/why-dt-2035/image.png')
     ],
     [
-      require('./containers/Sections/Potential/potential-dt.svg')
+      require('./containers/Sections/Potential/potential-dt/image.png')
     ],
     [
-      require('./containers/Sections/Actions/actions-dt.svg')
+      require('./containers/Sections/Actions/actions-dt/image.png')
     ]
   ],
 };

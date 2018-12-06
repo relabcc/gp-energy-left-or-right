@@ -56,5 +56,9 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "glob": "^7.1.3",
+    "inkscape": "^2.0.0"
+  }
 }

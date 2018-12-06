@@ -70,8 +70,8 @@ class Header extends PureComponent {
     <Link
       key={index}
       color={['white', null, 'gray']}
-      f={['1em', null, '0.875em']}
-      my={['1em', null, 0]}
+      f={['1.25em', null, '0.875em']}
+      my={['1.5em', null, 0]}
       {...a}
     >
       {label}

@@ -1,10 +1,15 @@
 import React, { PureComponent } from 'react';
 import TWEEN from '@tweenjs/tween.js';
 
-import Old from './intro-dt-2017.svg';
-import New from './intro-dt-2035.svg';
-import NewMobile from './intro-mb-2035.svg';
-import OldMobile from './intro-mb-2017.svg';
+import Old from './intro-dt-2017/text.svg';
+import New from './intro-dt-2035/text.svg';
+import NewMobile from './intro-mb-2035/text.svg';
+import OldMobile from './intro-mb-2017/text.svg';
+import OldBg from './intro-dt-2017/image.png';
+import NewBg from './intro-dt-2035/image.png';
+import NewMobileBg from './intro-mb-2035/image.png';
+import OldMobileBg from './intro-mb-2017/image.png';
+
 
 import creatSection from '../creatSection';
 import withConnect from '../../DualBg/withConnect';
@@ -62,4 +67,11 @@ const withIntroPlay = (Intro) => {
   return withConnect(WithIntro);
 }
 
-export default withIntroPlay(creatSection([Old, New], [OldMobile, NewMobile]));
+export default withIntroPlay(
+  creatSection(
+    [Old, New],
+    [OldMobile, NewMobile],
+    [OldBg, NewBg],
+    [OldMobileBg, NewMobileBg],
+  )
+);

@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import SVG from 'react-inlinesvg';
 
 import Box from './Box';
+import BackgroundImage from './BackgroundImage';
 
 const Container = styled(Box)`
   > svg {
@@ -17,10 +18,21 @@ class EmbedSVG extends PureComponent {
     const {
       ratio,
       src,
+      bg,
       ...props
     } = this.props;
     return (
       <Box pt={`${ratio * 100}%`} position="relative" {...props}>
+        {bg && (
+          <BackgroundImage
+            top="0"
+            left="0"
+            right="0"
+            position="absolute"
+            src={bg}
+            ratio={ratio}
+          />
+        )}
         <Container
           is={SVG}
           src={src}
