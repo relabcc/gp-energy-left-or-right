@@ -1,10 +1,20 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import throttle from 'lodash/throttle';
+import bowser from 'bowser';
+import { injectGlobal } from 'styled-components';
 
 import animatedScrollTo from '../utils/animated-scroll-to';
 import isMobileDevice from '../utils/is-mobile';
 import Controls from './Controls';
+
+bowser.mobile && injectGlobal`
+  body {
+    height: 100vh;
+    overflow: hidden;
+    position: fixed;
+  }
+`;
 
 const getChildrenCount = (children) => {
   const childrenArr = React.Children.toArray(children);
@@ -60,7 +70,7 @@ export default class FullPage extends React.Component {
       document.addEventListener('touchmove', this.onTouchMove);
       document.addEventListener('touchstart', this.onTouchStart);
     } else {
-      this.scrollToSlide = throttle(this.scrollToSlide, 1500);
+      this.scrollToSlide = throttle(this.scrollToSlide, 500);
       document.addEventListener('wheel', this.onScroll);
     }
     window.addEventListener('resize', this.onResize);
@@ -204,7 +214,7 @@ export default class FullPage extends React.Component {
       const currentSlide = this.state.activeSlide;
       if (currentSlide === slide) {
         if (!force) return;
-        return animatedScrollTo(this._slides[slide], 0);
+        return animatedScrollTo(this._slides[slide], 0, null, this._container);
       }
 
       this.props.beforeChange({ from: currentSlide, to: slide });
@@ -220,7 +230,7 @@ export default class FullPage extends React.Component {
 
         this.props.afterChange({ from: currentSlide, to: slide });
         if (this.deplayedOnresize) this.onResize(true);
-      });
+      }, this._container);
     }
   }
 
@@ -257,9 +267,11 @@ export default class FullPage extends React.Component {
 
   render() {
     return (
-      <div style={{ height: this.state.height }} ref={this.handleRef}>
+      <div>
         {this.renderControls()}
-        {this.props.children}
+        <div style={{ height: this.state.height }} ref={this.handleRef}>
+          {this.props.children}
+        </div>
       </div>
     );
   }
