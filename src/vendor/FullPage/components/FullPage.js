@@ -96,7 +96,7 @@ export default class FullPage extends React.Component {
     }
     this._slides = [];
 
-    const { height } = this._container.parentNode.getBoundingClientRect();
+    const { height } = this._container.parentNode.parentNode.getBoundingClientRect();
     for (let i = 0; i < this._slidesCount; i++) {
       this._slides.push(height * i);
     }
@@ -168,7 +168,7 @@ export default class FullPage extends React.Component {
   checkChildrenOverflow = () => {
     this.chidrenOverflow = [];
     this.chidrenRef = [];
-    const containerHeight = this._container.parentNode.clientHeight;
+    const containerHeight = this._container.parentNode.parentNode.clientHeight;
     this._container.childNodes.forEach((slide, index) => {
       if (index > 0) {
         this.chidrenRef.push(slide);
@@ -214,7 +214,7 @@ export default class FullPage extends React.Component {
       const currentSlide = this.state.activeSlide;
       if (currentSlide === slide) {
         if (!force) return;
-        return animatedScrollTo(this._slides[slide], 0, null, this._container);
+        return animatedScrollTo(this._slides[slide], 0, null, this._isMobile && this._container);
       }
 
       this.props.beforeChange({ from: currentSlide, to: slide });
@@ -230,7 +230,7 @@ export default class FullPage extends React.Component {
 
         this.props.afterChange({ from: currentSlide, to: slide });
         if (this.deplayedOnresize) this.onResize(true);
-      }, this._container);
+      }, this._isMobile && this._container);
     }
   }
 
@@ -267,9 +267,9 @@ export default class FullPage extends React.Component {
 
   render() {
     return (
-      <div>
+      <div style={{ height: this.state.height }}>
         {this.renderControls()}
-        <div style={{ height: this.state.height }} ref={this.handleRef}>
+        <div style={{ height: '100%' }} ref={this.handleRef}>
           {this.props.children}
         </div>
       </div>
