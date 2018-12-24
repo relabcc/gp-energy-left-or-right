@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 12">
+  <title>handle-arr</title>
+  <g>
+    <line x1="19.05" y1="6" x2="13.27" y2="1.09" fill="#934947" stroke="#934947" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1.09"/>
+    <line x1="13.27" y1="10.91" x2="19.05" y2="6" fill="#934947" stroke="#934947" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1.09"/>
+    <path d="M1.93,7.53A1.5,1.5,0,0,1,.4,6,1.5,1.5,0,0,1,1.93,4.47,1.5,1.5,0,0,1,3.46,6,1.57,1.57,0,0,1,1.93,7.53Z" fill="#934947"/>
+    <path d="M8,7.53A1.49,1.49,0,0,1,6.51,6,1.53,1.53,0,1,1,9.56,6,1.49,1.49,0,0,1,8,7.53Z" fill="#934947"/>
+  </g>
+</svg>

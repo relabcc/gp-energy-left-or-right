@@ -10,7 +10,7 @@ import withHeader from '../hoc/withHeader';
 import MythSlick from '../containers/Myth';
 
 const Myth = ({ match, ...props }) => (
-  <Flex height="100vh" align="center" bg="white" {...props}>
+  <Flex height="100vh" align="center" bg="white" overflow="hidden"  {...props}>
     <Helmet
       title={myth.title}
       meta={[

@@ -113,7 +113,6 @@ class TwoBackgrounds extends PureComponent {
         <Grain />
         <EnergyHandle
           position="absolute"
-          bottom="6em"
           transform="translate(-50%, 0)"
           left="50%"
           innerRef={this.handleRef}

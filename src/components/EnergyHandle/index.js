@@ -5,6 +5,7 @@ import Box from '../Box'
 import BackgroundImage from '../BackgroundImage'
 
 import handle from './energy-handle.svg';
+import handleArr from './handle-arr.svg';
 
 const ripple = keyframes`
   0%{
@@ -14,6 +15,15 @@ const ripple = keyframes`
   50%, 100% {
     opacity: 0;
     transform: scale(2);
+  }
+`;
+
+const poke = ({ transform, isLeft }) => keyframes`
+  0%, 75%{
+    transform: ${transform} translateX(0);
+  }
+  33% {
+    transform: ${transform} translateX(${isLeft ? '-' : ''}50%);
   }
 `;
 
@@ -27,10 +37,45 @@ const Ripple = styled(Box)`
   border-radius: 50%;
 `;
 
+const Poking = styled(Box)`
+  animation: ${poke} 2.5s ease infinite;
+  ${({ isLeft }) => !isLeft && 'animation-delay: 0.5s;'}
+`
+
+const Arrow = ({ isLeft, ...props }) => (
+  <Poking
+    position="absolute"
+    width="100%"
+    left={isLeft ? '-120%' : '120%'}
+    top="50%"
+    isLeft={isLeft}
+    transform="translateY(-50%)"
+    {...props}
+  >
+    <BackgroundImage ratio={12 / 20} src={handleArr} transform={`${isLeft ? 'rotate(180deg)' : ''}`} />
+  </Poking>
+)
+
 const EnergyHandle = ({ style, showHint, ...props }) => (
-  <Box w="3em" style={{ cursor: 'col-resize', ...style }} {...props}>
-    {showHint && <Ripple bg="white" />}
-    <BackgroundImage className="ratio-hanlde" src={handle} />
+  <Box
+    position="absolute"
+    w="3em"
+    top="0"
+    bottom="0"
+    style={{ cursor: 'col-resize', ...style }}
+    className="ratio-handle"
+    {...props}
+  >
+    <Box position="absolute" bottom="3em" w={1}>
+      <Ripple bg="white" />
+      {showHint && (
+        <div>
+          <Arrow isLeft />
+          <Arrow />
+        </div>
+      )}
+      <BackgroundImage src={handle} />
+    </Box>
   </Box>
 );
 

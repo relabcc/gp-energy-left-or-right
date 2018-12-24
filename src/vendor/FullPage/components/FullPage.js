@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import throttle from 'lodash/throttle';
+import some from 'lodash/some';
 import bowser from 'bowser';
 import { injectGlobal } from 'styled-components';
 
@@ -110,13 +111,13 @@ export default class FullPage extends React.Component {
   }
 
   onTouchStart = (evt) => {
-    if (evt.target.classList.contains('ratio-hanlde')) return;
+    if (some(this.getWhiteList(), (ele) => ele === evt.target || ele.contains(evt.target))) return;
     this._touchStart = evt.touches[0].clientY;
     this._isScrolledAlready = false;
   }
 
   onTouchMove = (evt) => {
-    if (evt.target.classList.contains('ratio-hanlde')) return;
+    if (some(this.getWhiteList(), (ele) => ele === evt.target || ele.contains(evt.target))) return;
     const touchEnd = evt.changedTouches[0].clientY;
     if (!this._isScrollPending && !this._isScrolledAlready) {
       if (this._touchStart > touchEnd + this._touchSensitivity) {
@@ -159,6 +160,13 @@ export default class FullPage extends React.Component {
 
   requestSrcollAdjust = (slide = this.state.activeSlide) => {
     this.scrollToSlide(slide, true);
+  }
+
+  getWhiteList = () => {
+    if (!this.whiteList) {
+      this.whiteList = document.querySelectorAll('.ratio-handle');
+    }
+    return this.whiteList
   }
 
   getSlidesCount = () => this._slidesCount

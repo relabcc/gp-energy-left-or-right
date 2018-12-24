@@ -26,7 +26,7 @@ const DualBg = ({
     onRatioChange={updateRatio}
     ratioSync={ratioSync}
     ratio={ratio}
-    showHint={introPlayFinished && showHint}
+    showHint={introPlayed && showHint}
     firstDragged={firstDragged}
     {...props}
   />

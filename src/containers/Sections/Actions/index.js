@@ -39,7 +39,7 @@ class ScrollableAction extends PureComponent {
           position="absolute"
           left={['10%', null, '17.5%']}
           right={['10%', null, '17.5%']}
-          top={['65%', null, '78%']}
+          top={['60%', null, '78%']}
           justify="space-around"
           flexWrap="wrap"
         >

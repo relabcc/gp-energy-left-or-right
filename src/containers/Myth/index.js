@@ -68,7 +68,7 @@ class MythSlick extends PureComponent {
     const isDesktop = browser.greaterThan.sm;
     const arrowPos = ['1em', null, 'calc((160% - 72px) / 6 * 0.975)'];
     return (
-      <Box overflow="hidden" {...props}>
+      <Box {...props}>
         <Box position="relative">
           <Box w={[1, null, '160%']} ml={[0, 0, '-30%']}>
             <Slider
@@ -78,6 +78,8 @@ class MythSlick extends PureComponent {
               accessibility={false}
               slidesToShow={3}
               arrows={false}
+              draggable={false}
+              swipe={false}
               centerMode
               centerPadding="36px"
               infinite={false}

@@ -2,6 +2,7 @@ import React, { PureComponent, createElement } from 'react';
 import { compose } from 'redux';
 import { withContentRect } from 'react-measure';
 import Helmet from 'react-helmet';
+import bowser from 'bowser'
 
 import { FullPage, Slide } from '../vendor/FullPage';
 import withHeader from '../hoc/withHeader';
@@ -34,6 +35,12 @@ class Index extends PureComponent {
       active: 0,
       isDesktop: !isServer && window.innerWidth > props.browser.breakpoints.sm,
     }
+    this.footerHeight = 0
+    if (['Line', 'FB', 'MicroMessenger'].every((name) => !window.navigator.userAgent.includes(name))) {
+      if (bowser.ios && bowser.safari ) this.footerHeight = 64
+      if (bowser.android && bowser.chrome) this.footerHeight = 56
+    }
+
   }
 
   componentDidMount() {
@@ -97,6 +104,7 @@ class Index extends PureComponent {
         zIndex={0}
         innerRef={measureRef}
         bg="blue"
+        pb={this.footerHeight}
         {...props}
       >
         <Helmet
@@ -134,6 +142,8 @@ class Index extends PureComponent {
         <Title active={!animating}>
           {title}
         </Title>
+        {/* <Box position="absolute" top={50} w={1} bg="white">{window.navigator.userAgent}<br />{window.navigator.userAgent.split('/').length}</Box> */}
+
       </Box>
     );
   }
