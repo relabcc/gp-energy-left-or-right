@@ -9,14 +9,6 @@ import animatedScrollTo from '../utils/animated-scroll-to';
 import isMobileDevice from '../utils/is-mobile';
 import Controls from './Controls';
 
-bowser.mobile && injectGlobal`
-  body {
-    height: 100vh;
-    overflow: hidden;
-    position: fixed;
-  }
-`;
-
 const getChildrenCount = (children) => {
   const childrenArr = React.Children.toArray(children);
   const slides = childrenArr;
@@ -77,6 +69,11 @@ export default class FullPage extends React.Component {
     window.addEventListener('resize', this.onResize);
     this.onResize();
     this.scrollToSlide(this.props.initialSlide);
+    if (this._isMobile) {
+      document.body.style.height = '100vh';
+      document.body.style.overflow = 'hidden';
+      document.body.style.position = 'fixed';
+    }
   }
 
   componentWillUnmount() {
@@ -84,6 +81,10 @@ export default class FullPage extends React.Component {
     if (this._isMobile) {
       document.removeEventListener('touchmove', this.onTouchMove);
       document.removeEventListener('touchstart', this.onTouchStart);
+
+      document.body.style.height = 'auto';
+      document.body.style.overflow = 'auto';
+      document.body.style.position = 'static';
     } else {
       document.removeEventListener('wheel', this.onScroll);
     }

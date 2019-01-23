@@ -35,6 +35,7 @@ export default class Modal extends PureComponent {
     if (prevProps.isOpen !== this.props.isOpen) {
       if (this.props.isOpen) {
         this.freeze();
+        console.log('freeze');
       } else {
         this.unfreeze();
       }

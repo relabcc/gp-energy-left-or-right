@@ -18,6 +18,7 @@ import {
   borderRadius,
   zIndex,
   flex,
+  minHeight,
 } from 'styled-system';
 
 import blacklist from './utils/blacklist';
@@ -26,6 +27,7 @@ import injectProps from './utils/injectProps';
 const Box = styled(tag)`
   ${space}
   ${width}
+  ${minHeight}
   ${display}
   ${height}
   ${color}

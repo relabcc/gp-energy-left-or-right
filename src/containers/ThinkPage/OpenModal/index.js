@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Flex from '../../../components/Flex';
 import Text from '../../../components/Text';
 import Link from '../../../components/Link';
-// import Circle from '../../../components/Circle';
+import Box from '../../../components/Box';
 import Modal from '../../../components/Modal';
 import Border from '../../../components/Border';
 import { thinkLinks } from '../../../text';
@@ -46,12 +46,14 @@ const OpenModal = ({ isOpen, ...props }) => (
     </Box> */}
     <Thanks />
     <Border mx="10%" my="1em" border="2px solid" borderColor="cyan" />
-    <Text my="1.5em" align="center" f="1.2em" color="gray" fontWeight="bold">我還想知道...</Text>
-    <Flex w="80%" mx="auto" mb="5em">
+    <Text my="1.5em" align="center" fontSize={['1em', null, '1.2em']} color="gray" fontWeight="bold">我還想知道...</Text>
+    <Flex w="80%" mx="auto" mb={['3em', null, '5em']} flexWrap="wrap">
       {linkPics.map(({ Pic, ...a }, index) => (
-        <Link mx="1em" fontWeight="thin" {...a} key={index}>
-          <Pic />
-        </Link>
+        <Box width={[1 / 2, null, 1 / 4]} p="0.5em" key={index}>
+          <Link fontWeight="thin" {...a}>
+            <Pic />
+          </Link>
+        </Box>
       ))}
     </Flex>
   </Modal>

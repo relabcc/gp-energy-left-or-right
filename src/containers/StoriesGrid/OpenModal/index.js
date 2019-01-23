@@ -18,6 +18,7 @@ class MimicModal extends React.PureComponent {
     if (prevProps.isOpen !== this.props.isOpen) {
       if (this.props.isOpen) {
         this.freeze();
+        console.log('freeeeez')
       } else {
         this.unfreeze();
       }

@@ -4,9 +4,11 @@ import random from 'lodash/random';
 import get from 'lodash/get';
 import Helmet from 'react-helmet';
 import ReactGA from 'react-ga';
+import MdKeyboardArrowDown from 'react-icons/lib/md/keyboard-arrow-down';
 
 import Flex from '../../components/Flex';
 import Box from '../../components/Box';
+import Text from '../../components/Text';
 import Image from '../../components/Image';
 import theme from '../../components/ThemeProvider/theme';
 import BackgroundImage from '../../components/BackgroundImage';
@@ -34,7 +36,7 @@ class ThinkPage extends React.PureComponent {
   }
 
   state = {
-    isOpen: false,
+    isOpen: true,
     scoreAnswered: false,
   }
 
@@ -106,6 +108,10 @@ class ThinkPage extends React.PureComponent {
           {browser.lessThan.md && (
             <Box position="relative">
               {image}
+              <Box textAlign="center" fontSize="1.25em" mt="2em">
+                <Text>一起來想一想</Text>
+                <MdKeyboardArrowDown />
+              </Box>
               <Box px="1em" py="2em" w={1}>
                 {content}
               </Box>
